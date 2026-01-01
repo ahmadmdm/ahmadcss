@@ -1,0 +1,732 @@
+/*
+ * AhmadCSS - Advanced Effects & Enhancements
+ * Premium animations, glassmorphism, and modern UI effects
+ */
+
+/* ============================================
+   GLASSMORPHISM EFFECTS
+   ============================================ */
+.glass {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.glass-dark {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Navbar Glass Effect */
+.navbar.glass-navbar {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+}
+
+/* ============================================
+   GRADIENT BUTTONS
+   ============================================ */
+.btn-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+}
+
+.btn-gradient-primary:hover {
+    background: linear-gradient(135deg, #5a6fd6 0%, #6a4190 100%) !important;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5) !important;
+    transform: translateY(-2px);
+}
+
+.btn-gradient-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(17, 153, 142, 0.4) !important;
+}
+
+.btn-gradient-danger {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4) !important;
+}
+
+.btn-gradient-warning {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn-gradient-info {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* ============================================
+   NEUMORPHISM CARDS
+   ============================================ */
+.neumorphic {
+    background: #e0e5ec !important;
+    border-radius: 16px !important;
+    box-shadow: 8px 8px 16px #b8bec7, -8px -8px 16px #ffffff !important;
+    border: none !important;
+}
+
+.neumorphic-inset {
+    background: #e0e5ec !important;
+    border-radius: 16px !important;
+    box-shadow: inset 8px 8px 16px #b8bec7, inset -8px -8px 16px #ffffff !important;
+}
+
+/* ============================================
+   FLOATING ACTION BUTTON
+   ============================================ */
+.fab {
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 6px 20px rgba(26, 115, 232, 0.4) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 1000 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.fab:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 8px 28px rgba(26, 115, 232, 0.5) !important;
+}
+
+.fab:active {
+    transform: scale(0.95) !important;
+}
+
+.fab i {
+    font-size: 24px !important;
+}
+
+/* Mini FAB */
+.fab-mini {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.fab-mini i {
+    font-size: 18px !important;
+}
+
+/* ============================================
+   ANIMATED BACKGROUND PATTERNS
+   ============================================ */
+.pattern-dots {
+    background-image: radial-gradient(circle, var(--border-color) 1px, transparent 1px) !important;
+    background-size: 20px 20px !important;
+}
+
+.pattern-grid {
+    background-image: 
+        linear-gradient(var(--border-light) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-light) 1px, transparent 1px) !important;
+    background-size: 20px 20px !important;
+}
+
+.animated-gradient-bg {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ============================================
+   PREMIUM CARD STYLES
+   ============================================ */
+.card-premium {
+    background: var(--surface) !important;
+    border-radius: 20px !important;
+    padding: 24px !important;
+    box-shadow: 
+        0 10px 40px rgba(0,0,0,0.08),
+        0 2px 10px rgba(0,0,0,0.04) !important;
+    border: 1px solid rgba(255,255,255,0.8) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.card-premium:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 
+        0 20px 60px rgba(0,0,0,0.12),
+        0 4px 20px rgba(0,0,0,0.06) !important;
+}
+
+.card-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.card-gradient-blue {
+    background: linear-gradient(135deg, #1a73e8 0%, #4285f4 100%) !important;
+    color: white !important;
+}
+
+.card-gradient-green {
+    background: linear-gradient(135deg, #34a853 0%, #4caf50 100%) !important;
+    color: white !important;
+}
+
+.card-gradient-orange {
+    background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%) !important;
+    color: white !important;
+}
+
+.card-gradient-red {
+    background: linear-gradient(135deg, #ea4335 0%, #f44336 100%) !important;
+    color: white !important;
+}
+
+/* ============================================
+   LOADING SPINNERS
+   ============================================ */
+.spinner-material {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-light);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.spinner-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.spinner-dots span {
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: bounce 1.4s ease-in-out infinite both;
+}
+
+.spinner-dots span:nth-child(1) { animation-delay: -0.32s; }
+.spinner-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+.spinner-pulse {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ============================================
+   ENHANCED FORM FIELDS
+   ============================================ */
+.input-floating {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.input-floating input {
+    width: 100%;
+    padding: 16px 16px 8px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 16px;
+    background: transparent;
+    transition: all 0.3s;
+}
+
+.input-floating label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s;
+    background: var(--surface);
+    padding: 0 4px;
+}
+
+.input-floating input:focus,
+.input-floating input:not(:placeholder-shown) {
+    border-color: var(--primary);
+}
+
+.input-floating input:focus + label,
+.input-floating input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 12px;
+    color: var(--primary);
+}
+
+/* Input with Icon */
+.input-icon-wrapper {
+    position: relative;
+}
+
+.input-icon-wrapper i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+
+.input-icon-wrapper input {
+    padding-left: 48px !important;
+}
+
+.input-icon-wrapper input:focus + i,
+.input-icon-wrapper:focus-within i {
+    color: var(--primary);
+}
+
+/* ============================================
+   AVATAR STYLES
+   ============================================ */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.avatar-sm { width: 32px; height: 32px; font-size: 12px; }
+.avatar-lg { width: 56px; height: 56px; font-size: 20px; }
+.avatar-xl { width: 80px; height: 80px; font-size: 28px; }
+
+.avatar-group {
+    display: flex;
+}
+
+.avatar-group .avatar {
+    border: 2px solid var(--surface);
+    margin-left: -12px;
+}
+
+.avatar-group .avatar:first-child {
+    margin-left: 0;
+}
+
+/* Avatar with Status */
+.avatar-status {
+    position: relative;
+}
+
+.avatar-status::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--surface);
+    background: var(--success);
+}
+
+.avatar-status.offline::after { background: var(--text-muted); }
+.avatar-status.busy::after { background: var(--danger); }
+.avatar-status.away::after { background: var(--warning); }
+
+/* ============================================
+   CHIPS & TAGS
+   ============================================ */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    background: var(--bg-color);
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.chip:hover {
+    background: var(--primary-bg);
+}
+
+.chip-primary {
+    background: var(--primary-bg);
+    color: var(--primary);
+}
+
+.chip-success {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.chip-danger {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+.chip .chip-close {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.chip .chip-close:hover {
+    opacity: 1;
+}
+
+/* ============================================
+   TIMELINE ENHANCED
+   ============================================ */
+.timeline-enhanced {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline-enhanced::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary), var(--primary-light));
+}
+
+.timeline-enhanced .timeline-item {
+    position: relative;
+    padding-bottom: 24px;
+}
+
+.timeline-enhanced .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    border-radius: 50%;
+    border: 3px solid var(--surface);
+    box-shadow: 0 0 0 3px var(--primary-bg);
+}
+
+.timeline-enhanced .timeline-content {
+    background: var(--surface);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* ============================================
+   STAT CARDS
+   ============================================ */
+.stat-card {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-card .stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.stat-card .stat-icon.primary {
+    background: var(--primary-bg);
+    color: var(--primary);
+}
+
+.stat-card .stat-icon.success {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.stat-card .stat-icon.danger {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+.stat-card .stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+.stat-card .stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.stat-card .stat-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 8px;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.stat-card .stat-change.positive {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.stat-card .stat-change.negative {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+/* ============================================
+   SWITCH TOGGLE
+   ============================================ */
+.switch {
+    position: relative;
+    width: 48px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--border-color);
+    transition: 0.3s;
+    border-radius: 24px;
+}
+
+.switch .slider::before {
+    position: absolute;
+    content: '';
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    transition: 0.3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.switch input:checked + .slider {
+    background: var(--primary);
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+/* ============================================
+   TOOLTIP ENHANCED
+   ============================================ */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::before,
+[data-tooltip]::after {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    padding: 8px 12px;
+    background: var(--text-color);
+    color: var(--bg-light);
+    font-size: 12px;
+    white-space: nowrap;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+}
+
+[data-tooltip]::after {
+    content: '';
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    border: 6px solid transparent;
+    border-top-color: var(--text-color);
+    margin-bottom: -12px;
+}
+
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================
+   NOTIFICATION BADGE
+   ============================================ */
+.notification-badge {
+    position: relative;
+}
+
+.notification-badge::after {
+    content: attr(data-count);
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    background: var(--danger);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--surface);
+}
+
+.notification-badge.dot::after {
+    content: '';
+    min-width: 10px;
+    height: 10px;
+    padding: 0;
+    top: -4px;
+    right: -4px;
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state .empty-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 24px;
+    background: var(--bg-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--text-light);
+}
+
+.empty-state .empty-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.empty-state .empty-description {
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 400px;
+    margin: 0 auto 24px;
+}
+
+/* ============================================
+   DIVIDERS
+   ============================================ */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 24px 0;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.divider::before {
+    margin-right: 16px;
+}
+
+.divider::after {
+    margin-left: 16px;
+}
+
+/* End of Advanced Effects */

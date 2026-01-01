@@ -1,0 +1,1304 @@
+/*
+ * AhmadCSS - Professional Material Design Theme for Frappe
+ * Version: 1.0.0
+ * Author: Ahmad
+ * 
+ * A modern, clean, and professional Material Design theme
+ * with carefully crafted UI components and smooth animations
+ */
+
+/* ============================================
+   1. CSS VARIABLES & COLOR PALETTE
+   ============================================ */
+:root {
+    /* Primary Colors - Deep Blue */
+    --primary: #1a73e8;
+    --primary-dark: #1557b0;
+    --primary-light: #4285f4;
+    --primary-bg: #e8f0fe;
+    
+    /* Secondary Colors - Teal Accent */
+    --secondary: #00bcd4;
+    --secondary-dark: #008ba3;
+    --secondary-light: #62efff;
+    
+    /* Neutral Colors */
+    --bg-color: #f8f9fa;
+    --bg-light: #ffffff;
+    --bg-dark: #e9ecef;
+    --surface: #ffffff;
+    
+    /* Text Colors */
+    --text-color: #202124;
+    --text-muted: #5f6368;
+    --text-light: #80868b;
+    --text-on-primary: #ffffff;
+    
+    /* Status Colors */
+    --success: #34a853;
+    --success-bg: #e6f4ea;
+    --warning: #fbbc04;
+    --warning-bg: #fef7e0;
+    --danger: #ea4335;
+    --danger-bg: #fce8e6;
+    --info: #4285f4;
+    --info-bg: #e8f0fe;
+    
+    /* Borders & Shadows */
+    --border-color: #dadce0;
+    --border-light: #e8eaed;
+    --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.1), 0 1px 3px 1px rgba(60,64,67,0.08);
+    --shadow-md: 0 1px 3px 0 rgba(60,64,67,0.15), 0 4px 8px 3px rgba(60,64,67,0.1);
+    --shadow-lg: 0 1px 3px 0 rgba(60,64,67,0.2), 0 8px 16px 4px rgba(60,64,67,0.15);
+    --shadow-xl: 0 4px 8px 0 rgba(60,64,67,0.25), 0 16px 32px 8px rgba(60,64,67,0.2);
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+    
+    /* Typography */
+    --font-family: 'Google Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'Roboto Mono', 'SF Mono', Consolas, monospace;
+    
+    /* Transitions */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Navbar Height */
+    --navbar-height: 64px;
+    --sidebar-width: 260px;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] {
+    --bg-color: #1f1f1f;
+    --bg-light: #2d2d2d;
+    --bg-dark: #171717;
+    --surface: #2d2d2d;
+    --text-color: #e8eaed;
+    --text-muted: #9aa0a6;
+    --text-light: #80868b;
+    --border-color: #3c4043;
+    --border-light: #5f6368;
+    --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.3);
+    --shadow-md: 0 2px 6px 2px rgba(0,0,0,0.4);
+}
+
+/* ============================================
+   2. GLOBAL STYLES & TYPOGRAPHY
+   ============================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family) !important;
+    background: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+/* Selection */
+::selection {
+    background: var(--primary-bg);
+    color: var(--primary-dark);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-light);
+}
+
+/* ============================================
+   3. NAVBAR - Material App Bar
+   ============================================ */
+.navbar {
+    background: var(--surface) !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    box-shadow: var(--shadow-sm) !important;
+    height: var(--navbar-height) !important;
+    padding: 0 var(--spacing-md) !important;
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    color: var(--text-color) !important;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.navbar-brand img {
+    height: 32px !important;
+    width: auto !important;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    padding: var(--spacing-sm) var(--spacing-md) !important;
+    border-radius: var(--radius-md) !important;
+    transition: var(--transition-fast) !important;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary) !important;
+    background: var(--primary-bg) !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+}
+
+/* Search Bar in Navbar */
+.navbar .search-bar,
+.navbar #navbar-search,
+#navbar-search input,
+.search-bar input {
+    background: var(--bg-color) !important;
+    border: 1px solid var(--border-light) !important;
+    border-radius: var(--radius-full) !important;
+    padding: 8px 16px 8px 40px !important;
+    font-size: 14px !important;
+    transition: var(--transition-fast) !important;
+    width: 100%;
+    max-width: 400px;
+}
+
+.navbar .search-bar:focus,
+#navbar-search input:focus {
+    background: var(--surface) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px var(--primary-bg) !important;
+    outline: none !important;
+}
+
+/* Awesomebar */
+.awesomebar-container {
+    max-width: 500px !important;
+}
+
+.awesomebar {
+    background: var(--bg-color) !important;
+    border: 1px solid var(--border-light) !important;
+    border-radius: var(--radius-full) !important;
+    padding: 10px 20px !important;
+    font-size: 14px !important;
+    transition: var(--transition-fast) !important;
+}
+
+.awesomebar:focus {
+    background: var(--surface) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px var(--primary-bg) !important;
+}
+
+/* ============================================
+   4. SIDEBAR - Material Navigation Drawer
+   ============================================ */
+.layout-side-section,
+.desk-sidebar {
+    background: var(--surface) !important;
+    border-right: 1px solid var(--border-light) !important;
+    width: var(--sidebar-width) !important;
+    padding: var(--spacing-md) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* Sidebar Items */
+.sidebar-menu .sidebar-label,
+.desk-sidebar .sidebar-label {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: var(--text-light) !important;
+    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-xs) !important;
+    margin-top: var(--spacing-sm) !important;
+}
+
+.sidebar-menu a,
+.desk-sidebar a,
+.standard-sidebar-item a {
+    display: flex !important;
+    align-items: center !important;
+    padding: 10px 12px !important;
+    margin: 2px 0 !important;
+    border-radius: var(--radius-md) !important;
+    color: var(--text-muted) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: var(--transition-fast) !important;
+}
+
+.sidebar-menu a:hover,
+.desk-sidebar a:hover,
+.standard-sidebar-item a:hover {
+    background: var(--primary-bg) !important;
+    color: var(--primary) !important;
+}
+
+.sidebar-menu a.active,
+.desk-sidebar a.active,
+.sidebar-menu .selected a,
+.standard-sidebar-item.selected a {
+    background: var(--primary-bg) !important;
+    color: var(--primary) !important;
+    font-weight: 600 !important;
+}
+
+.sidebar-menu a i,
+.desk-sidebar a i,
+.standard-sidebar-item a i {
+    margin-right: var(--spacing-sm) !important;
+    font-size: 18px !important;
+    width: 24px !important;
+    text-align: center !important;
+}
+
+/* Workspace Sidebar */
+.workspace-sidebar-item {
+    border-radius: var(--radius-md) !important;
+    margin: 2px 0 !important;
+}
+
+.workspace-sidebar-item:hover {
+    background: var(--primary-bg) !important;
+}
+
+.workspace-sidebar-item.selected {
+    background: var(--primary-bg) !important;
+    border-left: 3px solid var(--primary) !important;
+}
+
+/* ============================================
+   5. BUTTONS - Material Buttons
+   ============================================ */
+.btn {
+    font-family: var(--font-family) !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    padding: 10px 24px !important;
+    border-radius: var(--radius-md) !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: var(--transition-fast) !important;
+    text-transform: none !important;
+    letter-spacing: 0.25px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--spacing-xs) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ripple Effect */
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.3s;
+}
+
+.btn:active::after {
+    transform: scale(2);
+    opacity: 1;
+    transition: 0s;
+}
+
+/* Primary Button */
+.btn-primary,
+.btn-primary-dark {
+    background: var(--primary) !important;
+    color: var(--text-on-primary) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.btn-primary:hover,
+.btn-primary-dark:hover {
+    background: var(--primary-dark) !important;
+    box-shadow: var(--shadow-md) !important;
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* Secondary/Default Button */
+.btn-default,
+.btn-secondary {
+    background: var(--surface) !important;
+    color: var(--primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.btn-default:hover,
+.btn-secondary:hover {
+    background: var(--primary-bg) !important;
+    border-color: var(--primary-light) !important;
+}
+
+/* Success Button */
+.btn-success {
+    background: var(--success) !important;
+    color: var(--text-on-primary) !important;
+}
+
+.btn-success:hover {
+    background: #2d9249 !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Danger Button */
+.btn-danger {
+    background: var(--danger) !important;
+    color: var(--text-on-primary) !important;
+}
+
+.btn-danger:hover {
+    background: #d33426 !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Warning Button */
+.btn-warning {
+    background: var(--warning) !important;
+    color: var(--text-color) !important;
+}
+
+/* Small Button */
+.btn-sm,
+.btn-xs {
+    padding: 6px 16px !important;
+    font-size: 13px !important;
+}
+
+/* Large Button */
+.btn-lg {
+    padding: 14px 32px !important;
+    font-size: 16px !important;
+}
+
+/* Icon Button */
+.btn-icon,
+.icon-btn {
+    padding: 8px !important;
+    border-radius: var(--radius-full) !important;
+    min-width: 40px !important;
+    height: 40px !important;
+}
+
+/* ============================================
+   6. FORMS & INPUTS - Material Text Fields
+   ============================================ */
+.form-control,
+.frappe-control input,
+.frappe-control textarea,
+.frappe-control select,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+    font-family: var(--font-family) !important;
+    font-size: 14px !important;
+    padding: 12px 16px !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-md) !important;
+    background: var(--surface) !important;
+    color: var(--text-color) !important;
+    transition: var(--transition-fast) !important;
+    width: 100%;
+}
+
+.form-control:hover,
+.frappe-control input:hover {
+    border-color: var(--text-light) !important;
+}
+
+.form-control:focus,
+.frappe-control input:focus,
+.frappe-control textarea:focus,
+.frappe-control select:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px var(--primary-bg) !important;
+    outline: none !important;
+}
+
+/* Form Labels */
+.frappe-control label,
+.form-group label,
+.control-label {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: var(--text-muted) !important;
+    margin-bottom: 6px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Placeholder */
+::placeholder {
+    color: var(--text-light) !important;
+    opacity: 1 !important;
+}
+
+/* Select Dropdown */
+.frappe-control[data-fieldtype="Select"] select,
+.frappe-control[data-fieldtype="Link"] input {
+    appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%235f6368' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    background-size: 16px !important;
+    padding-right: 40px !important;
+}
+
+/* Checkbox & Radio */
+.frappe-control[data-fieldtype="Check"] .checkbox,
+input[type="checkbox"],
+input[type="radio"] {
+    width: 18px !important;
+    height: 18px !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: var(--radius-sm) !important;
+    appearance: none !important;
+    cursor: pointer !important;
+    transition: var(--transition-fast) !important;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="radio"] {
+    border-radius: var(--radius-full) !important;
+}
+
+/* ============================================
+   7. CARDS & CONTAINERS
+   ============================================ */
+.card,
+.frappe-card,
+.widget,
+.frappe-control.frappe-control[data-fieldtype="Section Break"] {
+    background: var(--surface) !important;
+    border: none !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-sm) !important;
+    padding: var(--spacing-lg) !important;
+    margin-bottom: var(--spacing-md) !important;
+    transition: var(--transition-fast) !important;
+}
+
+.card:hover,
+.frappe-card:hover {
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Card Header */
+.card-header,
+.section-head {
+    background: transparent !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    padding: var(--spacing-md) var(--spacing-lg) !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: var(--text-color) !important;
+}
+
+/* Page Container */
+.page-container,
+.container-fluid {
+    padding: var(--spacing-lg) !important;
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+}
+
+/* ============================================
+   8. TABLES - Material Data Tables
+   ============================================ */
+.frappe-list,
+.datatable,
+table {
+    background: var(--surface) !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.frappe-list .list-row,
+.datatable .dt-row,
+table tr {
+    border-bottom: 1px solid var(--border-light) !important;
+    transition: var(--transition-fast) !important;
+}
+
+.frappe-list .list-row:hover,
+.datatable .dt-row:hover,
+table tbody tr:hover {
+    background: var(--primary-bg) !important;
+}
+
+.frappe-list .list-row-head,
+.datatable .dt-header,
+table thead tr {
+    background: var(--bg-color) !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: var(--text-muted) !important;
+}
+
+table th,
+table td,
+.frappe-list .list-row-container {
+    padding: 14px 16px !important;
+    vertical-align: middle !important;
+}
+
+/* List View */
+.list-row-container.ellipsis {
+    border-radius: 0 !important;
+}
+
+.list-row .level-left {
+    padding-left: var(--spacing-md) !important;
+}
+
+/* ============================================
+   9. MODALS & DIALOGS - Material Dialogs
+   ============================================ */
+.modal-content {
+    border: none !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: var(--shadow-xl) !important;
+    overflow: hidden !important;
+}
+
+.modal-header {
+    background: var(--surface) !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    padding: var(--spacing-lg) var(--spacing-xl) !important;
+}
+
+.modal-title {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: var(--text-color) !important;
+}
+
+.modal-body {
+    padding: var(--spacing-xl) !important;
+    background: var(--surface) !important;
+}
+
+.modal-footer {
+    background: var(--bg-color) !important;
+    border-top: 1px solid var(--border-light) !important;
+    padding: var(--spacing-md) var(--spacing-xl) !important;
+}
+
+.modal-backdrop {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(4px) !important;
+}
+
+/* ============================================
+   10. ALERTS & NOTIFICATIONS
+   ============================================ */
+.alert,
+.frappe-alert {
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    padding: var(--spacing-md) var(--spacing-lg) !important;
+    font-size: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--spacing-sm) !important;
+}
+
+.alert-success {
+    background: var(--success-bg) !important;
+    color: var(--success) !important;
+}
+
+.alert-warning {
+    background: var(--warning-bg) !important;
+    color: #b06000 !important;
+}
+
+.alert-danger,
+.alert-error {
+    background: var(--danger-bg) !important;
+    color: var(--danger) !important;
+}
+
+.alert-info {
+    background: var(--info-bg) !important;
+    color: var(--info) !important;
+}
+
+/* Toast Notifications */
+.desk-alert,
+.frappe-control.frappe-control[data-fieldtype="HTML"] .alert {
+    position: fixed !important;
+    bottom: var(--spacing-lg) !important;
+    right: var(--spacing-lg) !important;
+    z-index: 9999 !important;
+    min-width: 300px !important;
+    box-shadow: var(--shadow-lg) !important;
+    animation: slideUp 0.3s ease-out !important;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   11. BADGES & INDICATORS
+   ============================================ */
+.badge,
+.indicator,
+.indicator-pill {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 4px 10px !important;
+    border-radius: var(--radius-full) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.badge-primary,
+.indicator-pill.blue {
+    background: var(--primary-bg) !important;
+    color: var(--primary) !important;
+}
+
+.badge-success,
+.indicator-pill.green {
+    background: var(--success-bg) !important;
+    color: var(--success) !important;
+}
+
+.badge-danger,
+.indicator-pill.red {
+    background: var(--danger-bg) !important;
+    color: var(--danger) !important;
+}
+
+.badge-warning,
+.indicator-pill.orange,
+.indicator-pill.yellow {
+    background: var(--warning-bg) !important;
+    color: #b06000 !important;
+}
+
+/* Status Indicator Dot */
+.indicator::before,
+.indicator-pill::before {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: var(--radius-full) !important;
+    margin-right: 6px !important;
+}
+
+/* ============================================
+   12. BREADCRUMBS
+   ============================================ */
+.breadcrumb {
+    background: transparent !important;
+    padding: var(--spacing-sm) 0 !important;
+    margin-bottom: var(--spacing-md) !important;
+    font-size: 13px !important;
+}
+
+.breadcrumb-item {
+    color: var(--text-muted) !important;
+}
+
+.breadcrumb-item a {
+    color: var(--primary) !important;
+    text-decoration: none !important;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline !important;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-color) !important;
+    font-weight: 500 !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: '›' !important;
+    color: var(--text-light) !important;
+    font-size: 16px !important;
+}
+
+/* ============================================
+   13. PAGINATION
+   ============================================ */
+.pagination {
+    gap: var(--spacing-xs) !important;
+}
+
+.page-item .page-link {
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    padding: 8px 14px !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    transition: var(--transition-fast) !important;
+}
+
+.page-item .page-link:hover {
+    background: var(--primary-bg) !important;
+    color: var(--primary) !important;
+}
+
+.page-item.active .page-link {
+    background: var(--primary) !important;
+    color: var(--text-on-primary) !important;
+}
+
+/* ============================================
+   14. TABS
+   ============================================ */
+.nav-tabs,
+.frappe-tabs {
+    border-bottom: 1px solid var(--border-light) !important;
+    gap: var(--spacing-xs) !important;
+}
+
+.nav-tabs .nav-link,
+.frappe-tabs .nav-link {
+    border: none !important;
+    border-bottom: 3px solid transparent !important;
+    padding: var(--spacing-md) var(--spacing-lg) !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    transition: var(--transition-fast) !important;
+    border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--primary) !important;
+    background: var(--primary-bg) !important;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary) !important;
+    border-bottom-color: var(--primary) !important;
+    background: transparent !important;
+}
+
+/* ============================================
+   15. DROPDOWNS
+   ============================================ */
+.dropdown-menu {
+    border: none !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-lg) !important;
+    padding: var(--spacing-sm) !important;
+    min-width: 200px !important;
+    animation: fadeIn 0.15s ease-out !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    padding: 10px 16px !important;
+    border-radius: var(--radius-md) !important;
+    color: var(--text-color) !important;
+    font-size: 14px !important;
+    transition: var(--transition-fast) !important;
+}
+
+.dropdown-item:hover {
+    background: var(--primary-bg) !important;
+    color: var(--primary) !important;
+}
+
+.dropdown-item i {
+    margin-right: var(--spacing-sm) !important;
+    width: 20px !important;
+    text-align: center !important;
+}
+
+.dropdown-divider {
+    margin: var(--spacing-xs) 0 !important;
+    border-color: var(--border-light) !important;
+}
+
+/* ============================================
+   16. TOOLTIPS
+   ============================================ */
+.tooltip {
+    font-family: var(--font-family) !important;
+}
+
+.tooltip-inner {
+    background: var(--text-color) !important;
+    color: var(--bg-light) !important;
+    padding: 8px 12px !important;
+    border-radius: var(--radius-md) !important;
+    font-size: 12px !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* ============================================
+   17. PROGRESS BARS
+   ============================================ */
+.progress {
+    height: 8px !important;
+    border-radius: var(--radius-full) !important;
+    background: var(--bg-dark) !important;
+    overflow: hidden !important;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--primary), var(--primary-light)) !important;
+    border-radius: var(--radius-full) !important;
+    transition: width 0.6s ease !important;
+}
+
+/* ============================================
+   18. FRAPPE SPECIFIC - Form View
+   ============================================ */
+.form-page,
+.form-dashboard {
+    background: var(--bg-color) !important;
+}
+
+.form-layout {
+    background: var(--surface) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-sm) !important;
+    margin: var(--spacing-md) !important;
+    padding: var(--spacing-lg) !important;
+}
+
+.form-section {
+    margin-bottom: var(--spacing-lg) !important;
+}
+
+.form-section .section-head {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: var(--primary) !important;
+    border-bottom: 2px solid var(--primary-bg) !important;
+    padding-bottom: var(--spacing-sm) !important;
+    margin-bottom: var(--spacing-md) !important;
+}
+
+/* Form Tabs */
+.form-tabs-list {
+    background: var(--surface) !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    padding: 0 var(--spacing-md) !important;
+}
+
+/* Timeline */
+.form-footer,
+.timeline {
+    background: var(--surface) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: var(--spacing-lg) !important;
+    margin: var(--spacing-md) !important;
+}
+
+.timeline-item {
+    padding: var(--spacing-md) !important;
+    border-left: 2px solid var(--border-light) !important;
+    margin-left: var(--spacing-sm) !important;
+}
+
+.timeline-item::before {
+    width: 12px !important;
+    height: 12px !important;
+    background: var(--primary) !important;
+    border-radius: var(--radius-full) !important;
+    left: -7px !important;
+}
+
+/* ============================================
+   19. WORKSPACE
+   ============================================ */
+.workspace-container {
+    background: var(--bg-color) !important;
+    padding: var(--spacing-xl) !important;
+}
+
+.widget-group {
+    margin-bottom: var(--spacing-xl) !important;
+}
+
+.widget-group-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: var(--text-color) !important;
+    margin-bottom: var(--spacing-md) !important;
+    padding-bottom: var(--spacing-sm) !important;
+    border-bottom: 2px solid var(--primary-bg) !important;
+}
+
+/* Shortcut Widget */
+.shortcut-widget-box {
+    background: var(--surface) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: var(--spacing-lg) !important;
+    box-shadow: var(--shadow-sm) !important;
+    transition: var(--transition-fast) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+.shortcut-widget-box:hover {
+    box-shadow: var(--shadow-md) !important;
+    border-color: var(--primary-light) !important;
+    transform: translateY(-2px);
+}
+
+.shortcut-widget-box .widget-head {
+    font-weight: 600 !important;
+    color: var(--text-color) !important;
+}
+
+/* Number Card Widget */
+.number-widget-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: var(--spacing-xl) !important;
+    color: var(--text-on-primary) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.number-widget-box .widget-title {
+    color: rgba(255,255,255,0.8) !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.number-widget-box .number {
+    font-size: 36px !important;
+    font-weight: 700 !important;
+    color: var(--text-on-primary) !important;
+}
+
+/* ============================================
+   20. PRINT STYLES
+   ============================================ */
+@media print {
+    .navbar,
+    .desk-sidebar,
+    .layout-side-section,
+    .page-actions,
+    .btn {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+    }
+    
+    .form-layout {
+        box-shadow: none !important;
+        margin: 0 !important;
+    }
+}
+
+/* ============================================
+   21. RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 991px) {
+    :root {
+        --navbar-height: 56px;
+        --sidebar-width: 100%;
+    }
+    
+    .navbar {
+        padding: 0 var(--spacing-sm) !important;
+    }
+    
+    .layout-side-section,
+    .desk-sidebar {
+        position: fixed !important;
+        left: -100% !important;
+        top: var(--navbar-height) !important;
+        height: calc(100vh - var(--navbar-height)) !important;
+        z-index: 999 !important;
+        transition: left 0.3s ease !important;
+    }
+    
+    .layout-side-section.show,
+    .desk-sidebar.show {
+        left: 0 !important;
+    }
+    
+    .page-container {
+        padding: var(--spacing-md) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn {
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+    }
+    
+    .modal-content {
+        margin: var(--spacing-sm) !important;
+        border-radius: var(--radius-lg) !important;
+    }
+    
+    .card,
+    .frappe-card {
+        padding: var(--spacing-md) !important;
+        border-radius: var(--radius-md) !important;
+    }
+}
+
+/* ============================================
+   22. ANIMATIONS & MICRO-INTERACTIONS
+   ============================================ */
+/* Fade In */
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Slide In */
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Scale In */
+.scale-in {
+    animation: scaleIn 0.2s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Hover Lift */
+.hover-lift {
+    transition: var(--transition-fast);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Skeleton Loading */
+.skeleton {
+    background: linear-gradient(90deg, var(--bg-dark) 25%, var(--bg-color) 50%, var(--bg-dark) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-md);
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ============================================
+   23. UTILITY CLASSES
+   ============================================ */
+.text-primary { color: var(--primary) !important; }
+.text-success { color: var(--success) !important; }
+.text-danger { color: var(--danger) !important; }
+.text-warning { color: var(--warning) !important; }
+.text-muted { color: var(--text-muted) !important; }
+
+.bg-primary { background: var(--primary) !important; }
+.bg-success { background: var(--success) !important; }
+.bg-danger { background: var(--danger) !important; }
+.bg-warning { background: var(--warning) !important; }
+.bg-light { background: var(--bg-light) !important; }
+
+.shadow-sm { box-shadow: var(--shadow-sm) !important; }
+.shadow-md { box-shadow: var(--shadow-md) !important; }
+.shadow-lg { box-shadow: var(--shadow-lg) !important; }
+
+.rounded-sm { border-radius: var(--radius-sm) !important; }
+.rounded-md { border-radius: var(--radius-md) !important; }
+.rounded-lg { border-radius: var(--radius-lg) !important; }
+.rounded-full { border-radius: var(--radius-full) !important; }
+
+/* ============================================
+   24. FRAPPE OVERRIDES - IMPORTANT FIXES
+   ============================================ */
+/* Fix z-index issues */
+.frappe-control .awesomplete > ul {
+    z-index: 9999 !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+/* Fix link field popup */
+.link-field .awesomplete > ul {
+    max-height: 300px !important;
+    overflow-y: auto !important;
+}
+
+/* Fix form grid */
+.form-grid {
+    border: 1px solid var(--border-light) !important;
+    border-radius: var(--radius-md) !important;
+    overflow: hidden !important;
+}
+
+.form-grid .grid-heading-row {
+    background: var(--bg-color) !important;
+}
+
+.form-grid .grid-row {
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+/* Fix page head */
+.page-head {
+    background: var(--surface) !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    padding: var(--spacing-md) var(--spacing-lg) !important;
+}
+
+.page-title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: var(--text-color) !important;
+}
+
+/* Fix comment box */
+.comment-box {
+    background: var(--surface) !important;
+    border: 1px solid var(--border-light) !important;
+    border-radius: var(--radius-md) !important;
+    padding: var(--spacing-md) !important;
+}
+
+.comment-box textarea {
+    border: none !important;
+    background: transparent !important;
+    resize: none !important;
+}
+
+/* Fix like button */
+.liked-by .btn {
+    background: var(--primary-bg) !important;
+    color: var(--primary) !important;
+}
+
+/* Fix quick entry */
+.quick-entry-modal .modal-content {
+    max-width: 600px !important;
+}
+
+/* End of AhmadCSS Material Theme */
