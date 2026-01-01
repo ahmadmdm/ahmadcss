@@ -1,0 +1,376 @@
+/*
+ * AhmadCSS - Arabic/RTL & Additional Enhancements
+ */
+
+/* ============================================
+   TYPOGRAPHY & FONTS
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+:root {
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-arabic: 'Tajawal', 'Inter', sans-serif;
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-light: #f9fafb;
+    --border-color: #e5e7eb;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+}
+
+body {
+    font-family: var(--font-primary) !important;
+}
+
+/* Arabic Text Support */
+[lang="ar"],
+.arabic-text,
+body[data-language="ar"] {
+    font-family: var(--font-arabic) !important;
+}
+
+/* ============================================
+   NAVBAR ENHANCEMENT
+   ============================================ */
+.navbar,
+header.navbar {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%) !important;
+    border-bottom: none !important;
+    box-shadow: 0 4px 20px rgba(30, 27, 75, 0.3) !important;
+    backdrop-filter: blur(10px) !important;
+    height: 60px !important;
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-home {
+    font-weight: 800 !important;
+    font-size: 20px !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+/* Logo Box */
+.navbar-brand .app-logo,
+.navbar-home .app-logo {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 8px 12px !important;
+    font-weight: 800 !important;
+}
+
+/* Search Bar */
+.navbar .search-bar,
+.navbar .awesomplete input,
+#navbar-search {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 25px !important;
+    padding: 10px 20px 10px 45px !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    width: 400px !important;
+    transition: all 0.3s !important;
+}
+
+.navbar .search-bar::placeholder,
+#navbar-search::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.navbar .search-bar:focus,
+#navbar-search:focus {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
+    width: 450px !important;
+}
+
+/* Navbar Icons */
+.navbar-nav .nav-link,
+.navbar .nav-item > a {
+    color: rgba(255, 255, 255, 0.85) !important;
+    padding: 8px 14px !important;
+    border-radius: 10px !important;
+    transition: all 0.2s !important;
+}
+
+.navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+/* Help Link */
+.navbar .nav-link[href*="help"],
+.navbar .navbar-help {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500 !important;
+}
+
+/* User Avatar */
+.navbar .avatar,
+.navbar-nav .avatar-frame {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1) !important;
+}
+
+/* Toggle Switch */
+.toggle-switch,
+.navbar .toggle-switch {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 20px !important;
+    padding: 4px !important;
+}
+
+/* ============================================
+   PAGE TITLE AREA
+   ============================================ */
+.page-head .title-area {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+}
+
+.page-head .title-text {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+}
+
+.page-head .indicator-pill {
+    margin-left: 12px !important;
+}
+
+/* Menu Button */
+.page-head .menu-btn-group {
+    margin-right: 12px !important;
+}
+
+.page-head .menu-btn-group .btn {
+    border-radius: 10px !important;
+    padding: 8px 14px !important;
+}
+
+/* ============================================
+   ENHANCED FORM COLUMNS
+   ============================================ */
+.form-column {
+    padding: 0 16px !important;
+}
+
+.section-body .form-column:first-child {
+    padding-left: 0 !important;
+}
+
+.section-body .form-column:last-child {
+    padding-right: 0 !important;
+}
+
+/* Grid alignment for checkboxes */
+.frappe-control.form-group.visible-xs {
+    margin-bottom: 12px !important;
+}
+
+/* Read-only fields styling */
+.like-disabled-input,
+.control-value {
+    background: #f9fafb !important;
+    padding: 12px 16px !important;
+    border-radius: 10px !important;
+    border: 1px solid #f3f4f6 !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Link fields */
+.frappe-control[data-fieldtype="Link"] .control-value {
+    color: #6366f1 !important;
+    font-weight: 500 !important;
+}
+
+.frappe-control[data-fieldtype="Link"] .control-value:hover {
+    text-decoration: underline !important;
+}
+
+/* ============================================
+   ENHANCED WIDGET GRID
+   ============================================ */
+.widget-group-body {
+    display: grid !important;
+    gap: 16px !important;
+}
+
+.widget-group-body[data-widget-type="shortcut"] {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+}
+
+.widget-group-body[data-widget-type="links"] {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+}
+
+/* ============================================
+   EMPTY STATES
+   ============================================ */
+.empty-state,
+.no-result {
+    text-align: center !important;
+    padding: 60px 40px !important;
+}
+
+.empty-state .title,
+.no-result .title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    margin-bottom: 8px !important;
+}
+
+.empty-state .subtitle,
+.no-result .message {
+    font-size: 14px !important;
+    color: #9ca3af !important;
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+.loading-state,
+.spinner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 40px !important;
+}
+
+.spinner-border {
+    width: 40px !important;
+    height: 40px !important;
+    border-width: 3px !important;
+    border-color: #6366f1 !important;
+    border-right-color: transparent !important;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f4f6 !important;
+    border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1d5db !important;
+    border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af !important;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.page-container,
+.workspace-container {
+    animation: fadeIn 0.3s ease-out !important;
+}
+
+.form-sidebar {
+    animation: slideIn 0.3s ease-out !important;
+}
+
+/* ============================================
+   QUICK FIXES
+   ============================================ */
+/* Remove double borders */
+.form-layout .form-section:first-child {
+    border-top: none !important;
+}
+
+/* Fix button alignment */
+.btn-group {
+    gap: 8px !important;
+}
+
+/* Fix text overflow */
+.ellipsis {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+/* Dividers */
+hr, .divider {
+    border: none !important;
+    border-top: 1px solid #f3f4f6 !important;
+    margin: 20px 0 !important;
+}
+
+/* Links */
+a {
+    color: #6366f1 !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: #4f46e5 !important;
+}
+
+/* Focus states */
+*:focus {
+    outline: none !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Disabled states */
+.disabled,
+[disabled],
+button:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .page-head .btn,
+    .desk-sidebar,
+    .form-sidebar {
+        display: none !important;
+    }
+    
+    .form-layout {
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+    }
+}

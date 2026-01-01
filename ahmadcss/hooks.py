@@ -26,15 +26,13 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 app_include_css = [
-    "/assets/ahmadcss/css/material-theme.css",
-    "/assets/ahmadcss/css/advanced-effects.css"
+    "/assets/ahmadcss/css/glass-ultimate.css"
 ]
 app_include_js = "/assets/ahmadcss/js/ahmadcss.js"
 
 # include js, css files in header of web template
 web_include_css = [
-    "/assets/ahmadcss/css/material-theme.css",
-    "/assets/ahmadcss/css/advanced-effects.css"
+    "/assets/ahmadcss/css/glass-ultimate.css"
 ]
 web_include_js = "/assets/ahmadcss/js/ahmadcss.js"
 

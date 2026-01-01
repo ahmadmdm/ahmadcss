@@ -1,0 +1,781 @@
+/*
+ * AhmadCSS v2.0 - Complete Frappe Redesign
+ * Professional UI overhaul for all pages
+ */
+
+/* ============================================
+   1. SIDEBAR - Complete Redesign
+   ============================================ */
+.layout-side-section,
+.desk-sidebar {
+    background: #ffffff !important;
+    border-right: 1px solid #e5e7eb !important;
+    width: 280px !important;
+    padding: 0 !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Sidebar Header - "to mail" area */
+.sidebar-menu > div:first-child,
+.desk-sidebar > div:first-child {
+    padding: 20px 20px 16px !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    margin-bottom: 8px !important;
+}
+
+/* Section Labels (PERSONAL, PUBLIC) */
+.sidebar-label,
+.widget-group-head {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: #9ca3af !important;
+    padding: 20px 20px 10px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.sidebar-label::before {
+    content: '' !important;
+    width: 4px !important;
+    height: 4px !important;
+    background: #d1d5db !important;
+    border-radius: 50% !important;
+}
+
+/* Sidebar Items */
+.desk-sidebar-item,
+.sidebar-item,
+.standard-sidebar-item {
+    margin: 2px 12px !important;
+}
+
+.desk-sidebar-item > a,
+.sidebar-item > a,
+.standard-sidebar-item > a,
+.workspace-sidebar-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+    color: #4b5563 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    gap: 12px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.desk-sidebar-item > a:hover,
+.sidebar-item > a:hover,
+.standard-sidebar-item > a:hover,
+.workspace-sidebar-item:hover {
+    background: #f3f4f6 !important;
+    color: #1f2937 !important;
+}
+
+/* Selected Item - Gradient Style */
+.desk-sidebar-item.selected > a,
+.sidebar-item.selected > a,
+.standard-sidebar-item.selected > a,
+.workspace-sidebar-item.selected {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35) !important;
+}
+
+.desk-sidebar-item.selected > a::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 4px !important;
+    background: #ffffff !important;
+    border-radius: 0 4px 4px 0 !important;
+}
+
+/* Sidebar Icons */
+.desk-sidebar-item .sidebar-item-icon,
+.sidebar-item .icon,
+.standard-sidebar-item .icon,
+.workspace-sidebar-item .icon {
+    width: 22px !important;
+    height: 22px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 16px !important;
+    opacity: 0.85 !important;
+}
+
+.desk-sidebar-item.selected .sidebar-item-icon,
+.sidebar-item.selected .icon {
+    opacity: 1 !important;
+}
+
+/* Online Indicator */
+.indicator-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+}
+
+.indicator-dot.green {
+    background: #22c55e !important;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2) !important;
+}
+
+/* Three dots menu */
+.sidebar-item-control,
+.desk-sidebar-item .btn-more {
+    opacity: 0 !important;
+    transition: opacity 0.2s !important;
+}
+
+.desk-sidebar-item:hover .btn-more,
+.sidebar-item:hover .sidebar-item-control {
+    opacity: 1 !important;
+}
+
+/* ============================================
+   2. PAGE FORM - Document View
+   ============================================ */
+.page-container[data-page-container="true"] {
+    background: #f9fafb !important;
+}
+
+/* Page Head */
+.page-head {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    padding: 16px 24px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+}
+
+.page-head .page-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+}
+
+/* Status Badges */
+.indicator-pill,
+.badge {
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.indicator-pill.red,
+.badge-danger,
+[data-indicator="red"] {
+    background: #fef2f2 !important;
+    color: #dc2626 !important;
+    border: 1px solid #fecaca !important;
+}
+
+.indicator-pill.green,
+.badge-success {
+    background: #f0fdf4 !important;
+    color: #16a34a !important;
+    border: 1px solid #bbf7d0 !important;
+}
+
+.indicator-pill.blue,
+.badge-primary {
+    background: #eff6ff !important;
+    color: #2563eb !important;
+    border: 1px solid #bfdbfe !important;
+}
+
+.indicator-pill.orange,
+.indicator-pill.yellow,
+.badge-warning {
+    background: #fffbeb !important;
+    color: #d97706 !important;
+    border: 1px solid #fde68a !important;
+}
+
+/* Action Buttons in Header */
+.page-head .btn-primary,
+.page-head .btn-primary-dark {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3) !important;
+}
+
+.page-head .btn-default {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 10px !important;
+    color: #374151 !important;
+    font-weight: 500 !important;
+}
+
+.page-head .btn-default:hover {
+    background: #f9fafb !important;
+    border-color: #d1d5db !important;
+}
+
+.page-head .btn-danger {
+    background: #ffffff !important;
+    border: 1px solid #fecaca !important;
+    color: #dc2626 !important;
+    border-radius: 10px !important;
+}
+
+.page-head .btn-danger:hover {
+    background: #fef2f2 !important;
+}
+
+/* ============================================
+   3. FORM SIDEBAR (Left Panel)
+   ============================================ */
+.form-sidebar,
+.layout-side-section .form-sidebar {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    margin: 16px !important;
+    padding: 0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid #e5e7eb !important;
+    overflow: hidden !important;
+}
+
+/* Sidebar Sections */
+.form-sidebar .sidebar-menu,
+.form-sidebar > ul {
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+}
+
+.form-sidebar .sidebar-label {
+    padding: 16px 20px 8px !important;
+    font-size: 10px !important;
+    color: #9ca3af !important;
+    background: #f9fafb !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+}
+
+.form-sidebar .sidebar-image-section,
+.form-sidebar .form-assignments,
+.form-sidebar .form-attachments,
+.form-sidebar .form-reviews,
+.form-sidebar .form-tags,
+.form-sidebar .form-shared,
+.form-sidebar .form-sidebar-stats,
+.form-sidebar > ul > li {
+    padding: 16px 20px !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+}
+
+.form-sidebar > ul > li:last-child {
+    border-bottom: none !important;
+}
+
+/* Sidebar Section Headers */
+.form-sidebar .sidebar-label,
+.form-sidebar h6,
+.form-sidebar .form-sidebar-section-head {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #6b7280 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-bottom: 12px !important;
+}
+
+.form-sidebar .sidebar-label .icon,
+.form-sidebar h6 .icon,
+.form-sidebar svg {
+    width: 18px !important;
+    height: 18px !important;
+    opacity: 0.6 !important;
+}
+
+/* Attachments */
+.form-attachments .attachment-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 10px 12px !important;
+    background: #f9fafb !important;
+    border-radius: 10px !important;
+    margin-bottom: 8px !important;
+    transition: all 0.2s !important;
+}
+
+.form-attachments .attachment-row:hover {
+    background: #f3f4f6 !important;
+}
+
+.form-attachments .file-icon {
+    width: 36px !important;
+    height: 36px !important;
+    background: #e5e7eb !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* ============================================
+   4. FORM LAYOUT - Main Content
+   ============================================ */
+.form-layout {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    margin: 16px !important;
+    padding: 0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid #e5e7eb !important;
+    overflow: hidden !important;
+}
+
+/* Form Tabs */
+.form-tabs-list,
+.frappe-tabs {
+    background: #f9fafb !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    padding: 0 24px !important;
+    display: flex !important;
+    gap: 4px !important;
+}
+
+.form-tabs-list .nav-link,
+.frappe-tabs .nav-link {
+    padding: 16px 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #6b7280 !important;
+    border: none !important;
+    background: transparent !important;
+    border-bottom: 3px solid transparent !important;
+    border-radius: 0 !important;
+    transition: all 0.2s !important;
+}
+
+.form-tabs-list .nav-link:hover {
+    color: #374151 !important;
+    background: rgba(99, 102, 241, 0.05) !important;
+}
+
+.form-tabs-list .nav-link.active {
+    color: #6366f1 !important;
+    background: #ffffff !important;
+    border-bottom-color: #6366f1 !important;
+    font-weight: 600 !important;
+}
+
+/* Form Sections */
+.form-section,
+.section-body {
+    padding: 24px !important;
+}
+
+.form-section .section-head,
+.section-head {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 20px !important;
+    border-bottom: 2px solid #f3f4f6 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.form-section .section-head::before {
+    content: '' !important;
+    width: 4px !important;
+    height: 18px !important;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+    border-radius: 2px !important;
+}
+
+/* Form Fields */
+.frappe-control {
+    margin-bottom: 20px !important;
+}
+
+.frappe-control .control-label,
+.frappe-control label {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #6b7280 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+}
+
+.frappe-control .control-value,
+.frappe-control .like-disabled-input {
+    font-size: 14px !important;
+    color: #111827 !important;
+    font-weight: 500 !important;
+    padding: 10px 0 !important;
+}
+
+.frappe-control input,
+.frappe-control select,
+.frappe-control textarea {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 10px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    transition: all 0.2s !important;
+    background: #ffffff !important;
+}
+
+.frappe-control input:focus,
+.frappe-control select:focus,
+.frappe-control textarea:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+    outline: none !important;
+}
+
+/* Checkboxes */
+.frappe-control[data-fieldtype="Check"] {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 12px 16px !important;
+    background: #f9fafb !important;
+    border-radius: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.frappe-control[data-fieldtype="Check"] input[type="checkbox"] {
+    width: 20px !important;
+    height: 20px !important;
+    border: 2px solid #d1d5db !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+    margin-top: 2px !important;
+}
+
+.frappe-control[data-fieldtype="Check"] input[type="checkbox"]:checked {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+    border-color: #6366f1 !important;
+}
+
+.frappe-control[data-fieldtype="Check"] .label-area {
+    font-size: 13px !important;
+    color: #374151 !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+}
+
+.frappe-control[data-fieldtype="Check"] .help-box {
+    font-size: 12px !important;
+    color: #9ca3af !important;
+    margin-top: 4px !important;
+}
+
+/* ============================================
+   5. WORKSPACE - Shortcuts & Cards
+   ============================================ */
+.workspace-container {
+    padding: 24px 32px !important;
+    background: #f9fafb !important;
+}
+
+/* Section Title */
+.widget-group-title,
+h4.widget-group-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+    margin-bottom: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+/* Shortcut Cards */
+.shortcut-widget-box,
+.widget.shortcut-widget-box {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 14px !important;
+    padding: 20px !important;
+    min-height: 90px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.shortcut-widget-box::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4px !important;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #a855f7) !important;
+    opacity: 0 !important;
+    transition: opacity 0.25s !important;
+}
+
+.shortcut-widget-box:hover {
+    border-color: #c7d2fe !important;
+    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.15) !important;
+    transform: translateY(-4px) !important;
+}
+
+.shortcut-widget-box:hover::before {
+    opacity: 1 !important;
+}
+
+.shortcut-widget-box .widget-head,
+.shortcut-widget-box .ellipsis {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.shortcut-widget-box svg,
+.shortcut-widget-box .external-link-icon {
+    width: 16px !important;
+    height: 16px !important;
+    color: #9ca3af !important;
+    transition: all 0.25s !important;
+}
+
+.shortcut-widget-box:hover svg {
+    color: #6366f1 !important;
+    transform: translate(3px, -3px) !important;
+}
+
+/* Links Widget (Reports & Masters) */
+.links-widget-box,
+.widget.links-widget-box {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+}
+
+.links-widget-box .widget-head,
+.links-widget-box .widget-title {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+    padding-bottom: 14px !important;
+    margin-bottom: 14px !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.links-widget-box .widget-head::before {
+    content: '' !important;
+    width: 8px !important;
+    height: 8px !important;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+    border-radius: 50% !important;
+}
+
+.links-widget-box .link-item,
+.links-widget-box a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 10px 12px !important;
+    margin: 4px -12px !important;
+    border-radius: 8px !important;
+    color: #4b5563 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all 0.15s !important;
+}
+
+.links-widget-box .link-item:hover,
+.links-widget-box a:hover {
+    background: #f3f4f6 !important;
+    color: #6366f1 !important;
+    padding-left: 16px !important;
+}
+
+.links-widget-box a svg {
+    width: 14px !important;
+    height: 14px !important;
+    opacity: 0 !important;
+    transition: opacity 0.15s !important;
+}
+
+.links-widget-box a:hover svg {
+    opacity: 1 !important;
+}
+
+/* ============================================
+   6. DATA TABLES
+   ============================================ */
+.frappe-list {
+    background: #ffffff !important;
+    border-radius: 14px !important;
+    border: 1px solid #e5e7eb !important;
+    overflow: hidden !important;
+}
+
+.frappe-list .list-row-head {
+    background: #f9fafb !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+.frappe-list .list-row-head .list-header-subject {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #6b7280 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.frappe-list .list-row {
+    border-bottom: 1px solid #f3f4f6 !important;
+    transition: background 0.15s !important;
+}
+
+.frappe-list .list-row:hover {
+    background: #f9fafb !important;
+}
+
+.frappe-list .list-row:last-child {
+    border-bottom: none !important;
+}
+
+/* ============================================
+   7. MODALS & DIALOGS
+   ============================================ */
+.modal-content {
+    border: none !important;
+    border-radius: 20px !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    overflow: hidden !important;
+}
+
+.modal-header {
+    background: #f9fafb !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    padding: 20px 24px !important;
+}
+
+.modal-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+}
+
+.modal-body {
+    padding: 24px !important;
+}
+
+.modal-footer {
+    background: #f9fafb !important;
+    border-top: 1px solid #e5e7eb !important;
+    padding: 16px 24px !important;
+    gap: 12px !important;
+}
+
+/* ============================================
+   8. DROPDOWNS
+   ============================================ */
+.dropdown-menu {
+    border: none !important;
+    border-radius: 14px !important;
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.2) !important;
+    padding: 8px !important;
+    min-width: 200px !important;
+}
+
+.dropdown-item {
+    padding: 12px 16px !important;
+    border-radius: 10px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #374151 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    transition: all 0.15s !important;
+}
+
+.dropdown-item:hover {
+    background: #f3f4f6 !important;
+    color: #6366f1 !important;
+}
+
+.dropdown-item .icon,
+.dropdown-item svg {
+    width: 18px !important;
+    height: 18px !important;
+    opacity: 0.7 !important;
+}
+
+/* ============================================
+   9. RESPONSIVE
+   ============================================ */
+@media (max-width: 991px) {
+    .layout-side-section,
+    .desk-sidebar {
+        width: 100% !important;
+        position: fixed !important;
+        left: -100% !important;
+        top: 60px !important;
+        bottom: 0 !important;
+        z-index: 1000 !important;
+        transition: left 0.3s ease !important;
+    }
+    
+    .layout-side-section.show {
+        left: 0 !important;
+    }
+    
+    .workspace-container,
+    .form-layout {
+        margin: 12px !important;
+        border-radius: 12px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-section,
+    .section-body {
+        padding: 16px !important;
+    }
+    
+    .shortcut-widget-box {
+        padding: 16px !important;
+    }
+}
