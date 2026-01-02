@@ -1,31 +1,77 @@
-/*
- * AhmadCSS - Interactive Effects JavaScript
- * Ripple effects, smooth scrolling, and UI enhancements
- */
+/* ═══════════════════════════════════════════════════════════════════════════
+   AhmadCSS - Professional Glassmorphism v15.0
+   JavaScript Module for Frappe/ERPNext
+   ═══════════════════════════════════════════════════════════════════════════ */
 
 (function() {
     'use strict';
-
-    // Wait for DOM ready
-    document.addEventListener('DOMContentLoaded', function() {
-        initRippleEffect();
-        initSmoothScroll();
-        initTooltips();
-        initPageTransitions();
-        initNavbarScroll();
-        console.log('🎨 AhmadCSS Material Theme loaded successfully!');
-    });
-
-    // ============================================
-    // RIPPLE EFFECT FOR BUTTONS
-    // ============================================
-    function initRippleEffect() {
+    
+    // Configuration - matches Frappe defaults
+    const CONFIG = {
+        navbarHeight: 48,  // Frappe default
+        pageHeadHeight: 60, // Frappe default
+        sidebarWidth: 260,
+        animationDuration: 250
+    };
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    function init() {
+        console.log('🎨 AhmadCSS v15.0 - Professional Glassmorphism loaded');
+        
+        // Clean up any inline styles that might cause conflicts
+        cleanupInlineStyles();
+        
+        // Setup features
+        setupRippleEffect();
+        setupSmoothScroll();
+        setupMobileSidebar();
+        
+        // Re-run on page navigation
+        if (window.frappe && frappe.router) {
+            frappe.router.on('change', function() {
+                setTimeout(cleanupInlineStyles, 100);
+            });
+        }
+    }
+    
+    /**
+     * Clean up inline styles that might conflict with CSS
+     */
+    function cleanupInlineStyles() {
+        // Remove any margin-left on body (common issue)
+        const body = document.body;
+        if (body) {
+            body.style.marginLeft = '';
+            body.style.paddingLeft = '';
+        }
+        
+        // Ensure sidebar is visible on desktop
+        const sidebar = document.querySelector('.layout-side-section');
+        if (sidebar && window.innerWidth >= 992) {
+            sidebar.style.display = '';
+            sidebar.style.visibility = '';
+            sidebar.style.opacity = '';
+            sidebar.style.transform = '';
+        }
+    }
+    
+    /**
+     * Material Design Ripple Effect
+     */
+    function setupRippleEffect() {
         document.addEventListener('click', function(e) {
-            const target = e.target.closest('.btn, .nav-link, .dropdown-item, .sidebar-menu a, .list-row');
+            const target = e.target.closest('.btn, .shortcut-widget-box, .standard-sidebar-item');
             if (!target) return;
-
+            
+            // Create ripple
             const ripple = document.createElement('span');
-            ripple.className = 'ripple-effect';
+            ripple.className = 'ahmadcss-ripple';
             
             const rect = target.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
@@ -38,37 +84,51 @@
                 height: ${size}px;
                 left: ${x}px;
                 top: ${y}px;
-                background: rgba(255, 255, 255, 0.4);
+                background: rgba(255, 255, 255, 0.3);
                 border-radius: 50%;
                 transform: scale(0);
-                animation: ripple-animation 0.6s ease-out;
                 pointer-events: none;
+                animation: ahmadcss-ripple 0.6s ease-out;
             `;
             
-            target.style.position = 'relative';
+            // Ensure target has relative positioning
+            const originalPosition = getComputedStyle(target).position;
+            if (originalPosition === 'static') {
+                target.style.position = 'relative';
+            }
             target.style.overflow = 'hidden';
+            
             target.appendChild(ripple);
             
-            setTimeout(() => ripple.remove(), 600);
-        });
-
-        // Add ripple animation style
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple-animation {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
+            // Remove ripple after animation
+            setTimeout(() => {
+                ripple.remove();
+                if (originalPosition === 'static') {
+                    target.style.position = '';
                 }
-            }
-        `;
-        document.head.appendChild(style);
+            }, 600);
+        });
+        
+        // Add ripple keyframes if not exist
+        if (!document.getElementById('ahmadcss-ripple-styles')) {
+            const style = document.createElement('style');
+            style.id = 'ahmadcss-ripple-styles';
+            style.textContent = `
+                @keyframes ahmadcss-ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
     }
-
-    // ============================================
-    // SMOOTH SCROLL
-    // ============================================
-    function initSmoothScroll() {
+    
+    /**
+     * Smooth Scroll for anchor links
+     */
+    function setupSmoothScroll() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
@@ -85,207 +145,65 @@
             });
         });
     }
-
-    // ============================================
-    // ENHANCED TOOLTIPS
-    // ============================================
-    function initTooltips() {
-        // Initialize Bootstrap tooltips if available
-        if (typeof $ !== 'undefined' && $.fn.tooltip) {
-            $('[data-toggle="tooltip"], [title]').tooltip({
-                trigger: 'hover',
-                container: 'body',
-                template: '<div class="tooltip ahmad-tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
-            });
-        }
-    }
-
-    // ============================================
-    // PAGE TRANSITIONS
-    // ============================================
-    function initPageTransitions() {
-        // Add fade-in effect to main content
-        const mainContent = document.querySelector('.page-container, .main-section, [data-page-container]');
-        if (mainContent) {
-            mainContent.classList.add('ahmad-fade-in');
-        }
-
-        // Observe for new content
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                mutation.addedNodes.forEach(function(node) {
-                    if (node.nodeType === 1) {
-                        // Add animation to new cards
-                        const cards = node.querySelectorAll ? node.querySelectorAll('.card, .frappe-card, .widget') : [];
-                        cards.forEach((card, index) => {
-                            card.style.animationDelay = `${index * 0.05}s`;
-                            card.classList.add('ahmad-slide-up');
-                        });
-                    }
-                });
-            });
-        });
-
-        observer.observe(document.body, { childList: true, subtree: true });
-
-        // Add animation styles
-        const style = document.createElement('style');
-        style.textContent = `
-            .ahmad-fade-in {
-                animation: ahmadFadeIn 0.3s ease-out;
-            }
-            
-            .ahmad-slide-up {
-                animation: ahmadSlideUp 0.4s ease-out forwards;
-                opacity: 0;
-            }
-            
-            @keyframes ahmadFadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            
-            @keyframes ahmadSlideUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-
-    // ============================================
-    // NAVBAR SCROLL EFFECT
-    // ============================================
-    function initNavbarScroll() {
-        const navbar = document.querySelector('.navbar');
-        if (!navbar) return;
-
-        let lastScroll = 0;
-        
-        window.addEventListener('scroll', function() {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 50) {
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Add navbar scroll styles
-        const style = document.createElement('style');
-        style.textContent = `
-            .navbar {
-                transition: all 0.3s ease;
-            }
-            
-            .navbar.navbar-scrolled {
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-            }
-        `;
-        document.head.appendChild(style);
-    }
-
-    // ============================================
-    // FRAPPE INTEGRATION HELPERS
-    // ============================================
     
-    // Override frappe.show_alert for better styling
-    if (typeof frappe !== 'undefined') {
-        const originalShowAlert = frappe.show_alert;
-        frappe.show_alert = function(message, seconds, actions) {
-            // Add custom class for styling
-            const result = originalShowAlert.call(this, message, seconds, actions);
-            
-            // Find and enhance the alert
-            setTimeout(() => {
-                const alerts = document.querySelectorAll('.desk-alert:not(.ahmad-styled)');
-                alerts.forEach(alert => {
-                    alert.classList.add('ahmad-styled');
-                    alert.style.borderRadius = '12px';
-                    alert.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
-                });
-            }, 10);
-            
-            return result;
-        };
-
-        // Enhance frappe.msgprint
-        const originalMsgprint = frappe.msgprint;
-        frappe.msgprint = function(msg, title, indicator) {
-            const result = originalMsgprint.call(this, msg, title, indicator);
-            
-            setTimeout(() => {
-                const modal = document.querySelector('.msgprint-dialog .modal-content');
-                if (modal && !modal.classList.contains('ahmad-styled')) {
-                    modal.classList.add('ahmad-styled');
-                    modal.style.borderRadius = '16px';
-                    modal.style.overflow = 'hidden';
-                }
-            }, 50);
-            
-            return result;
-        };
-    }
-
-    // ============================================
-    // UTILITY: Add loading skeleton
-    // ============================================
-    window.ahmadShowSkeleton = function(container, count = 3) {
-        const skeleton = `
-            <div class="ahmad-skeleton" style="padding: 16px;">
-                ${Array(count).fill(`
-                    <div style="display: flex; gap: 16px; margin-bottom: 16px;">
-                        <div class="skeleton" style="width: 48px; height: 48px; border-radius: 8px;"></div>
-                        <div style="flex: 1;">
-                            <div class="skeleton" style="height: 16px; width: 70%; margin-bottom: 8px;"></div>
-                            <div class="skeleton" style="height: 12px; width: 50%;"></div>
-                        </div>
-                    </div>
-                `).join('')}
-            </div>
+    /**
+     * Mobile Sidebar Toggle
+     */
+    function setupMobileSidebar() {
+        // Create toggle button for mobile
+        const navbar = document.querySelector('.navbar');
+        if (!navbar || document.querySelector('.ahmadcss-sidebar-toggle')) return;
+        
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'ahmadcss-sidebar-toggle';
+        toggleBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+        toggleBtn.style.cssText = `
+            display: none;
+            background: rgba(255,255,255,0.15);
+            border: none;
+            border-radius: 8px;
+            padding: 8px;
+            cursor: pointer;
+            color: white;
+            margin-right: 10px;
         `;
         
-        if (typeof container === 'string') {
-            container = document.querySelector(container);
-        }
-        
-        if (container) {
-            container.innerHTML = skeleton;
-        }
-    };
-
-    // ============================================
-    // UTILITY: Format numbers with animation
-    // ============================================
-    window.ahmadAnimateNumber = function(element, endValue, duration = 1000) {
-        const startValue = 0;
-        const startTime = performance.now();
-        
-        function update(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const easeProgress = 1 - Math.pow(1 - progress, 3); // Ease out cubic
-            
-            const currentValue = Math.floor(startValue + (endValue - startValue) * easeProgress);
-            element.textContent = currentValue.toLocaleString();
-            
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            } else {
-                element.textContent = endValue.toLocaleString();
+        toggleBtn.addEventListener('click', function() {
+            const sidebar = document.querySelector('.layout-side-section');
+            if (sidebar) {
+                sidebar.classList.toggle('show');
+                sidebar.classList.toggle('opened');
             }
+        });
+        
+        navbar.insertBefore(toggleBtn, navbar.firstChild);
+        
+        // Show/hide toggle based on screen size
+        function updateToggleVisibility() {
+            toggleBtn.style.display = window.innerWidth < 992 ? 'flex' : 'none';
         }
         
-        requestAnimationFrame(update);
+        updateToggleVisibility();
+        window.addEventListener('resize', updateToggleVisibility);
+        
+        // Close sidebar when clicking outside
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth >= 992) return;
+            
+            const sidebar = document.querySelector('.layout-side-section');
+            const isClickInside = sidebar?.contains(e.target) || toggleBtn.contains(e.target);
+            
+            if (!isClickInside && sidebar?.classList.contains('show')) {
+                sidebar.classList.remove('show', 'opened');
+            }
+        });
+    }
+    
+    // Expose for debugging
+    window.AhmadCSS = {
+        version: '15.0',
+        config: CONFIG,
+        refresh: cleanupInlineStyles
     };
-
+    
 })();
