@@ -171,6 +171,49 @@ body::before {
     padding: 0 20px !important;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 CUSTOM LOGO - Ahmad Brand
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* إخفاء الشعار الأصلي */
+.navbar .app-logo,
+.navbar img.app-logo,
+.navbar-brand img,
+.navbar .navbar-home img {
+    display: none !important;
+}
+
+/* إنشاء الشعار الجديد */
+.navbar .navbar-home,
+.navbar .navbar-brand {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 !important;
+    margin-right: 15px !important;
+}
+
+.navbar .navbar-home::before,
+.navbar .navbar-brand::before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 120px !important;
+    height: 36px !important;
+    background-image: url('/assets/ahmadcss/images/ahmad-logo-white.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center left !important;
+}
+
+/* شعار بديل بـ CSS فقط (في حال عدم تحميل SVG) */
+.navbar .navbar-home::after {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
 /* Navbar text - all white */
 .navbar *,
 .navbar a,
