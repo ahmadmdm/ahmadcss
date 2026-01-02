@@ -28,7 +28,10 @@ app_license = "mit"
 app_include_css = [
     "/assets/ahmadcss/css/glass-ultimate.css"
 ]
-app_include_js = "/assets/ahmadcss/js/ahmadcss.js"
+app_include_js = [
+    "https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js",
+    "/assets/ahmadcss/js/ahmadcss.js"
+]
 
 # include js, css files in header of web template
 web_include_css = [
