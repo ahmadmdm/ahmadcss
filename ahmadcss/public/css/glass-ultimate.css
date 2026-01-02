@@ -609,9 +609,12 @@ body::before {
     background: var(--glass-white-strong) !important;
     border: 1.5px solid rgba(124, 58, 237, 0.12) !important;
     border-radius: var(--radius-md) !important;
-    padding: 10px 14px !important;
+    padding: 12px 16px !important;
+    min-height: 44px !important;
+    height: auto !important;
     color: var(--text-primary) !important;
-    font-size: 13px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
     transition: var(--transition-base) !important;
 }
 
@@ -624,7 +627,192 @@ body::before {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   📋 LISTS
+   � LINK & SELECT FIELDS (Dropdown Fields)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Link field container */
+.frappe-control[data-fieldtype="Link"] .control-input-wrapper,
+.frappe-control[data-fieldtype="Select"] .control-input-wrapper,
+.frappe-control[data-fieldtype="Dynamic Link"] .control-input-wrapper {
+    position: relative;
+}
+
+/* Link field input with clear text */
+.frappe-control[data-fieldtype="Link"] input,
+.frappe-control[data-fieldtype="Select"] select,
+.frappe-control[data-fieldtype="Dynamic Link"] input,
+.link-field input,
+.control-input .link-btn ~ input,
+input[data-fieldtype="Link"],
+select[data-fieldtype="Select"] {
+    background: rgba(255, 255, 255, 0.98) !important;
+    color: #1a1a2e !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    padding: 12px 42px 12px 16px !important;
+    min-height: 46px !important;
+    height: auto !important;
+    line-height: 1.5 !important;
+    border: 1.5px solid rgba(124, 58, 237, 0.18) !important;
+    border-radius: var(--radius-md) !important;
+    transition: var(--transition-base) !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+}
+
+/* Select dropdown styling */
+select.form-control,
+select.input-with-feedback,
+.frappe-control[data-fieldtype="Select"] select {
+    background: rgba(255, 255, 255, 0.98) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 14px center !important;
+    background-size: 22px !important;
+    padding: 12px 44px 12px 16px !important;
+    min-height: 46px !important;
+    height: auto !important;
+    line-height: 1.5 !important;
+    color: #1a1a2e !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+}
+
+/* Link/Select field focus state */
+.frappe-control[data-fieldtype="Link"] input:focus,
+.frappe-control[data-fieldtype="Select"] select:focus,
+.frappe-control[data-fieldtype="Dynamic Link"] input:focus,
+select.form-control:focus {
+    background: #ffffff !important;
+    border-color: var(--primary-500) !important;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15), 0 4px 12px rgba(124, 58, 237, 0.1) !important;
+    outline: none !important;
+}
+
+/* Link field button styling */
+.link-btn {
+    position: absolute !important;
+    right: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: linear-gradient(135deg, var(--primary-500), var(--secondary-500)) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 6px !important;
+    width: 26px !important;
+    height: 26px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: var(--transition-fast) !important;
+    z-index: 2 !important;
+}
+
+.link-btn:hover {
+    transform: translateY(-50%) scale(1.08) !important;
+    box-shadow: 0 3px 10px rgba(124, 58, 237, 0.35) !important;
+}
+
+.link-btn svg,
+.link-btn .icon {
+    width: 14px !important;
+    height: 14px !important;
+    stroke: #fff !important;
+    fill: none !important;
+}
+
+/* Awesomplete dropdown (autocomplete for link fields) */
+.awesomplete > ul {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(124, 58, 237, 0.15) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 10px 40px rgba(30, 27, 75, 0.18) !important;
+    padding: 6px !important;
+    margin-top: 4px !important;
+    max-height: 280px !important;
+    overflow-y: auto !important;
+}
+
+.awesomplete > ul > li {
+    padding: 10px 14px !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-primary) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: var(--transition-fast) !important;
+    margin: 2px 0 !important;
+}
+
+.awesomplete > ul > li:hover,
+.awesomplete > ul > li[aria-selected="true"] {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(59, 130, 246, 0.08)) !important;
+    color: var(--primary-700) !important;
+}
+
+.awesomplete mark {
+    background: rgba(124, 58, 237, 0.2) !important;
+    color: var(--primary-700) !important;
+    font-weight: 600 !important;
+    padding: 0 2px !important;
+    border-radius: 3px !important;
+}
+
+/* Control value display (for read-only link fields) */
+.control-value,
+.like-disabled-input {
+    background: rgba(255, 255, 255, 0.85) !important;
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+    padding: 10px 14px !important;
+    border-radius: var(--radius-md) !important;
+    border: 1.5px solid rgba(124, 58, 237, 0.1) !important;
+}
+
+/* Placeholder text in dropdowns */
+.frappe-control[data-fieldtype="Link"] input::placeholder,
+.frappe-control[data-fieldtype="Select"] select::placeholder,
+select.form-control option:first-child:disabled {
+    color: var(--text-muted) !important;
+    font-weight: 400 !important;
+    opacity: 0.7 !important;
+}
+
+/* Select option styling */
+select.form-control option,
+.frappe-control[data-fieldtype="Select"] select option {
+    background: #fff !important;
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+    padding: 10px !important;
+}
+
+/* Form group label enhancement */
+.frappe-control .control-label,
+.form-group label {
+    color: var(--text-secondary) !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+    margin-bottom: 6px !important;
+}
+
+/* Required field indicator */
+.frappe-control .control-label .reqd,
+.form-group label .reqd {
+    color: var(--error) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   �📋 LISTS
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .frappe-list {
