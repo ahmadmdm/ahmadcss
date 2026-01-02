@@ -5,7 +5,14 @@
    🎨 Color Palette: Modern Purple-Blue Gradient
    📐 Layout: Bootstrap 4 Grid Compatible
    ✨ Effects: Premium Glassmorphism
+   🔤 Fonts: Cairo (Arabic) + Inter (English)
    ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔤 GOOGLE FONTS - Cairo for Arabic
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ═══════════════════════════════════════════════════════════════════════════
    🎨 DESIGN TOKENS - Professional Color System
@@ -62,7 +69,8 @@
     --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #60a5fa 100%);
     
     /* === Typography === */
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-arabic: 'Cairo', 'Tajawal', sans-serif;
     --text-primary: #1e1b4b;
     --text-secondary: #4c4687;
     --text-muted: #6b7280;
@@ -97,6 +105,33 @@ body {
     color: var(--text-primary);
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/* Arabic text styling with Cairo font */
+body,
+* {
+    font-family: 'Cairo', var(--font-sans) !important;
+}
+
+/* Ensure proper Arabic text rendering */
+[lang="ar"],
+:lang(ar),
+.frappe-control,
+.form-control,
+.btn,
+.modal-title,
+.page-title,
+.sidebar-label,
+.desk-sidebar,
+.widget-title,
+.card-title,
+h1, h2, h3, h4, h5, h6,
+p, span, div, a, label,
+input, select, textarea,
+.dropdown-item,
+.list-row,
+.level-item {
+    font-family: 'Cairo', var(--font-sans) !important;
 }
 
 body::before {
