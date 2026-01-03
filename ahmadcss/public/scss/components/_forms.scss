@@ -1,0 +1,179 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// AhmadCSS - Forms Component
+// ═══════════════════════════════════════════════════════════════════════════
+
+.form-layout {
+    background: var(--glass-white) !important;
+    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--glass-shadow) !important;
+    padding: 20px !important;
+}
+
+// Form Controls
+.form-control,
+.input-with-feedback {
+    background: var(--glass-white-strong) !important;
+    border: 1.5px solid rgba($primary-600, 0.15) !important;
+    border-radius: var(--radius-md) !important;
+    padding: 8px 14px !important;
+    min-height: 36px !important;
+    height: 36px !important;
+    color: var(--text-primary) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    transition: var(--transition-base) !important;
+    
+    &:focus {
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-color: $primary-500 !important;
+        box-shadow: 0 0 0 3px rgba($primary-600, 0.12) !important;
+        outline: none !important;
+    }
+}
+
+// Link & Select Fields
+.frappe-control[data-fieldtype="Link"],
+.frappe-control[data-fieldtype="Select"],
+.frappe-control[data-fieldtype="Dynamic Link"] {
+    .control-input-wrapper {
+        position: relative;
+    }
+    
+    input, select {
+        background: rgba(255, 255, 255, 0.98) !important;
+        color: #1a1a2e !important;
+        font-weight: 500 !important;
+        font-size: 13px !important;
+        padding: 8px 38px 8px 14px !important;
+        min-height: 36px !important;
+        height: 36px !important;
+        line-height: 1.4 !important;
+        border: 1.5px solid rgba($primary-600, 0.18) !important;
+        border-radius: var(--radius-md) !important;
+        transition: var(--transition-base) !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        appearance: none !important;
+        
+        &:focus {
+            background: #ffffff !important;
+            border-color: $primary-500 !important;
+            box-shadow: 0 0 0 3px rgba($primary-600, 0.15), 0 4px 12px rgba($primary-600, 0.1) !important;
+            outline: none !important;
+        }
+    }
+}
+
+// Select dropdown styling
+select.form-control,
+select.input-with-feedback {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    background-size: 18px !important;
+    cursor: pointer !important;
+}
+
+// Link button
+.link-btn {
+    position: absolute !important;
+    right: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: linear-gradient(135deg, $primary-500, $secondary-500) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 6px !important;
+    width: 26px !important;
+    height: 26px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: var(--transition-fast) !important;
+    z-index: 2 !important;
+    
+    &:hover {
+        transform: translateY(-50%) scale(1.08) !important;
+        box-shadow: 0 3px 10px rgba($primary-600, 0.35) !important;
+    }
+    
+    svg, .icon {
+        width: 14px !important;
+        height: 14px !important;
+        stroke: #fff !important;
+        fill: none !important;
+    }
+}
+
+// Awesomplete dropdown
+.awesomplete > ul {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba($primary-600, 0.15) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 10px 40px rgba(30, 27, 75, 0.18) !important;
+    padding: 6px !important;
+    margin-top: 4px !important;
+    max-height: 280px !important;
+    overflow-y: auto !important;
+    
+    > li {
+        padding: 10px 14px !important;
+        border-radius: var(--radius-sm) !important;
+        color: var(--text-primary) !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        cursor: pointer !important;
+        transition: var(--transition-fast) !important;
+        margin: 2px 0 !important;
+        
+        &:hover,
+        &[aria-selected="true"] {
+            background: linear-gradient(135deg, rgba($primary-600, 0.1), rgba($secondary-500, 0.08)) !important;
+            color: $primary-700 !important;
+        }
+    }
+    
+    mark {
+        background: rgba($primary-600, 0.2) !important;
+        color: $primary-700 !important;
+        font-weight: 600 !important;
+        padding: 0 2px !important;
+        border-radius: 3px !important;
+    }
+}
+
+// Form labels
+.frappe-control .control-label,
+.form-group label {
+    color: #374151 !important;
+    font-weight: 600 !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.4px !important;
+    margin-bottom: 4px !important;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8) !important;
+}
+
+// Required indicator
+.frappe-control .control-label .reqd,
+.form-group label .reqd {
+    color: $error !important;
+}
+
+// Control value display
+.control-value,
+.like-disabled-input {
+    background: rgba(255, 255, 255, 0.85) !important;
+    color: #1e293b !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+    border-radius: var(--radius-md) !important;
+    border: 1.5px solid rgba($primary-600, 0.1) !important;
+    min-height: 36px !important;
+}

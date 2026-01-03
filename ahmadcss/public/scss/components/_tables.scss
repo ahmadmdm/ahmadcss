@@ -1,0 +1,103 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// AhmadCSS - Tables Component
+// ═══════════════════════════════════════════════════════════════════════════
+
+.frappe-list {
+    background: var(--glass-white) !important;
+    backdrop-filter: blur(var(--glass-blur)) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--glass-shadow) !important;
+    overflow: hidden !important;
+}
+
+.list-row {
+    padding: 10px 16px !important;
+    border-bottom: 1px solid rgba($primary-600, 0.06) !important;
+    transition: var(--transition-fast) !important;
+    color: #1e293b !important;
+    
+    &:hover {
+        background: rgba($primary-600, 0.04) !important;
+    }
+    
+    &:last-child {
+        border-bottom: none !important;
+    }
+}
+
+.list-row-head {
+    background: rgba($primary-600, 0.05) !important;
+    font-weight: 700 !important;
+    font-size: 10px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: #475569 !important;
+}
+
+// Status Indicators
+.indicator-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 22px !important;
+    padding: 0 10px !important;
+    border-radius: 11px !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    
+    &.blue {
+        background: rgba($info, 0.15) !important;
+        color: darken($info, 10%) !important;
+    }
+    
+    &.green {
+        background: rgba($success, 0.15) !important;
+        color: darken($success, 10%) !important;
+    }
+    
+    &.red {
+        background: rgba($error, 0.15) !important;
+        color: darken($error, 10%) !important;
+    }
+    
+    &.orange {
+        background: rgba($warning, 0.15) !important;
+        color: darken($warning, 10%) !important;
+    }
+    
+    &.yellow {
+        background: rgba(#eab308, 0.15) !important;
+        color: darken(#eab308, 15%) !important;
+    }
+    
+    &.gray {
+        background: rgba(#6b7280, 0.15) !important;
+        color: #4b5563 !important;
+    }
+    
+    &.purple {
+        background: rgba($primary-500, 0.15) !important;
+        color: $primary-600 !important;
+    }
+}
+
+// Data Tables
+.datatable {
+    .dt-scrollable {
+        border-radius: var(--radius-md) !important;
+    }
+    
+    .dt-header {
+        background: rgba($primary-600, 0.05) !important;
+    }
+    
+    .dt-cell {
+        border-color: rgba($primary-600, 0.08) !important;
+    }
+    
+    .dt-row {
+        &:hover {
+            background: rgba($primary-600, 0.04) !important;
+        }
+    }
+}

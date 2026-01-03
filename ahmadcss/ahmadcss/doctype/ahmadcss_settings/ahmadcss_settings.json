@@ -1,0 +1,275 @@
+{
+    "actions": [],
+    "allow_rename": 0,
+    "creation": "2026-01-03 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "theme_section",
+        "enable_theme",
+        "color_theme",
+        "dark_mode",
+        "primary_color",
+        "secondary_color",
+        "gradient_start",
+        "gradient_end",
+        "column_break_1",
+        "enable_glassmorphism",
+        "glass_blur",
+        "glass_opacity",
+        "enable_animations",
+        "animation_speed",
+        "typography_section",
+        "font_family",
+        "font_size_base",
+        "column_break_2",
+        "arabic_font",
+        "enable_custom_fonts",
+        "navbar_section",
+        "navbar_style",
+        "navbar_blur",
+        "column_break_3",
+        "show_custom_logo",
+        "custom_logo",
+        "sidebar_section",
+        "sidebar_style",
+        "sidebar_width",
+        "column_break_4",
+        "sidebar_blur",
+        "sidebar_position",
+        "advanced_section",
+        "custom_css",
+        "custom_js"
+    ],
+    "fields": [
+        {
+            "fieldname": "theme_section",
+            "fieldtype": "Section Break",
+            "label": "Theme Settings"
+        },
+        {
+            "default": "1",
+            "fieldname": "enable_theme",
+            "fieldtype": "Check",
+            "label": "Enable AhmadCSS Theme"
+        },
+        {
+            "default": "0",
+            "fieldname": "dark_mode",
+            "fieldtype": "Check",
+            "label": "Dark Mode"
+        },
+        {
+            "default": "Silver",
+            "description": "Select the color theme for the interface",
+            "fieldname": "color_theme",
+            "fieldtype": "Select",
+            "label": "Color Theme",
+            "options": "Purple\nSilver"
+        },
+        {
+            "default": "#7c3aed",
+            "fieldname": "primary_color",
+            "fieldtype": "Color",
+            "label": "Primary Color"
+        },
+        {
+            "default": "#3b82f6",
+            "fieldname": "secondary_color",
+            "fieldtype": "Color",
+            "label": "Secondary Color"
+        },
+        {
+            "default": "#667eea",
+            "fieldname": "gradient_start",
+            "fieldtype": "Color",
+            "label": "Gradient Start Color"
+        },
+        {
+            "default": "#764ba2",
+            "fieldname": "gradient_end",
+            "fieldtype": "Color",
+            "label": "Gradient End Color"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "1",
+            "fieldname": "enable_glassmorphism",
+            "fieldtype": "Check",
+            "label": "Enable Glassmorphism"
+        },
+        {
+            "default": "20",
+            "description": "Blur intensity in pixels",
+            "fieldname": "glass_blur",
+            "fieldtype": "Int",
+            "label": "Glass Blur (px)"
+        },
+        {
+            "default": "72",
+            "description": "Opacity percentage (0-100)",
+            "fieldname": "glass_opacity",
+            "fieldtype": "Int",
+            "label": "Glass Opacity (%)"
+        },
+        {
+            "default": "1",
+            "fieldname": "enable_animations",
+            "fieldtype": "Check",
+            "label": "Enable Animations"
+        },
+        {
+            "default": "Normal",
+            "fieldname": "animation_speed",
+            "fieldtype": "Select",
+            "label": "Animation Speed",
+            "options": "Slow\nNormal\nFast"
+        },
+        {
+            "fieldname": "typography_section",
+            "fieldtype": "Section Break",
+            "label": "Typography"
+        },
+        {
+            "default": "Cairo",
+            "fieldname": "font_family",
+            "fieldtype": "Select",
+            "label": "Font Family",
+            "options": "Cairo\nInter\nTajawal\nRoboto\nOpen Sans\nPoppins"
+        },
+        {
+            "default": "14",
+            "fieldname": "font_size_base",
+            "fieldtype": "Int",
+            "label": "Base Font Size (px)"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "Cairo",
+            "fieldname": "arabic_font",
+            "fieldtype": "Select",
+            "label": "Arabic Font",
+            "options": "Cairo\nTajawal\nAmiri\nNoto Sans Arabic"
+        },
+        {
+            "default": "1",
+            "fieldname": "enable_custom_fonts",
+            "fieldtype": "Check",
+            "label": "Enable Custom Fonts"
+        },
+        {
+            "fieldname": "navbar_section",
+            "fieldtype": "Section Break",
+            "label": "Navbar Settings"
+        },
+        {
+            "default": "Gradient",
+            "fieldname": "navbar_style",
+            "fieldtype": "Select",
+            "label": "Navbar Style",
+            "options": "Gradient\nSolid\nGlass\nTransparent"
+        },
+        {
+            "default": "30",
+            "fieldname": "navbar_blur",
+            "fieldtype": "Int",
+            "label": "Navbar Blur (px)"
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "0",
+            "fieldname": "show_custom_logo",
+            "fieldtype": "Check",
+            "label": "Show Custom Logo"
+        },
+        {
+            "fieldname": "custom_logo",
+            "fieldtype": "Attach Image",
+            "label": "Custom Logo"
+        },
+        {
+            "fieldname": "sidebar_section",
+            "fieldtype": "Section Break",
+            "label": "Sidebar Settings"
+        },
+        {
+            "default": "Glass",
+            "fieldname": "sidebar_style",
+            "fieldtype": "Select",
+            "label": "Sidebar Style",
+            "options": "Glass\nSolid\nTransparent\nBordered"
+        },
+        {
+            "default": "260",
+            "fieldname": "sidebar_width",
+            "fieldtype": "Int",
+            "label": "Sidebar Width (px)"
+        },
+        {
+            "fieldname": "column_break_4",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "20",
+            "fieldname": "sidebar_blur",
+            "fieldtype": "Int",
+            "label": "Sidebar Blur (px)"
+        },
+        {
+            "default": "Left",
+            "fieldname": "sidebar_position",
+            "fieldtype": "Select",
+            "label": "Sidebar Position",
+            "options": "Left\nRight"
+        },
+        {
+            "fieldname": "advanced_section",
+            "fieldtype": "Section Break",
+            "label": "Advanced Settings"
+        },
+        {
+            "fieldname": "custom_css",
+            "fieldtype": "Code",
+            "label": "Custom CSS",
+            "options": "CSS"
+        },
+        {
+            "fieldname": "custom_js",
+            "fieldtype": "Code",
+            "label": "Custom JavaScript",
+            "options": "Javascript"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "issingle": 1,
+    "links": [],
+    "modified": "2026-01-03 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Ahmadcss",
+    "name": "AhmadCSS Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

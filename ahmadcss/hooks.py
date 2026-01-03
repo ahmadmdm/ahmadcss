@@ -11,22 +11,23 @@ app_license = "mit"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "ahmadcss",
-# 		"logo": "/assets/ahmadcss/logo.png",
-# 		"title": "Ahmadcss",
-# 		"route": "/ahmadcss",
-# 		"has_permission": "ahmadcss.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "ahmadcss",
+		"logo": "/assets/ahmadcss/images/ahmad-logo.svg",
+		"title": "AhmadCSS Settings",
+		"route": "/app/ahmadcss-settings",
+	}
+]
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
 app_include_css = [
-    "/assets/ahmadcss/css/glass-ultimate.css"
+    "/assets/ahmadcss/css/glass-ultimate.css",
+    "/assets/ahmadcss/css/glass-silver.css",
+    "/assets/ahmadcss/css/components.css"
 ]
 app_include_js = [
     "https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js",
@@ -35,7 +36,9 @@ app_include_js = [
 
 # include js, css files in header of web template
 web_include_css = [
-    "/assets/ahmadcss/css/glass-ultimate.css"
+    "/assets/ahmadcss/css/glass-ultimate.css",
+    "/assets/ahmadcss/css/glass-silver.css",
+    "/assets/ahmadcss/css/components.css"
 ]
 web_include_js = "/assets/ahmadcss/js/ahmadcss.js"
 
@@ -89,14 +92,24 @@ web_include_js = "/assets/ahmadcss/js/ahmadcss.js"
 # Installation
 # ------------
 
-# before_install = "ahmadcss.install.before_install"
-# after_install = "ahmadcss.install.after_install"
+before_install = "ahmadcss.install.before_install"
+after_install = "ahmadcss.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "ahmadcss.uninstall.before_uninstall"
-# after_uninstall = "ahmadcss.uninstall.after_uninstall"
+before_uninstall = "ahmadcss.uninstall.before_uninstall"
+after_uninstall = "ahmadcss.uninstall.after_uninstall"
+
+# After Migrate
+# ------------
+
+after_migrate = "ahmadcss.install.after_migrate"
+
+# Boot Info
+# ---------
+
+boot_session = "ahmadcss.api.get_boot_info"
 
 # Integration Setup
 # ------------------

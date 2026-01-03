@@ -1,0 +1,111 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// AhmadCSS - Buttons Component
+// ═══════════════════════════════════════════════════════════════════════════
+
+.btn {
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+    min-height: 32px !important;
+    border-radius: var(--radius-md) !important;
+    transition: var(--transition-base) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.btn-primary,
+.btn-primary-dark {
+    background: var(--gradient-navbar) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba($primary-600, 0.3) !important;
+    
+    &:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba($primary-600, 0.4) !important;
+    }
+}
+
+.btn-default,
+.btn-secondary {
+    background: var(--glass-white) !important;
+    color: $primary-600 !important;
+    border: 1.5px solid rgba($primary-600, 0.25) !important;
+    
+    &:hover {
+        background: rgba($primary-600, 0.08) !important;
+        border-color: $primary-600 !important;
+    }
+}
+
+.btn-success {
+    background: linear-gradient(135deg, $success, darken($success, 10%)) !important;
+    color: #fff !important;
+    border: none !important;
+    
+    &:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 15px rgba($success, 0.4) !important;
+    }
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, $error, darken($error, 10%)) !important;
+    color: #fff !important;
+    border: none !important;
+    
+    &:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 15px rgba($error, 0.4) !important;
+    }
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, $warning, darken($warning, 10%)) !important;
+    color: #fff !important;
+    border: none !important;
+    
+    &:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 15px rgba($warning, 0.4) !important;
+    }
+}
+
+.btn-info {
+    background: linear-gradient(135deg, $info, darken($info, 10%)) !important;
+    color: #fff !important;
+    border: none !important;
+    
+    &:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 15px rgba($info, 0.4) !important;
+    }
+}
+
+// Button sizes
+.btn-sm {
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+    min-height: 26px !important;
+}
+
+.btn-lg {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+    min-height: 42px !important;
+}
+
+// Button groups
+.btn-group {
+    .btn {
+        border-radius: 0 !important;
+        
+        &:first-child {
+            border-radius: var(--radius-md) 0 0 var(--radius-md) !important;
+        }
+        
+        &:last-child {
+            border-radius: 0 var(--radius-md) var(--radius-md) 0 !important;
+        }
+    }
+}

@@ -1,0 +1,180 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// AhmadCSS - Cards Component
+// ═══════════════════════════════════════════════════════════════════════════
+
+.frappe-card {
+    background: var(--glass-white) !important;
+    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--glass-shadow) !important;
+}
+
+// Widget Groups
+.widget-group {
+    margin-bottom: 28px !important;
+}
+
+.widget-group-title,
+.widget-group-head .widget-group-title {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin-bottom: 14px !important;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6) !important;
+}
+
+.widget-group-body {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+    gap: 14px !important;
+}
+
+// Number Widget
+.number-widget-box {
+    background: var(--glass-white) !important;
+    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--glass-shadow) !important;
+    padding: 18px !important;
+    transition: var(--transition-base) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gradient-accent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform var(--transition-base);
+    }
+    
+    &:hover {
+        transform: translateY(-4px) !important;
+        box-shadow: 0 12px 28px rgba(31, 38, 135, 0.18) !important;
+        
+        &::after {
+            transform: scaleX(1);
+        }
+    }
+    
+    .widget-title {
+        font-size: 10px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        color: #475569 !important;
+        margin-bottom: 6px !important;
+    }
+    
+    .number {
+        font-size: 22px !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+    }
+}
+
+// Shortcut Widget
+.shortcut-widget-box {
+    background: var(--glass-white) !important;
+    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--glass-shadow) !important;
+    padding: 16px !important;
+    cursor: pointer !important;
+    transition: var(--transition-base) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gradient-accent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform var(--transition-base);
+    }
+    
+    &:hover {
+        transform: translateY(-4px) scale(1.01) !important;
+        box-shadow: 0 14px 32px rgba(31, 38, 135, 0.2) !important;
+        
+        &::after {
+            transform: scaleX(1);
+        }
+    }
+    
+    .widget-title,
+    .ellipsis {
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        color: #1e293b !important;
+    }
+}
+
+// Links Widget
+.links-widget-box {
+    background: var(--glass-white) !important;
+    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--glass-shadow) !important;
+    padding: 16px !important;
+    
+    .widget-head {
+        padding-bottom: 10px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 1px solid rgba($primary-600, 0.1) !important;
+    }
+    
+    .widget-title {
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+    }
+    
+    .link-item,
+    .widget-link {
+        padding: 6px 10px !important;
+        margin: 2px 0 !important;
+        border-radius: var(--radius-sm) !important;
+        transition: var(--transition-fast) !important;
+        color: #334155 !important;
+        font-size: 12px !important;
+        
+        &:hover {
+            background: rgba($primary-600, 0.08) !important;
+            transform: translateX(3px) !important;
+            color: $primary-800 !important;
+        }
+    }
+}
+
+// Widget animations
+.shortcut-widget-box,
+.number-widget-box,
+.links-widget-box {
+    animation: fadeInUp 0.4s ease-out;
+    animation-fill-mode: both;
+}
+
+@for $i from 1 through 6 {
+    .widget-group-body > *:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.05}s;
+    }
+}

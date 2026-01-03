@@ -1,0 +1,76 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// AhmadCSS - Responsive Styles
+// ═══════════════════════════════════════════════════════════════════════════
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+    :root {
+        --sidebar-width: 240px;
+    }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+    .layout-main.row {
+        flex-wrap: wrap !important;
+        padding: 0 12px !important;
+    }
+    
+    .layout-main.row > .col-lg-2,
+    .layout-main.row > .col-lg-2.layout-side-section {
+        position: fixed !important;
+        top: var(--navbar-height) !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        width: 280px !important;
+        max-width: 280px !important;
+        flex: 0 0 280px !important;
+        z-index: 1025 !important;
+        transform: translateX(-100%) !important;
+        transition: transform var(--transition-slow) !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: 4px 0 30px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    .layout-side-section.show,
+    .layout-side-section.opened {
+        transform: translateX(0) !important;
+    }
+    
+    .layout-main.row > .col,
+    .layout-main.row > .col.layout-main-section-wrapper {
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+    .title-text {
+        font-size: 20px !important;
+    }
+    
+    #navbar-search {
+        width: 200px !important;
+        
+        &:focus {
+            width: 240px !important;
+        }
+    }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .widget-group-body {
+        grid-template-columns: 1fr !important;
+    }
+    
+    #navbar-search {
+        width: 160px !important;
+    }
+    
+    .page-head .page-head-content {
+        padding: 8px 12px !important;
+    }
+}

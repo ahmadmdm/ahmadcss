@@ -1,0 +1,172 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// AhmadCSS - SCSS Variables
+// Design Tokens and Configuration
+// ═══════════════════════════════════════════════════════════════════════════
+
+// Frappe Default Variables (DO NOT CHANGE)
+$navbar-height: 48px;
+$page-head-height: 60px;
+
+// Primary Colors - Modern Purple
+$primary-50: #f5f3ff;
+$primary-100: #ede9fe;
+$primary-200: #ddd6fe;
+$primary-300: #c4b5fd;
+$primary-400: #a78bfa;
+$primary-500: #8b5cf6;
+$primary-600: #7c3aed;
+$primary-700: #6d28d9;
+$primary-800: #5b21b6;
+$primary-900: #4c1d95;
+
+// Secondary Colors - Ocean Blue
+$secondary-400: #60a5fa;
+$secondary-500: #3b82f6;
+$secondary-600: #2563eb;
+$secondary-700: #1d4ed8;
+
+// Neutral Colors
+$neutral-50: #fafafa;
+$neutral-100: #f4f4f5;
+$neutral-200: #e4e4e7;
+$neutral-300: #d4d4d8;
+$neutral-700: #3f3f46;
+$neutral-800: #27272a;
+$neutral-900: #18181b;
+
+// Semantic Colors
+$success: #10b981;
+$warning: #f59e0b;
+$error: #ef4444;
+$info: #3b82f6;
+
+// Glass Effect Variables
+$glass-white: rgba(255, 255, 255, 0.72);
+$glass-white-strong: rgba(255, 255, 255, 0.88);
+$glass-border: rgba(255, 255, 255, 0.4);
+$glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.12);
+$glass-blur: 20px;
+
+// Dark Mode Variables
+$dark-glass-white: rgba(30, 27, 75, 0.85);
+$dark-glass-white-strong: rgba(30, 27, 75, 0.95);
+$dark-glass-border: rgba(124, 58, 237, 0.3);
+
+// Gradients
+$gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+$gradient-navbar: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+$gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #60a5fa 100%);
+$gradient-dark-bg: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+
+// Typography
+$font-sans: 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-arabic: 'Cairo', 'Tajawal', sans-serif;
+$text-primary: #1a1a2e;
+$text-secondary: #2d2a54;
+$text-muted: #4a4a68;
+$text-on-gradient: #ffffff;
+$text-label: #374151;
+
+// Layout
+$sidebar-width: 260px;
+$content-max-width: 1400px;
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-xl: 20px;
+
+// Animation
+$transition-fast: 150ms ease;
+$transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+// Breakpoints (Bootstrap 4)
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Z-index layers
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;
+$z-toast: 10000;
+$z-customizer: 10001;
+
+// Export as CSS Variables
+:root {
+    // Frappe
+    --navbar-height: #{$navbar-height};
+    --page-head-height: #{$page-head-height};
+    
+    // Primary
+    --primary-50: #{$primary-50};
+    --primary-100: #{$primary-100};
+    --primary-200: #{$primary-200};
+    --primary-300: #{$primary-300};
+    --primary-400: #{$primary-400};
+    --primary-500: #{$primary-500};
+    --primary-600: #{$primary-600};
+    --primary-700: #{$primary-700};
+    --primary-800: #{$primary-800};
+    --primary-900: #{$primary-900};
+    
+    // Secondary
+    --secondary-400: #{$secondary-400};
+    --secondary-500: #{$secondary-500};
+    --secondary-600: #{$secondary-600};
+    --secondary-700: #{$secondary-700};
+    
+    // Neutral
+    --neutral-50: #{$neutral-50};
+    --neutral-100: #{$neutral-100};
+    --neutral-200: #{$neutral-200};
+    --neutral-300: #{$neutral-300};
+    --neutral-700: #{$neutral-700};
+    --neutral-800: #{$neutral-800};
+    --neutral-900: #{$neutral-900};
+    
+    // Semantic
+    --success: #{$success};
+    --warning: #{$warning};
+    --error: #{$error};
+    --info: #{$info};
+    
+    // Glass
+    --glass-white: #{$glass-white};
+    --glass-white-strong: #{$glass-white-strong};
+    --glass-border: #{$glass-border};
+    --glass-shadow: #{$glass-shadow};
+    --glass-blur: #{$glass-blur};
+    
+    // Gradients
+    --gradient-bg: #{$gradient-bg};
+    --gradient-navbar: #{$gradient-navbar};
+    --gradient-accent: #{$gradient-accent};
+    
+    // Typography
+    --font-sans: #{$font-sans};
+    --font-arabic: #{$font-arabic};
+    --text-primary: #{$text-primary};
+    --text-secondary: #{$text-secondary};
+    --text-muted: #{$text-muted};
+    --text-on-gradient: #{$text-on-gradient};
+    --text-label: #{$text-label};
+    
+    // Layout
+    --sidebar-width: #{$sidebar-width};
+    --content-max-width: #{$content-max-width};
+    --radius-sm: #{$radius-sm};
+    --radius-md: #{$radius-md};
+    --radius-lg: #{$radius-lg};
+    --radius-xl: #{$radius-xl};
+    
+    // Animation
+    --transition-fast: #{$transition-fast};
+    --transition-base: #{$transition-base};
+    --transition-slow: #{$transition-slow};
+}

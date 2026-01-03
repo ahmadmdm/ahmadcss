@@ -1,0 +1,47 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// AhmadCSS - Print Styles
+// ═══════════════════════════════════════════════════════════════════════════
+
+@media print {
+    body,
+    body::before {
+        background: #fff !important;
+    }
+    
+    .navbar,
+    .layout-side-section,
+    .ahmadcss-darkmode-toggle,
+    .ahmadcss-customizer-toggle,
+    .ahmadcss-sidebar-toggle,
+    .ahmadcss-toast-container,
+    .ahmadcss-customizer {
+        display: none !important;
+    }
+    
+    .frappe-card,
+    .form-layout {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+    
+    .main-section {
+        padding-top: 0 !important;
+    }
+    
+    .layout-main.row > .col,
+    .layout-main.row > .col.layout-main-section-wrapper {
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+    
+    a {
+        text-decoration: underline !important;
+    }
+    
+    .btn {
+        border: 1px solid #333 !important;
+        background: transparent !important;
+    }
+}

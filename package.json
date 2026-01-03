@@ -1,18 +1,22 @@
 {
   "name": "ahmadcss",
   "version": "1.0.0",
-  "description": "<div align=\"center\">   <img src=\"https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge\" alt=\"Version\">   <img src=\"https://img.shields.io/badge/Frappe-v15-green?style=for-the-badge\" alt=\"Frappe\">   <img src=\"https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge\" alt=\"License\"> </div>",
-  "main": "index.js",
+  "description": "Professional Glassmorphism Theme for Frappe/ERPNext with Material Design",
+  "main": "ahmadcss/public/js/ahmadcss.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "npx tailwindcss -i ./ahmadcss/public/css/input.css -o ./ahmadcss/public/css/output.css --minify",
+    "watch:css": "npx tailwindcss -i ./ahmadcss/public/css/input.css -o ./ahmadcss/public/css/output.css --watch",
+    "build:scss": "npx sass ahmadcss/public/scss/main.scss:ahmadcss/public/css/main.css --style=compressed",
+    "watch:scss": "npx sass --watch ahmadcss/public/scss/main.scss:ahmadcss/public/css/main.css",
+    "test": "echo \"No tests specified\" && exit 0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ahmadmdm/ahmadcss.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["frappe", "erpnext", "theme", "glassmorphism", "material-design", "css"],
+  "author": "Ahmad Dev",
+  "license": "MIT",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/ahmadmdm/ahmadcss/issues"
@@ -21,5 +25,8 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.18",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
   }
 }

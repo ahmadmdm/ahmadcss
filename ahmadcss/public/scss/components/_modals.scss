@@ -1,0 +1,91 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// AhmadCSS - Modals Component
+// ═══════════════════════════════════════════════════════════════════════════
+
+.modal-backdrop {
+    background: rgba(30, 27, 75, 0.4) !important;
+    backdrop-filter: blur(6px) !important;
+}
+
+.modal-content {
+    background: var(--glass-white-strong) !important;
+    backdrop-filter: blur(30px) saturate(180%) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2) !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba($primary-600, 0.1) !important;
+    padding: 14px 18px !important;
+}
+
+.modal-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+}
+
+.modal-body {
+    padding: 20px !important;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba($primary-600, 0.1) !important;
+    padding: 14px 18px !important;
+}
+
+// Dropdown Menus
+.dropdown-menu {
+    background: var(--glass-white-strong) !important;
+    backdrop-filter: blur(25px) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+    padding: 4px !important;
+}
+
+.dropdown-item {
+    padding: 8px 12px !important;
+    border-radius: var(--radius-sm) !important;
+    color: #1e293b !important;
+    font-size: 12px !important;
+    transition: var(--transition-fast) !important;
+    
+    &:hover {
+        background: rgba($primary-600, 0.08) !important;
+        color: $primary-800 !important;
+    }
+}
+
+// Alerts
+.alert {
+    backdrop-filter: blur(10px) !important;
+    border-radius: var(--radius-md) !important;
+    padding: 14px 18px !important;
+    border: 1px solid !important;
+}
+
+.alert-warning {
+    background: rgba($warning, 0.12) !important;
+    color: darken($warning, 30%) !important;
+    border-color: rgba($warning, 0.25) !important;
+}
+
+.alert-danger {
+    background: rgba($error, 0.12) !important;
+    color: darken($error, 20%) !important;
+    border-color: rgba($error, 0.25) !important;
+}
+
+.alert-success {
+    background: rgba($success, 0.12) !important;
+    color: darken($success, 25%) !important;
+    border-color: rgba($success, 0.25) !important;
+}
+
+.alert-info {
+    background: rgba($info, 0.12) !important;
+    color: darken($info, 25%) !important;
+    border-color: rgba($info, 0.25) !important;
+}

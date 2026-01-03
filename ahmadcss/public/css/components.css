@@ -1,0 +1,711 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   AhmadCSS - Components CSS
+   Toast Notifications, Skeletons, Theme Customizer, Dark Mode
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🌙 DARK MODE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+[data-theme="dark"],
+.ahmadcss-dark {
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --glass-white: rgba(30, 27, 75, 0.85);
+    --glass-white-strong: rgba(30, 27, 75, 0.95);
+    --glass-border: rgba(124, 58, 237, 0.3);
+    --gradient-bg: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+}
+
+.ahmadcss-dark body {
+    background: var(--gradient-bg) !important;
+}
+
+.ahmadcss-dark .frappe-card,
+.ahmadcss-dark .form-layout,
+.ahmadcss-dark .layout-side-section,
+.ahmadcss-dark .page-head {
+    background: var(--glass-white) !important;
+    border-color: var(--glass-border) !important;
+}
+
+.ahmadcss-dark .form-control,
+.ahmadcss-dark .input-with-feedback {
+    background: rgba(30, 27, 75, 0.6) !important;
+    color: var(--text-primary) !important;
+    border-color: rgba(124, 58, 237, 0.3) !important;
+}
+
+.ahmadcss-dark .list-row,
+.ahmadcss-dark .standard-sidebar-item,
+.ahmadcss-dark .dropdown-item {
+    color: var(--text-primary) !important;
+}
+
+.ahmadcss-dark .modal-content {
+    background: var(--glass-white-strong) !important;
+}
+
+/* Dark Mode Toggle Button */
+.ahmadcss-darkmode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-left: 8px;
+}
+
+.ahmadcss-darkmode-toggle:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}
+
+.ahmadcss-darkmode-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔔 TOAST NOTIFICATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.ahmadcss-toast-container {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.ahmadcss-toast {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 320px;
+    max-width: 420px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transform: translateX(120%);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.ahmadcss-toast-show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.ahmadcss-toast-hide {
+    transform: translateX(120%);
+    opacity: 0;
+}
+
+.ahmadcss-toast-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.ahmadcss-toast-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ahmadcss-toast-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.ahmadcss-toast-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 2px;
+}
+
+.ahmadcss-toast-message {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.4;
+}
+
+.ahmadcss-toast-close {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #94a3b8;
+    transition: color 0.2s;
+}
+
+.ahmadcss-toast-close:hover {
+    color: #64748b;
+}
+
+.ahmadcss-toast-close svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ahmadcss-toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: currentColor;
+    width: 100%;
+    transform-origin: left;
+}
+
+@keyframes ahmadcss-toast-progress {
+    from { transform: scaleX(1); }
+    to { transform: scaleX(0); }
+}
+
+/* Toast Types */
+.ahmadcss-toast-success {
+    border-left: 4px solid #10b981;
+}
+.ahmadcss-toast-success .ahmadcss-toast-icon { color: #10b981; }
+.ahmadcss-toast-success .ahmadcss-toast-progress { background: #10b981; }
+
+.ahmadcss-toast-error {
+    border-left: 4px solid #ef4444;
+}
+.ahmadcss-toast-error .ahmadcss-toast-icon { color: #ef4444; }
+.ahmadcss-toast-error .ahmadcss-toast-progress { background: #ef4444; }
+
+.ahmadcss-toast-warning {
+    border-left: 4px solid #f59e0b;
+}
+.ahmadcss-toast-warning .ahmadcss-toast-icon { color: #f59e0b; }
+.ahmadcss-toast-warning .ahmadcss-toast-progress { background: #f59e0b; }
+
+.ahmadcss-toast-info {
+    border-left: 4px solid #3b82f6;
+}
+.ahmadcss-toast-info .ahmadcss-toast-icon { color: #3b82f6; }
+.ahmadcss-toast-info .ahmadcss-toast-progress { background: #3b82f6; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   💀 LOADING SKELETONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.ahmadcss-skeleton-wrapper {
+    padding: 16px;
+}
+
+.ahmadcss-skeleton-fade {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ahmadcss-skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(124, 58, 237, 0.08) 25%,
+        rgba(124, 58, 237, 0.15) 50%,
+        rgba(124, 58, 237, 0.08) 75%
+    );
+    background-size: 200% 100%;
+    animation: ahmadcss-skeleton-shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes ahmadcss-skeleton-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Skeleton Elements */
+.ahmadcss-skeleton-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.ahmadcss-skeleton-lines {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ahmadcss-skeleton-line {
+    height: 14px;
+    border-radius: 6px;
+}
+
+.ahmadcss-skeleton-title {
+    height: 20px;
+    width: 60%;
+    margin-bottom: 12px;
+}
+
+.ahmadcss-skeleton-text {
+    height: 14px;
+    width: 100%;
+}
+
+/* Card Skeleton */
+.ahmadcss-skeleton-card {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.ahmadcss-skeleton-image {
+    width: 100%;
+    height: 160px;
+    border-radius: 0;
+}
+
+.ahmadcss-skeleton-body {
+    padding: 16px;
+}
+
+/* Table Skeleton */
+.ahmadcss-skeleton-table {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ahmadcss-skeleton-table-row {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.08);
+}
+
+.ahmadcss-skeleton-cell {
+    height: 16px;
+}
+
+/* Form Skeleton */
+.ahmadcss-skeleton-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ahmadcss-skeleton-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ahmadcss-skeleton-label {
+    height: 12px;
+    width: 30%;
+}
+
+.ahmadcss-skeleton-input {
+    height: 40px;
+    width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 THEME CUSTOMIZER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.ahmadcss-customizer {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+    z-index: 10001;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ahmadcss-customizer-open {
+    right: 0;
+}
+
+.ahmadcss-customizer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.ahmadcss-customizer-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.ahmadcss-customizer-close {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.ahmadcss-customizer-close:hover {
+    background: rgba(124, 58, 237, 0.1);
+    color: #7c3aed;
+}
+
+.ahmadcss-customizer-close svg {
+    width: 20px;
+    height: 20px;
+}
+
+.ahmadcss-customizer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.ahmadcss-customizer-section {
+    margin-bottom: 24px;
+}
+
+.ahmadcss-customizer-section label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.ahmadcss-customizer-section input[type="color"] {
+    width: 100%;
+    height: 44px;
+    border: 2px solid rgba(124, 58, 237, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.ahmadcss-customizer-section input[type="range"] {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(124, 58, 237, 0.15);
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.ahmadcss-customizer-section input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed, #3b82f6);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+}
+
+.ahmadcss-customizer-footer {
+    display: flex;
+    gap: 12px;
+    padding: 20px;
+    border-top: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+/* Customizer Toggle Button */
+.ahmadcss-customizer-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-left: 8px;
+}
+
+.ahmadcss-customizer-toggle:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(90deg);
+}
+
+.ahmadcss-customizer-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔘 AHMADCSS BUTTONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.ahmadcss-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    flex: 1;
+}
+
+.ahmadcss-btn-primary {
+    background: linear-gradient(135deg, #7c3aed, #3b82f6);
+    color: white;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
+}
+
+.ahmadcss-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
+}
+
+.ahmadcss-btn-secondary {
+    background: transparent;
+    color: #7c3aed;
+    border: 2px solid rgba(124, 58, 237, 0.25);
+}
+
+.ahmadcss-btn-secondary:hover {
+    background: rgba(124, 58, 237, 0.08);
+    border-color: #7c3aed;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📱 SIDEBAR TOGGLE (Desktop & Mobile)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Sidebar collapsed state */
+body.sidebar-collapsed .layout-side-section {
+    display: none !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+body.sidebar-collapsed .layout-main-section-wrapper {
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+}
+
+body.sidebar-collapsed .layout-main.row > .col-lg-2 {
+    display: none !important;
+}
+
+/* Transition for smooth toggle */
+.layout-side-section {
+    transition: all 0.3s ease !important;
+}
+
+.layout-main-section-wrapper {
+    transition: all 0.3s ease !important;
+}
+
+/* Mobile sidebar toggle button */
+.ahmadcss-sidebar-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-right: 12px;
+}
+
+.ahmadcss-sidebar-toggle:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 991.98px) {
+    .ahmadcss-sidebar-toggle {
+        display: flex;
+    }
+    
+    .ahmadcss-toast-container {
+        right: 10px;
+        left: 10px;
+    }
+    
+    .ahmadcss-toast {
+        min-width: auto;
+        max-width: none;
+    }
+    
+    .ahmadcss-customizer {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎭 RTL SUPPORT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+[dir="rtl"] .ahmadcss-toast-container,
+.rtl .ahmadcss-toast-container {
+    right: auto;
+    left: 20px;
+}
+
+[dir="rtl"] .ahmadcss-toast,
+.rtl .ahmadcss-toast {
+    transform: translateX(-120%);
+    border-left: none;
+    border-right-width: 4px;
+    border-right-style: solid;
+}
+
+[dir="rtl"] .ahmadcss-toast-show,
+.rtl .ahmadcss-toast-show {
+    transform: translateX(0);
+}
+
+[dir="rtl"] .ahmadcss-toast-hide,
+.rtl .ahmadcss-toast-hide {
+    transform: translateX(-120%);
+}
+
+[dir="rtl"] .ahmadcss-customizer,
+.rtl .ahmadcss-customizer {
+    right: auto;
+    left: -320px;
+}
+
+[dir="rtl"] .ahmadcss-customizer-open,
+.rtl .ahmadcss-customizer-open {
+    left: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 THEME SWITCHER (Purple / Silver)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.ahmadcss-theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.ahmadcss-theme-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.ahmadcss-theme-btn span {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+}
+
+.ahmadcss-theme-btn:hover {
+    transform: scale(1.1);
+}
+
+.ahmadcss-theme-btn:hover span {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ahmadcss-theme-btn.active {
+    border-color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.ahmadcss-theme-btn.active span {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Tooltip on hover */
+.ahmadcss-theme-btn::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 11px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.ahmadcss-theme-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: -35px;
+}
+
+/* RTL Support for Theme Switcher */
+[dir="rtl"] .ahmadcss-theme-switcher,
+.rtl .ahmadcss-theme-switcher {
+    margin-left: 10px;
+    margin-right: 10px;
+}

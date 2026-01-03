@@ -1,0 +1,774 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   AhmadCSS - Silver Glass Theme v15.0
+   Premium Metallic Silver Glassmorphism for Frappe/ERPNext
+   
+   🎨 Color Palette: Elegant Silver-Blue Metallic
+   📐 Layout: Bootstrap 4 Grid Compatible
+   ✨ Effects: Premium Silver Glassmorphism
+   🔤 Fonts: Cairo (Arabic) + Inter (English)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 SILVER THEME DESIGN TOKENS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root[data-ahmadcss-theme="silver"],
+body.ahmadcss-theme-silver {
+    /* === Primary Colors - Elegant Silver === */
+    --primary-50: #f8fafc;
+    --primary-100: #f1f5f9;
+    --primary-200: #e2e8f0;
+    --primary-300: #cbd5e1;
+    --primary-400: #94a3b8;
+    --primary-500: #64748b;
+    --primary-600: #475569;
+    --primary-700: #334155;
+    --primary-800: #1e293b;
+    --primary-900: #0f172a;
+    
+    /* === Secondary Colors - Cool Blue Accent === */
+    --secondary-400: #7dd3fc;
+    --secondary-500: #38bdf8;
+    --secondary-600: #0ea5e9;
+    --secondary-700: #0284c7;
+    
+    /* === Neutral Colors === */
+    --neutral-50: #fafafa;
+    --neutral-100: #f4f4f5;
+    --neutral-200: #e4e4e7;
+    --neutral-300: #d4d4d8;
+    --neutral-700: #3f3f46;
+    --neutral-800: #27272a;
+    --neutral-900: #18181b;
+    
+    /* === Semantic Colors === */
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --info: #0ea5e9;
+    
+    /* === Silver Glass Effect Variables === */
+    --glass-white: rgba(255, 255, 255, 0.75);
+    --glass-white-strong: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(148, 163, 184, 0.4);
+    --glass-shadow: 0 8px 32px rgba(100, 116, 139, 0.15);
+    --glass-blur: 20px;
+    
+    /* === Silver Gradients === */
+    --gradient-bg: linear-gradient(135deg, #94a3b8 0%, #64748b 50%, #475569 100%);
+    --gradient-navbar: linear-gradient(135deg, #64748b 0%, #475569 50%, #334155 100%);
+    --gradient-accent: linear-gradient(135deg, #94a3b8 0%, #38bdf8 100%);
+    --gradient-silver: linear-gradient(135deg, #667eea 0%, #64748b 35%, #94a3b8 65%, #cbd5e1 100%);
+    --gradient-metallic: linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.4) 0%, 
+        rgba(148, 163, 184, 0.2) 50%, 
+        rgba(100, 116, 139, 0.3) 100%);
+    
+    /* === Typography === */
+    --text-primary: #1e293b;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --text-on-gradient: #ffffff;
+    --text-label: #475569;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🌈 SILVER BACKGROUND - Enhanced Gradient
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver {
+    background: linear-gradient(135deg, 
+        #4a5568 0%, 
+        #64748b 25%, 
+        #94a3b8 50%, 
+        #78909c 75%, 
+        #546e7a 100%) !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
+}
+
+body.ahmadcss-theme-silver::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse 100% 80% at 10% 90%, rgba(71, 85, 105, 0.6) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 60% at 90% 10%, rgba(100, 116, 139, 0.5) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 50% 50%, rgba(148, 163, 184, 0.3) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 30% 30%, rgba(203, 213, 225, 0.25) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔝 SILVER NAVBAR
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver .navbar {
+    background: linear-gradient(135deg, #475569 0%, #334155 50%, #1e293b 100%) !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.3) !important;
+    box-shadow: 
+        0 4px 24px rgba(30, 41, 59, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+body.ahmadcss-theme-silver .navbar .navbar-brand,
+body.ahmadcss-theme-silver .navbar .nav-link,
+body.ahmadcss-theme-silver .navbar .navbar-nav .nav-item {
+    color: #ffffff !important;
+}
+
+body.ahmadcss-theme-silver .navbar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Search in navbar */
+body.ahmadcss-theme-silver .navbar .search-bar,
+body.ahmadcss-theme-silver .navbar input[type="search"],
+body.ahmadcss-theme-silver .navbar .awesomplete input {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+}
+
+body.ahmadcss-theme-silver .navbar input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SILVER SIDEBAR TOGGLE & ICONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver .sidebar-toggle-btn,
+body.ahmadcss-theme-silver .sidebar-toggle-placeholder,
+body.ahmadcss-theme-silver .page-title .sidebar-toggle-btn {
+    background: rgba(100, 116, 139, 0.15) !important;
+    border: 1px solid rgba(100, 116, 139, 0.25) !important;
+    color: #475569 !important;
+}
+
+body.ahmadcss-theme-silver .sidebar-toggle-btn:hover,
+body.ahmadcss-theme-silver .sidebar-toggle-placeholder:hover {
+    background: rgba(100, 116, 139, 0.25) !important;
+    border-color: rgba(100, 116, 139, 0.4) !important;
+}
+
+body.ahmadcss-theme-silver .sidebar-toggle-btn .es-icon use,
+body.ahmadcss-theme-silver .sidebar-toggle-placeholder use {
+    stroke: #475569 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   �📱 SILVER SIDEBAR
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver .desk-sidebar,
+body.ahmadcss-theme-silver .layout-side-section {
+    background: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(25px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(200%) !important;
+    border-right: 1px solid rgba(148, 163, 184, 0.4) !important;
+    box-shadow: 4px 0 30px rgba(71, 85, 105, 0.15) !important;
+}
+
+body.ahmadcss-theme-silver .desk-sidebar .desk-sidebar-item.active,
+body.ahmadcss-theme-silver .desk-sidebar .desk-sidebar-item:hover {
+    background: linear-gradient(135deg, rgba(100, 116, 139, 0.25) 0%, rgba(148, 163, 184, 0.3) 100%) !important;
+    border-left: 3px solid #475569 !important;
+}
+
+body.ahmadcss-theme-silver .sidebar-label,
+body.ahmadcss-theme-silver .desk-sidebar-item span {
+    color: #334155 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📦 SILVER CARDS & LIST
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver .card,
+body.ahmadcss-theme-silver .frappe-card,
+body.ahmadcss-theme-silver .widget,
+body.ahmadcss-theme-silver .frappe-list,
+body.ahmadcss-theme-silver .form-container,
+body.ahmadcss-theme-silver .layout-main-section,
+body.ahmadcss-theme-silver .page-container,
+body.ahmadcss-theme-silver [data-page-container] {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(25px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+    border: 1px solid rgba(148, 163, 184, 0.35) !important;
+    border-radius: 16px !important;
+    box-shadow: 
+        0 8px 32px rgba(71, 85, 105, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+}
+
+body.ahmadcss-theme-silver .card:hover,
+body.ahmadcss-theme-silver .frappe-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 40px rgba(71, 85, 105, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+body.ahmadcss-theme-silver .card-header,
+body.ahmadcss-theme-silver .section-head {
+    background: linear-gradient(135deg, rgba(100, 116, 139, 0.12) 0%, rgba(148, 163, 184, 0.2) 100%) !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔘 SILVER BUTTONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver .btn-primary,
+body.ahmadcss-theme-silver .btn-primary-dark {
+    background: linear-gradient(135deg, #64748b 0%, #475569 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(100, 116, 139, 0.3) !important;
+}
+
+body.ahmadcss-theme-silver .btn-primary:hover,
+body.ahmadcss-theme-silver .btn-primary-dark:hover {
+    background: linear-gradient(135deg, #475569 0%, #334155 100%) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(100, 116, 139, 0.4) !important;
+}
+
+body.ahmadcss-theme-silver .btn-secondary {
+    background: rgba(148, 163, 184, 0.2) !important;
+    border: 1px solid rgba(148, 163, 184, 0.4) !important;
+    color: #475569 !important;
+}
+
+body.ahmadcss-theme-silver .btn-secondary:hover {
+    background: rgba(148, 163, 184, 0.35) !important;
+}
+
+body.ahmadcss-theme-silver .btn-default,
+body.ahmadcss-theme-silver .btn-light {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid rgba(148, 163, 184, 0.3) !important;
+    color: #475569 !important;
+}
+
+body.ahmadcss-theme-silver .btn-default:hover,
+body.ahmadcss-theme-silver .btn-light:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📝 SILVER FORMS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver .form-control,
+body.ahmadcss-theme-silver input[type="text"],
+body.ahmadcss-theme-silver input[type="password"],
+body.ahmadcss-theme-silver input[type="email"],
+body.ahmadcss-theme-silver input[type="number"],
+body.ahmadcss-theme-silver textarea,
+body.ahmadcss-theme-silver select {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(148, 163, 184, 0.4) !important;
+    border-radius: 10px !important;
+    color: #1e293b !important;
+    transition: all 0.25s ease !important;
+}
+
+body.ahmadcss-theme-silver .form-control:focus,
+body.ahmadcss-theme-silver input:focus,
+body.ahmadcss-theme-silver textarea:focus,
+body.ahmadcss-theme-silver select:focus {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: #64748b !important;
+    box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.15) !important;
+    outline: none !important;
+}
+
+body.ahmadcss-theme-silver label,
+body.ahmadcss-theme-silver .control-label {
+    color: #475569 !important;
+    font-weight: 500 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📋 SILVER TABLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver .frappe-list .list-row,
+body.ahmadcss-theme-silver table tbody tr {
+    background: rgba(255, 255, 255, 0.6) !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2) !important;
+    transition: all 0.2s ease !important;
+}
+
+body.ahmadcss-theme-silver .frappe-list .list-row:hover,
+body.ahmadcss-theme-silver table tbody tr:hover {
+    background: rgba(148, 163, 184, 0.15) !important;
+}
+
+body.ahmadcss-theme-silver .frappe-list .list-row:nth-child(even),
+body.ahmadcss-theme-silver table tbody tr:nth-child(even) {
+    background: rgba(248, 250, 252, 0.7) !important;
+}
+
+body.ahmadcss-theme-silver table thead th {
+    background: linear-gradient(135deg, rgba(148, 163, 184, 0.2) 0%, rgba(226, 232, 240, 0.4) 100%) !important;
+    color: #334155 !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid rgba(148, 163, 184, 0.3) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🪟 SILVER MODALS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver .modal-content {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(30px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
+    border: 1px solid rgba(148, 163, 184, 0.3) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 25px 60px rgba(100, 116, 139, 0.25) !important;
+}
+
+body.ahmadcss-theme-silver .modal-header {
+    background: linear-gradient(135deg, rgba(148, 163, 184, 0.15) 0%, rgba(226, 232, 240, 0.25) 100%) !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2) !important;
+    border-radius: 20px 20px 0 0 !important;
+}
+
+body.ahmadcss-theme-silver .modal-title {
+    color: #334155 !important;
+}
+
+body.ahmadcss-theme-silver .modal-backdrop {
+    background: rgba(30, 41, 59, 0.6) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔗 SILVER LINKS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver a:not(.btn):not(.nav-link):not(.dropdown-item) {
+    color: #475569 !important;
+}
+
+body.ahmadcss-theme-silver a:not(.btn):not(.nav-link):not(.dropdown-item):hover {
+    color: #0ea5e9 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📊 SILVER PAGE HEAD
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver .page-head {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25) !important;
+    box-shadow: 0 2px 12px rgba(100, 116, 139, 0.08) !important;
+}
+
+body.ahmadcss-theme-silver .page-head .title-text {
+    color: #1e293b !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📌 SILVER DROPDOWNS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver .dropdown-menu {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(148, 163, 184, 0.3) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 40px rgba(100, 116, 139, 0.2) !important;
+}
+
+body.ahmadcss-theme-silver .dropdown-item {
+    color: #334155 !important;
+    transition: all 0.2s ease !important;
+}
+
+body.ahmadcss-theme-silver .dropdown-item:hover {
+    background: rgba(148, 163, 184, 0.15) !important;
+    color: #1e293b !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🏷️ SILVER BADGES & INDICATORS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver .badge-primary,
+body.ahmadcss-theme-silver .indicator-pill.blue {
+    background: linear-gradient(135deg, #64748b 0%, #475569 100%) !important;
+    color: #ffffff !important;
+}
+
+body.ahmadcss-theme-silver .badge-secondary {
+    background: rgba(148, 163, 184, 0.3) !important;
+    color: #475569 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🌙 SILVER DARK MODE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver.ahmadcss-dark {
+    --gradient-bg: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #020617 100%);
+    --gradient-navbar: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+    --gradient-silver: linear-gradient(145deg, #334155 0%, #1e293b 50%, #0f172a 100%);
+    --glass-white: rgba(30, 41, 59, 0.8);
+    --glass-white-strong: rgba(51, 65, 85, 0.9);
+    --glass-border: rgba(100, 116, 139, 0.3);
+    --text-primary: #f1f5f9;
+    --text-secondary: #e2e8f0;
+    --text-muted: #94a3b8;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark {
+    background: var(--gradient-silver) !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark::before {
+    background: 
+        radial-gradient(ellipse 80% 50% at 20% 80%, rgba(100, 116, 139, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 30% at 50% 50%, rgba(51, 65, 85, 0.3) 0%, transparent 60%);
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .card,
+body.ahmadcss-theme-silver.ahmadcss-dark .frappe-card,
+body.ahmadcss-theme-silver.ahmadcss-dark .widget,
+body.ahmadcss-theme-silver.ahmadcss-dark .form-container {
+    background: rgba(30, 41, 59, 0.85) !important;
+    border-color: rgba(100, 116, 139, 0.3) !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .desk-sidebar,
+body.ahmadcss-theme-silver.ahmadcss-dark .layout-side-section {
+    background: rgba(30, 41, 59, 0.9) !important;
+    border-right-color: rgba(100, 116, 139, 0.3) !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .form-control,
+body.ahmadcss-theme-silver.ahmadcss-dark input,
+body.ahmadcss-theme-silver.ahmadcss-dark textarea,
+body.ahmadcss-theme-silver.ahmadcss-dark select {
+    background: rgba(51, 65, 85, 0.6) !important;
+    border-color: rgba(100, 116, 139, 0.4) !important;
+    color: #f1f5f9 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark label,
+body.ahmadcss-theme-silver.ahmadcss-dark .control-label,
+body.ahmadcss-theme-silver.ahmadcss-dark .sidebar-label,
+body.ahmadcss-theme-silver.ahmadcss-dark .desk-sidebar-item span {
+    color: #e2e8f0 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .page-head {
+    background: rgba(30, 41, 59, 0.9) !important;
+    border-bottom-color: rgba(100, 116, 139, 0.3) !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .page-head .title-text {
+    color: #f1f5f9 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .modal-content {
+    background: rgba(30, 41, 59, 0.95) !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .dropdown-menu {
+    background: rgba(30, 41, 59, 0.95) !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .dropdown-item {
+    color: #e2e8f0 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .dropdown-item:hover {
+    background: rgba(100, 116, 139, 0.2) !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark a:not(.btn):not(.nav-link):not(.dropdown-item) {
+    color: #38bdf8 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark a:not(.btn):not(.nav-link):not(.dropdown-item):hover {
+    color: #7dd3fc !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔍 SILVER SEARCH DIALOG (Ctrl+G) - Clear Text Visibility
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Search Dialog Container */
+body.ahmadcss-theme-silver .search-dialog .modal-content {
+    background: #ffffff !important;
+}
+
+/* Search Input */
+body.ahmadcss-theme-silver .search-dialog .search-input,
+body.ahmadcss-theme-silver .search-dialog input[type="text"],
+body.ahmadcss-theme-silver .search-dialog input[type="search"] {
+    background: #ffffff !important;
+    color: #1e293b !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    caret-color: #475569 !important;
+}
+
+body.ahmadcss-theme-silver .search-dialog .search-input::placeholder {
+    color: #64748b !important;
+    opacity: 1 !important;
+}
+
+/* Search Icon */
+body.ahmadcss-theme-silver .search-dialog .search-icon {
+    color: #64748b !important;
+}
+
+/* Search Results Sidebar */
+body.ahmadcss-theme-silver .search-dialog .search-sidebar {
+    background: #f8fafc !important;
+    border-right: 1px solid #e2e8f0 !important;
+}
+
+body.ahmadcss-theme-silver .search-dialog .standard-sidebar-item {
+    color: #334155 !important;
+    font-weight: 500 !important;
+}
+
+body.ahmadcss-theme-silver .search-dialog .standard-sidebar-item:hover,
+body.ahmadcss-theme-silver .search-dialog .standard-sidebar-item.selected {
+    background: rgba(100, 116, 139, 0.15) !important;
+    color: #1e293b !important;
+}
+
+body.ahmadcss-theme-silver .search-dialog .standard-sidebar-label {
+    color: #64748b !important;
+    font-weight: 700 !important;
+}
+
+/* Search Results */
+body.ahmadcss-theme-silver .search-dialog .result-title {
+    color: #1e293b !important;
+    font-weight: 700 !important;
+}
+
+body.ahmadcss-theme-silver .search-dialog .result {
+    color: #334155 !important;
+}
+
+body.ahmadcss-theme-silver .search-dialog .result .result-text {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+body.ahmadcss-theme-silver .search-dialog .result .description {
+    color: #64748b !important;
+}
+
+body.ahmadcss-theme-silver .search-dialog .result:hover {
+    background: rgba(100, 116, 139, 0.1) !important;
+}
+
+/* Highlighted text */
+body.ahmadcss-theme-silver .search-dialog mark {
+    background: rgba(14, 165, 233, 0.2) !important;
+    color: #0369a1 !important;
+}
+
+/* More results link */
+body.ahmadcss-theme-silver .search-dialog .list-more,
+body.ahmadcss-theme-silver .search-dialog .section-more {
+    color: #0ea5e9 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔍 SILVER DARK MODE SEARCH DIALOG
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-silver.ahmadcss-dark .search-dialog .modal-content {
+    background: #1e293b !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .search-dialog .search-input {
+    background: #1e293b !important;
+    color: #f1f5f9 !important;
+    caret-color: #38bdf8 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .search-dialog .search-input::placeholder {
+    color: #94a3b8 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .search-dialog .search-sidebar {
+    background: #0f172a !important;
+    border-right-color: #334155 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .search-dialog .standard-sidebar-item {
+    color: #e2e8f0 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .search-dialog .standard-sidebar-item:hover {
+    background: rgba(56, 189, 248, 0.15) !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .search-dialog .result-title {
+    color: #f1f5f9 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .search-dialog .result {
+    color: #e2e8f0 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .search-dialog .result .description {
+    color: #94a3b8 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .search-dialog mark {
+    background: rgba(56, 189, 248, 0.25) !important;
+    color: #7dd3fc !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 SILVER GLOBAL TEXT CONTRAST
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Ensure all text on glass backgrounds is readable */
+body.ahmadcss-theme-silver .layout-main-section-wrapper,
+body.ahmadcss-theme-silver .layout-main-section,
+body.ahmadcss-theme-silver .page-container {
+    color: #1e293b !important;
+}
+
+/* Labels must be clearly visible */
+body.ahmadcss-theme-silver label,
+body.ahmadcss-theme-silver .control-label {
+    color: #334155 !important;
+    font-weight: 600 !important;
+}
+
+/* Help text */
+body.ahmadcss-theme-silver .help-text,
+body.ahmadcss-theme-silver .text-muted {
+    color: #64748b !important;
+}
+
+/* Awesomebar */
+body.ahmadcss-theme-silver .awesomplete > ul {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+body.ahmadcss-theme-silver .awesomplete > ul > li {
+    color: #1e293b !important;
+}
+
+body.ahmadcss-theme-silver .awesomplete > ul > li:hover {
+    background: rgba(100, 116, 139, 0.15) !important;
+}
+
+body.ahmadcss-theme-silver .awesomplete mark {
+    background: rgba(14, 165, 233, 0.2) !important;
+    color: #0369a1 !important;
+}
+
+/* Dark mode awesomebar */
+body.ahmadcss-theme-silver.ahmadcss-dark .awesomplete > ul {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .awesomplete > ul > li {
+    color: #f1f5f9 !important;
+}
+
+body.ahmadcss-theme-silver.ahmadcss-dark .awesomplete mark {
+    background: rgba(56, 189, 248, 0.25) !important;
+    color: #7dd3fc !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ✨ SILVER SPECIAL EFFECTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Metallic shine effect on cards */
+body.ahmadcss-theme-silver .card::after,
+body.ahmadcss-theme-silver .frappe-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+    pointer-events: none;
+}
+
+body.ahmadcss-theme-silver .card:hover::after,
+body.ahmadcss-theme-silver .frappe-card:hover::after {
+    left: 100%;
+}
+
+/* Subtle pulse animation for primary buttons */
+@keyframes silver-pulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(100, 116, 139, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(100, 116, 139, 0.5);
+    }
+}
+
+body.ahmadcss-theme-silver .btn-primary:focus {
+    animation: silver-pulse 2s infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📱 SILVER RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 991px) {
+    body.ahmadcss-theme-silver .desk-sidebar {
+        background: rgba(255, 255, 255, 0.95) !important;
+    }
+    
+    body.ahmadcss-theme-silver.ahmadcss-dark .desk-sidebar {
+        background: rgba(30, 41, 59, 0.95) !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🖨️ SILVER PRINT STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+    body.ahmadcss-theme-silver {
+        background: #ffffff !important;
+    }
+    
+    body.ahmadcss-theme-silver .card,
+    body.ahmadcss-theme-silver .frappe-card {
+        background: #ffffff !important;
+        box-shadow: none !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+}

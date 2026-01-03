@@ -1,0 +1,75 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// AhmadCSS - Dark Mode Feature
+// ═══════════════════════════════════════════════════════════════════════════
+
+[data-theme="dark"],
+.ahmadcss-dark {
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --glass-white: rgba(30, 27, 75, 0.85);
+    --glass-white-strong: rgba(30, 27, 75, 0.95);
+    --glass-border: rgba(124, 58, 237, 0.3);
+    --gradient-bg: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+    
+    body {
+        background: var(--gradient-bg) !important;
+    }
+    
+    .frappe-card,
+    .form-layout,
+    .layout-side-section,
+    .page-head {
+        background: var(--glass-white) !important;
+        border-color: var(--glass-border) !important;
+    }
+    
+    .form-control,
+    .input-with-feedback {
+        background: rgba(30, 27, 75, 0.6) !important;
+        color: var(--text-primary) !important;
+        border-color: rgba($primary-600, 0.3) !important;
+    }
+    
+    .list-row,
+    .standard-sidebar-item,
+    .dropdown-item {
+        color: var(--text-primary) !important;
+    }
+    
+    .modal-content {
+        background: var(--glass-white-strong) !important;
+    }
+    
+    .widget-group-title,
+    .number-widget-box .number,
+    .shortcut-widget-box .widget-title {
+        color: var(--text-primary) !important;
+    }
+}
+
+// Dark Mode Toggle Button
+.ahmadcss-darkmode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-left: 8px;
+    
+    &:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: scale(1.05);
+    }
+    
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+}
