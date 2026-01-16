@@ -54,17 +54,17 @@
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.08);
     border: none;
     border-radius: 10px;
-    color: white;
+    color: var(--text-color, #1f2937);
     cursor: pointer;
     transition: all 0.25s ease;
     margin-left: 8px;
 }
 
 .ahmadcss-darkmode-toggle:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.12);
     transform: scale(1.05);
 }
 
@@ -453,17 +453,17 @@
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.08);
     border: none;
     border-radius: 10px;
-    color: white;
+    color: var(--text-color, #1f2937);
     cursor: pointer;
     transition: all 0.25s ease;
     margin-left: 8px;
 }
 
 .ahmadcss-customizer-toggle:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.12);
     transform: rotate(90deg);
 }
 
@@ -492,7 +492,7 @@
 
 .ahmadcss-btn-primary {
     background: linear-gradient(135deg, #7c3aed, #3b82f6);
-    color: white;
+    color: #ffffff;
     box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
 }
 
@@ -549,17 +549,17 @@ body.sidebar-collapsed .layout-main.row > .col-lg-2 {
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.08);
     border: none;
     border-radius: 10px;
-    color: white;
+    color: var(--text-color, #1f2937);
     cursor: pointer;
     transition: all 0.25s ease;
     margin-right: 12px;
 }
 
 .ahmadcss-sidebar-toggle:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 991.98px) {
@@ -623,16 +623,16 @@ body.sidebar-collapsed .layout-main.row > .col-lg-2 {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   🎨 THEME SWITCHER (Purple / Silver)
+   🎨 THEME SWITCHER (All Themes)
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .ahmadcss-theme-switcher {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 4px;
+    gap: 4px;
+    padding: 4px 6px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    border-radius: 14px;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -641,8 +641,8 @@ body.sidebar-collapsed .layout-main.row > .col-lg-2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     padding: 0;
     background: transparent;
     border: 2px solid transparent;
@@ -654,9 +654,9 @@ body.sidebar-collapsed .layout-main.row > .col-lg-2 {
 
 .ahmadcss-theme-btn span {
     display: block;
-    width: 18px;
-    height: 18px;
-    border-radius: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
     transition: all 0.25s ease;
 }
 
@@ -685,8 +685,8 @@ body.sidebar-collapsed .layout-main.row > .col-lg-2 {
     left: 50%;
     transform: translateX(-50%);
     padding: 4px 8px;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
+    background: rgba(0, 0, 0, 0.85);
+    color: #f5f5f5;
     font-size: 11px;
     border-radius: 4px;
     white-space: nowrap;
@@ -708,4 +708,43 @@ body.sidebar-collapsed .layout-main.row > .col-lg-2 {
 .rtl .ahmadcss-theme-switcher {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🌙 DARK MODE ADJUSTMENTS FOR COMPONENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Dark mode button styles */
+[data-theme="dark"] .ahmadcss-darkmode-toggle,
+[data-theme="dark"] .ahmadcss-customizer-toggle,
+[data-theme="dark"] .ahmadcss-sidebar-toggle,
+.ahmadcss-dark .ahmadcss-darkmode-toggle,
+.ahmadcss-dark .ahmadcss-customizer-toggle,
+.ahmadcss-dark .ahmadcss-sidebar-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e5e7eb;
+}
+
+[data-theme="dark"] .ahmadcss-darkmode-toggle:hover,
+[data-theme="dark"] .ahmadcss-customizer-toggle:hover,
+[data-theme="dark"] .ahmadcss-sidebar-toggle:hover,
+.ahmadcss-dark .ahmadcss-darkmode-toggle:hover,
+.ahmadcss-dark .ahmadcss-customizer-toggle:hover,
+.ahmadcss-dark .ahmadcss-sidebar-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+body[data-route="login"] .ahmadcss-darkmode-toggle,
+body[data-path="login"] .ahmadcss-theme-switcher,
+body[data-route="login"] .ahmadcss-theme-switcher,
+body[data-path="login"] .ahmadcss-theme-customizer,
+body[data-route="login"] .ahmadcss-theme-customizer,
+.for-login .ahmadcss-darkmode-toggle,
+.for-login .ahmadcss-theme-switcher,
+.for-login .ahmadcss-theme-customizer,
+.login-page .ahmadcss-darkmode-toggle,
+.login-page .ahmadcss-theme-switcher,
+.login-page .ahmadcss-theme-customizer {
+    display: none !important;
 }

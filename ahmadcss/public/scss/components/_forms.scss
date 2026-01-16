@@ -18,9 +18,9 @@
     background: var(--glass-white-strong) !important;
     border: 1.5px solid rgba($primary-600, 0.15) !important;
     border-radius: var(--radius-md) !important;
-    padding: 8px 14px !important;
-    min-height: 36px !important;
-    height: 36px !important;
+    padding: 6px 12px !important;
+    min-height: 32px !important;
+    height: 32px !important;
     color: var(--text-primary) !important;
     font-size: 13px !important;
     font-weight: 500 !important;
@@ -48,9 +48,9 @@
         color: #1a1a2e !important;
         font-weight: 500 !important;
         font-size: 13px !important;
-        padding: 8px 38px 8px 14px !important;
-        min-height: 36px !important;
-        height: 36px !important;
+        padding: 6px 38px 6px 12px !important;
+        min-height: 32px !important;
+        height: 32px !important;
         line-height: 1.4 !important;
         border: 1.5px solid rgba($primary-600, 0.18) !important;
         border-radius: var(--radius-md) !important;
@@ -172,8 +172,8 @@ select.input-with-feedback {
     background: rgba(255, 255, 255, 0.85) !important;
     color: #1e293b !important;
     font-weight: 500 !important;
-    padding: 8px 12px !important;
+    padding: 6px 12px !important;
     border-radius: var(--radius-md) !important;
     border: 1.5px solid rgba($primary-600, 0.1) !important;
-    min-height: 36px !important;
+    min-height: 32px !important;
 }

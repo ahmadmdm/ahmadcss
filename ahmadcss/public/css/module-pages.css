@@ -1,0 +1,789 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   AhmadCSS - Module Page Components v2.0
+   Specialized components for module landing pages
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📊 MODULE OVERVIEW GRID
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.erp-module-overview {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--erp-space-6);
+}
+
+@media (min-width: 1024px) {
+    .erp-module-overview {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.erp-module-overview__main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--erp-space-6);
+}
+
+.erp-module-overview__side {
+    display: flex;
+    flex-direction: column;
+    gap: var(--erp-space-4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📈 CHARTS & VISUALIZATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.erp-chart-card {
+    background: var(--erp-glass-bg-strong);
+    backdrop-filter: blur(var(--erp-glass-blur));
+    -webkit-backdrop-filter: blur(var(--erp-glass-blur));
+    border: 1px solid var(--erp-glass-border);
+    border-radius: var(--erp-radius-xl);
+    padding: var(--erp-space-5);
+    box-shadow: var(--erp-glass-shadow);
+}
+
+.erp-chart-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--erp-space-4);
+}
+
+.erp-chart-card__title {
+    font-size: var(--erp-text-md);
+    font-weight: 600;
+    color: var(--erp-text-primary);
+}
+
+.erp-chart-card__period {
+    display: flex;
+    gap: var(--erp-space-1);
+}
+
+.erp-chart-card__period-btn {
+    padding: var(--erp-space-1) var(--erp-space-3);
+    font-size: var(--erp-text-xs);
+    font-weight: 500;
+    color: var(--erp-text-secondary);
+    background: transparent;
+    border: none;
+    border-radius: var(--erp-radius-md);
+    cursor: pointer;
+    transition: all var(--erp-transition-fast);
+}
+
+.erp-chart-card__period-btn:hover {
+    background: var(--erp-neutral-100);
+}
+
+.erp-chart-card__period-btn--active {
+    background: var(--erp-primary-100);
+    color: var(--erp-primary-700);
+}
+
+.erp-chart-card__body {
+    min-height: 250px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📋 ACTIVITY TIMELINE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.erp-activity {
+    background: var(--erp-glass-bg-strong);
+    backdrop-filter: blur(var(--erp-glass-blur));
+    -webkit-backdrop-filter: blur(var(--erp-glass-blur));
+    border: 1px solid var(--erp-glass-border);
+    border-radius: var(--erp-radius-xl);
+    padding: var(--erp-space-5);
+}
+
+.erp-activity__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--erp-space-4);
+}
+
+.erp-activity__title {
+    font-size: var(--erp-text-md);
+    font-weight: 600;
+    color: var(--erp-text-primary);
+}
+
+.erp-activity__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.erp-activity__item {
+    display: flex;
+    gap: var(--erp-space-3);
+    padding: var(--erp-space-3) 0;
+    border-bottom: 1px solid var(--erp-neutral-100);
+}
+
+.erp-activity__item:last-child {
+    border-bottom: none;
+}
+
+.erp-activity__icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--erp-neutral-100);
+    color: var(--erp-text-secondary);
+    border-radius: var(--erp-radius-full);
+    flex-shrink: 0;
+}
+
+.erp-activity__icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.erp-activity__icon--success {
+    background: var(--erp-success-100);
+    color: var(--erp-success-600);
+}
+
+.erp-activity__icon--warning {
+    background: var(--erp-warning-100);
+    color: var(--erp-warning-600);
+}
+
+.erp-activity__icon--error {
+    background: var(--erp-error-100);
+    color: var(--erp-error-600);
+}
+
+.erp-activity__content {
+    flex: 1;
+    min-width: 0;
+}
+
+.erp-activity__text {
+    font-size: var(--erp-text-sm);
+    color: var(--erp-text-primary);
+    margin-bottom: 2px;
+}
+
+.erp-activity__text strong {
+    font-weight: 600;
+}
+
+.erp-activity__time {
+    font-size: var(--erp-text-xs);
+    color: var(--erp-text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔢 STATS MINI CARDS (Compact KPIs)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.erp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--erp-space-3);
+}
+
+.erp-stat-mini {
+    display: flex;
+    align-items: center;
+    gap: var(--erp-space-3);
+    padding: var(--erp-space-4);
+    background: var(--erp-glass-bg);
+    border: 1px solid var(--erp-glass-border-subtle);
+    border-radius: var(--erp-radius-lg);
+}
+
+.erp-stat-mini__icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--erp-primary-100);
+    color: var(--erp-primary-600);
+    border-radius: var(--erp-radius-md);
+}
+
+.erp-stat-mini__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.erp-stat-mini__content {
+    flex: 1;
+}
+
+.erp-stat-mini__value {
+    font-size: var(--erp-text-lg);
+    font-weight: 700;
+    color: var(--erp-text-primary);
+    line-height: 1.2;
+}
+
+.erp-stat-mini__label {
+    font-size: var(--erp-text-xs);
+    color: var(--erp-text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📝 DOCUMENT LIST (Recent/Pending Documents)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.erp-doc-list {
+    background: var(--erp-glass-bg-strong);
+    backdrop-filter: blur(var(--erp-glass-blur));
+    -webkit-backdrop-filter: blur(var(--erp-glass-blur));
+    border: 1px solid var(--erp-glass-border);
+    border-radius: var(--erp-radius-xl);
+    overflow: hidden;
+}
+
+.erp-doc-list__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--erp-space-4) var(--erp-space-5);
+    background: var(--erp-neutral-50);
+    border-bottom: 1px solid var(--erp-neutral-150);
+}
+
+.erp-doc-list__title {
+    font-size: var(--erp-text-md);
+    font-weight: 600;
+    color: var(--erp-text-primary);
+}
+
+.erp-doc-list__action {
+    font-size: var(--erp-text-sm);
+    color: var(--erp-primary-600);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.erp-doc-list__action:hover {
+    text-decoration: underline;
+}
+
+.erp-doc-list__body {
+    padding: 0;
+}
+
+.erp-doc-list__item {
+    display: flex;
+    align-items: center;
+    gap: var(--erp-space-4);
+    padding: var(--erp-space-4) var(--erp-space-5);
+    border-bottom: 1px solid var(--erp-neutral-100);
+    text-decoration: none;
+    transition: background var(--erp-transition-fast);
+}
+
+.erp-doc-list__item:last-child {
+    border-bottom: none;
+}
+
+.erp-doc-list__item:hover {
+    background: var(--erp-neutral-50);
+}
+
+.erp-doc-list__item-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--erp-neutral-100);
+    color: var(--erp-text-secondary);
+    border-radius: var(--erp-radius-md);
+    flex-shrink: 0;
+}
+
+.erp-doc-list__item-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.erp-doc-list__item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.erp-doc-list__item-title {
+    font-size: var(--erp-text-sm);
+    font-weight: 500;
+    color: var(--erp-text-primary);
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.erp-doc-list__item-meta {
+    font-size: var(--erp-text-xs);
+    color: var(--erp-text-muted);
+}
+
+.erp-doc-list__item-amount {
+    font-size: var(--erp-text-sm);
+    font-weight: 600;
+    color: var(--erp-text-primary);
+    text-align: right;
+}
+
+.erp-doc-list__item-status {
+    flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📊 PROGRESS INDICATORS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.erp-progress {
+    display: flex;
+    flex-direction: column;
+    gap: var(--erp-space-2);
+}
+
+.erp-progress__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.erp-progress__label {
+    font-size: var(--erp-text-sm);
+    font-weight: 500;
+    color: var(--erp-text-primary);
+}
+
+.erp-progress__value {
+    font-size: var(--erp-text-sm);
+    font-weight: 600;
+    color: var(--erp-text-secondary);
+}
+
+.erp-progress__bar {
+    height: 8px;
+    background: var(--erp-neutral-150);
+    border-radius: var(--erp-radius-full);
+    overflow: hidden;
+}
+
+.erp-progress__fill {
+    height: 100%;
+    background: var(--erp-primary-500);
+    border-radius: var(--erp-radius-full);
+    transition: width var(--erp-transition-smooth);
+}
+
+.erp-progress--success .erp-progress__fill {
+    background: var(--erp-success-500);
+}
+
+.erp-progress--warning .erp-progress__fill {
+    background: var(--erp-warning-500);
+}
+
+.erp-progress--error .erp-progress__fill {
+    background: var(--erp-error-500);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🏷️ TAGS & BADGES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.erp-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: var(--erp-radius-full);
+    white-space: nowrap;
+}
+
+.erp-tag--default {
+    background: var(--erp-neutral-100);
+    color: var(--erp-neutral-600);
+}
+
+.erp-tag--primary {
+    background: var(--erp-primary-100);
+    color: var(--erp-primary-700);
+}
+
+.erp-tag--success {
+    background: var(--erp-success-100);
+    color: var(--erp-success-700);
+}
+
+.erp-tag--warning {
+    background: var(--erp-warning-100);
+    color: var(--erp-warning-600);
+}
+
+.erp-tag--error {
+    background: var(--erp-error-100);
+    color: var(--erp-error-600);
+}
+
+.erp-tag--info {
+    background: var(--erp-info-100);
+    color: var(--erp-info-600);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔔 NOTIFICATION CARDS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.erp-notification-card {
+    display: flex;
+    gap: var(--erp-space-3);
+    padding: var(--erp-space-4);
+    border-radius: var(--erp-radius-lg);
+    border-left: 4px solid;
+}
+
+.erp-notification-card--info {
+    background: var(--erp-info-50);
+    border-color: var(--erp-info-500);
+}
+
+.erp-notification-card--success {
+    background: var(--erp-success-50);
+    border-color: var(--erp-success-500);
+}
+
+.erp-notification-card--warning {
+    background: var(--erp-warning-50);
+    border-color: var(--erp-warning-500);
+}
+
+.erp-notification-card--error {
+    background: var(--erp-error-50);
+    border-color: var(--erp-error-500);
+}
+
+.erp-notification-card__icon {
+    flex-shrink: 0;
+}
+
+.erp-notification-card__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.erp-notification-card--info .erp-notification-card__icon {
+    color: var(--erp-info-500);
+}
+
+.erp-notification-card--success .erp-notification-card__icon {
+    color: var(--erp-success-500);
+}
+
+.erp-notification-card--warning .erp-notification-card__icon {
+    color: var(--erp-warning-500);
+}
+
+.erp-notification-card--error .erp-notification-card__icon {
+    color: var(--erp-error-500);
+}
+
+.erp-notification-card__content {
+    flex: 1;
+}
+
+.erp-notification-card__title {
+    font-size: var(--erp-text-sm);
+    font-weight: 600;
+    color: var(--erp-text-primary);
+    margin-bottom: 2px;
+}
+
+.erp-notification-card__message {
+    font-size: var(--erp-text-sm);
+    color: var(--erp-text-secondary);
+}
+
+.erp-notification-card__actions {
+    display: flex;
+    gap: var(--erp-space-2);
+    margin-top: var(--erp-space-3);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📊 SPARKLINES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.erp-sparkline {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 30px;
+}
+
+.erp-sparkline__bar {
+    width: 4px;
+    background: var(--erp-primary-300);
+    border-radius: 2px;
+    transition: height var(--erp-transition-fast);
+}
+
+.erp-sparkline__bar:hover {
+    background: var(--erp-primary-500);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎯 QUICK STATS ROW
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.erp-quick-stats {
+    display: flex;
+    gap: var(--erp-space-4);
+    padding: var(--erp-space-4);
+    background: var(--erp-glass-bg);
+    border-radius: var(--erp-radius-xl);
+    border: 1px solid var(--erp-glass-border-subtle);
+}
+
+.erp-quick-stats__item {
+    flex: 1;
+    text-align: center;
+    padding: var(--erp-space-3);
+}
+
+.erp-quick-stats__item:not(:last-child) {
+    border-right: 1px solid var(--erp-neutral-150);
+}
+
+.erp-quick-stats__value {
+    font-size: var(--erp-text-2xl);
+    font-weight: 700;
+    color: var(--erp-text-primary);
+    line-height: 1.2;
+}
+
+.erp-quick-stats__label {
+    font-size: var(--erp-text-xs);
+    color: var(--erp-text-secondary);
+    margin-top: var(--erp-space-1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📑 SPLIT CARD LAYOUT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.erp-split-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--erp-glass-bg-strong);
+    border: 1px solid var(--erp-glass-border);
+    border-radius: var(--erp-radius-xl);
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .erp-split-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+.erp-split-card__section {
+    padding: var(--erp-space-5);
+}
+
+.erp-split-card__section:first-child {
+    border-right: 1px solid var(--erp-neutral-150);
+}
+
+@media (max-width: 768px) {
+    .erp-split-card__section:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--erp-neutral-150);
+    }
+}
+
+.erp-split-card__title {
+    font-size: var(--erp-text-md);
+    font-weight: 600;
+    color: var(--erp-text-primary);
+    margin-bottom: var(--erp-space-4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔄 LOADING PLACEHOLDERS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.erp-loading-shimmer {
+    background: linear-gradient(
+        90deg,
+        var(--erp-neutral-100) 0%,
+        var(--erp-neutral-50) 50%,
+        var(--erp-neutral-100) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.erp-loading-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--erp-neutral-200);
+    border-top-color: var(--erp-primary-500);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.erp-loading-dots {
+    display: flex;
+    gap: 4px;
+}
+
+.erp-loading-dots__dot {
+    width: 8px;
+    height: 8px;
+    background: var(--erp-primary-400);
+    border-radius: 50%;
+    animation: bounce 1.4s ease-in-out infinite both;
+}
+
+.erp-loading-dots__dot:nth-child(1) { animation-delay: 0s; }
+.erp-loading-dots__dot:nth-child(2) { animation-delay: 0.16s; }
+.erp-loading-dots__dot:nth-child(3) { animation-delay: 0.32s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 MODULE-SPECIFIC COLOR THEMES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Accounting Module */
+[data-module="accounting"] {
+    --erp-module-color: var(--erp-module-accounting);
+}
+
+[data-module="accounting"] .erp-kpi-card__icon,
+[data-module="accounting"] .erp-action-card__icon,
+[data-module="accounting"] .erp-header__module-dot {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--erp-module-accounting);
+}
+
+/* Selling Module */
+[data-module="selling"] {
+    --erp-module-color: var(--erp-module-selling);
+}
+
+[data-module="selling"] .erp-kpi-card__icon,
+[data-module="selling"] .erp-action-card__icon,
+[data-module="selling"] .erp-header__module-dot {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--erp-module-selling);
+}
+
+/* Buying Module */
+[data-module="buying"] {
+    --erp-module-color: var(--erp-module-buying);
+}
+
+[data-module="buying"] .erp-kpi-card__icon,
+[data-module="buying"] .erp-action-card__icon,
+[data-module="buying"] .erp-header__module-dot {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--erp-module-buying);
+}
+
+/* Stock Module */
+[data-module="stock"] {
+    --erp-module-color: var(--erp-module-stock);
+}
+
+[data-module="stock"] .erp-kpi-card__icon,
+[data-module="stock"] .erp-action-card__icon,
+[data-module="stock"] .erp-header__module-dot {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--erp-module-stock);
+}
+
+/* HR Module */
+[data-module="hr"] {
+    --erp-module-color: var(--erp-module-hr);
+}
+
+[data-module="hr"] .erp-kpi-card__icon,
+[data-module="hr"] .erp-action-card__icon,
+[data-module="hr"] .erp-header__module-dot {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--erp-module-hr);
+}
+
+/* Manufacturing Module */
+[data-module="manufacturing"] {
+    --erp-module-color: var(--erp-module-manufacturing);
+}
+
+[data-module="manufacturing"] .erp-kpi-card__icon,
+[data-module="manufacturing"] .erp-action-card__icon,
+[data-module="manufacturing"] .erp-header__module-dot {
+    background: rgba(236, 72, 153, 0.1);
+    color: var(--erp-module-manufacturing);
+}
+
+/* Projects Module */
+[data-module="projects"] {
+    --erp-module-color: var(--erp-module-projects);
+}
+
+[data-module="projects"] .erp-kpi-card__icon,
+[data-module="projects"] .erp-action-card__icon,
+[data-module="projects"] .erp-header__module-dot {
+    background: rgba(249, 115, 22, 0.1);
+    color: var(--erp-module-projects);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🖨️ PRINT STYLES FOR MODULE PAGES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+    .erp-quick-actions,
+    .erp-activity,
+    .erp-chart-card__period {
+        display: none !important;
+    }
+    
+    .erp-kpi-card,
+    .erp-doc-list,
+    .erp-chart-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+    
+    .erp-kpi-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}

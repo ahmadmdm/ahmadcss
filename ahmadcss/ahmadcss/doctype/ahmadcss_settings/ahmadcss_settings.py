@@ -27,31 +27,66 @@ class AhmadCSSSettings(Document):
         try:
             settings = frappe.get_single("AhmadCSS Settings")
             return {
+                # General
                 "enable_theme": settings.enable_theme,
+                "color_theme": getattr(settings, 'color_theme', 'Silver'),
                 "dark_mode": settings.dark_mode,
-                "primary_color": settings.primary_color or "#7c3aed",
-                "secondary_color": settings.secondary_color or "#3b82f6",
-                "gradient_start": settings.gradient_start or "#667eea",
-                "gradient_end": settings.gradient_end or "#764ba2",
+                "enable_animations": settings.enable_animations,
+                "animation_speed": settings.animation_speed or "Normal",
+                
+                # Header
+                "header_style": getattr(settings, 'header_style', 'Gradient'),
+                "header_gradient_start": getattr(settings, 'header_gradient_start', '#7c3aed'),
+                "header_gradient_end": getattr(settings, 'header_gradient_end', '#3b82f6'),
+                "header_blur": getattr(settings, 'header_blur', 30),
+                "show_custom_logo": settings.show_custom_logo,
+                "custom_logo": settings.custom_logo,
+                
+                # Body
+                "body_gradient_start": getattr(settings, 'body_gradient_start', '#667eea'),
+                "body_gradient_middle": getattr(settings, 'body_gradient_middle', '#764ba2'),
+                "body_gradient_end": getattr(settings, 'body_gradient_end', '#f093fb'),
                 "enable_glassmorphism": settings.enable_glassmorphism,
                 "glass_blur": settings.glass_blur or 20,
                 "glass_opacity": settings.glass_opacity or 72,
-                "enable_animations": settings.enable_animations,
-                "animation_speed": settings.animation_speed or "Normal",
+                
+                # Sidebar
+                "sidebar_style": settings.sidebar_style or "Glass",
+                "sidebar_gradient_start": getattr(settings, 'sidebar_gradient_start', '#1e1e2e'),
+                "sidebar_gradient_end": getattr(settings, 'sidebar_gradient_end', '#2d2d3f'),
+                "sidebar_width": settings.sidebar_width or 260,
+                "sidebar_blur": settings.sidebar_blur or 20,
+                "sidebar_position": settings.sidebar_position or "Left",
+                
+                # Footer
+                "footer_style": getattr(settings, 'footer_style', 'Gradient'),
+                "footer_gradient_start": getattr(settings, 'footer_gradient_start', '#1e1e2e'),
+                "footer_gradient_end": getattr(settings, 'footer_gradient_end', '#2d2d3f'),
+                "footer_blur": getattr(settings, 'footer_blur', 10),
+                "show_footer": getattr(settings, 'show_footer', 1),
+                
+                # Typography
                 "font_family": settings.font_family or "Cairo",
                 "font_size_base": settings.font_size_base or 14,
                 "arabic_font": settings.arabic_font or "Cairo",
                 "enable_custom_fonts": settings.enable_custom_fonts,
-                "navbar_style": settings.navbar_style or "Gradient",
-                "navbar_blur": settings.navbar_blur or 30,
-                "show_custom_logo": settings.show_custom_logo,
-                "custom_logo": settings.custom_logo,
-                "sidebar_style": settings.sidebar_style or "Glass",
-                "sidebar_width": settings.sidebar_width or 260,
-                "sidebar_blur": settings.sidebar_blur or 20,
-                "sidebar_position": settings.sidebar_position or "Left",
+                
+                # Colors
+                "primary_color": settings.primary_color or "#7c3aed",
+                "secondary_color": settings.secondary_color or "#3b82f6",
+                "success_color": getattr(settings, 'success_color', '#10b981'),
+                "warning_color": getattr(settings, 'warning_color', '#f59e0b'),
+                "error_color": getattr(settings, 'error_color', '#ef4444'),
+                
+                # Advanced
                 "custom_css": settings.custom_css or "",
-                "custom_js": settings.custom_js or ""
+                "custom_js": settings.custom_js or "",
+                
+                # Legacy support (for backward compatibility)
+                "navbar_style": getattr(settings, 'header_style', 'Gradient'),
+                "navbar_blur": getattr(settings, 'header_blur', 30),
+                "gradient_start": getattr(settings, 'body_gradient_start', '#667eea'),
+                "gradient_end": getattr(settings, 'body_gradient_end', '#f093fb'),
             }
         except Exception:
             return get_default_settings()
@@ -60,31 +95,66 @@ class AhmadCSSSettings(Document):
 def get_default_settings():
     """Return default settings"""
     return {
+        # General
         "enable_theme": 1,
+        "color_theme": "Silver",
         "dark_mode": 0,
-        "primary_color": "#7c3aed",
-        "secondary_color": "#3b82f6",
-        "gradient_start": "#667eea",
-        "gradient_end": "#764ba2",
+        "enable_animations": 1,
+        "animation_speed": "Normal",
+        
+        # Header
+        "header_style": "Gradient",
+        "header_gradient_start": "#7c3aed",
+        "header_gradient_end": "#3b82f6",
+        "header_blur": 30,
+        "show_custom_logo": 0,
+        "custom_logo": None,
+        
+        # Body
+        "body_gradient_start": "#667eea",
+        "body_gradient_middle": "#764ba2",
+        "body_gradient_end": "#f093fb",
         "enable_glassmorphism": 1,
         "glass_blur": 20,
         "glass_opacity": 72,
-        "enable_animations": 1,
-        "animation_speed": "Normal",
+        
+        # Sidebar
+        "sidebar_style": "Glass",
+        "sidebar_gradient_start": "#1e1e2e",
+        "sidebar_gradient_end": "#2d2d3f",
+        "sidebar_width": 260,
+        "sidebar_blur": 20,
+        "sidebar_position": "Left",
+        
+        # Footer
+        "footer_style": "Gradient",
+        "footer_gradient_start": "#1e1e2e",
+        "footer_gradient_end": "#2d2d3f",
+        "footer_blur": 10,
+        "show_footer": 1,
+        
+        # Typography
         "font_family": "Cairo",
         "font_size_base": 14,
         "arabic_font": "Cairo",
         "enable_custom_fonts": 1,
+        
+        # Colors
+        "primary_color": "#7c3aed",
+        "secondary_color": "#3b82f6",
+        "success_color": "#10b981",
+        "warning_color": "#f59e0b",
+        "error_color": "#ef4444",
+        
+        # Advanced
+        "custom_css": "",
+        "custom_js": "",
+        
+        # Legacy
         "navbar_style": "Gradient",
         "navbar_blur": 30,
-        "show_custom_logo": 0,
-        "custom_logo": None,
-        "sidebar_style": "Glass",
-        "sidebar_width": 260,
-        "sidebar_blur": 20,
-        "sidebar_position": "Left",
-        "custom_css": "",
-        "custom_js": ""
+        "gradient_start": "#667eea",
+        "gradient_end": "#f093fb",
     }
 
 

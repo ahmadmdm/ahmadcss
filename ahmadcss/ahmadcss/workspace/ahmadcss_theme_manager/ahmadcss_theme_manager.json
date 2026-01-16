@@ -1,0 +1,175 @@
+{
+ "charts": [],
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>🎨 AhmadCSS Theme Manager</b></span>\", \"col\": 12}}, {\"type\": \"paragraph\", \"data\": {\"text\": \"Professional theme management for Frappe/ERPNext - Customize your interface with modern themes\", \"col\": 12}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h5\\\"><b>⚡ Quick Actions</b></span>\", \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Theme Settings\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Glass Ultimate\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Glass Silver\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Bento Grids\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Material Web\", \"col\": 3}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h5\\\"><b>📚 Theme Gallery</b></span>\", \"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Glassmorphism Themes\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Modern Themes\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Customization\", \"col\": 4}}]",
+ "creation": "2026-01-03 12:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "tool",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "AhmadCSS Theme Manager",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Glassmorphism Themes",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Glass Ultimate Theme",
+   "link_count": 0,
+   "link_to": "AhmadCSS Settings",
+   "link_type": "DocType",
+   "description": "Premium glassmorphism with blur effects and gradients",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Glass Silver Theme",
+   "link_count": 0,
+   "link_to": "AhmadCSS Settings",
+   "link_type": "DocType",
+   "description": "Elegant silver-toned glass design",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Modern Themes",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Bento Grids Theme",
+   "link_count": 0,
+   "link_to": "AhmadCSS Settings",
+   "link_type": "DocType",
+   "description": "Modern bento-style grid layouts inspired by Apple design",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Material Web Theme",
+   "link_count": 0,
+   "link_to": "AhmadCSS Settings",
+   "link_type": "DocType",
+   "description": "Google Material Design 3 with dynamic color system",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customization",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Theme Settings",
+   "link_count": 0,
+   "link_to": "AhmadCSS Settings",
+   "link_type": "DocType",
+   "description": "Configure colors, fonts, animations and more",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Custom CSS",
+   "link_count": 0,
+   "link_to": "AhmadCSS Settings",
+   "link_type": "DocType",
+   "description": "Add your own custom CSS styles",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Custom JavaScript",
+   "link_count": 0,
+   "link_to": "AhmadCSS Settings",
+   "link_type": "DocType",
+   "description": "Add custom JavaScript functionality",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-01-03 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ahmadcss",
+ "name": "AhmadCSS Theme Manager",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "sequence_id": 25.0,
+ "shortcuts": [
+  {
+   "color": "Purple",
+   "doc_view": "",
+   "icon": "setting",
+   "label": "Theme Settings",
+   "link_to": "AhmadCSS Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "icon": "assets",
+   "label": "Glass Ultimate",
+   "link_to": "AhmadCSS Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "",
+   "icon": "file",
+   "label": "Glass Silver",
+   "link_to": "AhmadCSS Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "",
+   "icon": "dashboard",
+   "label": "Bento Grids",
+   "link_to": "AhmadCSS Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "",
+   "icon": "tool",
+   "label": "Material Web",
+   "link_to": "AhmadCSS Settings",
+   "type": "DocType"
+  }
+ ],
+ "title": "AhmadCSS Theme Manager"
+}

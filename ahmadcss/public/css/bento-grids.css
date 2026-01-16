@@ -1,0 +1,692 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   AhmadCSS - Bento Grids Theme v1.0
+   Modern Bento-Style Grid Layout for Frappe/ERPNext
+   
+   🎨 Inspired by: Apple Design Language & Bento Box Layouts
+   📐 Layout: CSS Grid with Responsive Bento Cards
+   ✨ Effects: Subtle shadows, rounded corners, smooth transitions
+   🔤 Fonts: SF Pro Display / Inter
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔤 GOOGLE FONTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700&display=swap');
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 BENTO DESIGN TOKENS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Scoped to Bento theme only */
+html[data-theme="bento-grids"],
+body[data-theme="bento-grids"],
+.theme-bento-grids {
+    /* === Bento Colors === */
+    --bento-bg: #f5f5f7;
+    --bento-card-bg: #ffffff;
+    --bento-card-hover: #fafafa;
+    --bento-border: rgba(0, 0, 0, 0.04);
+    --bento-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 24px rgba(0, 0, 0, 0.06);
+    --bento-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.08), 0 8px 32px rgba(0, 0, 0, 0.1);
+    
+    /* === Accent Colors === */
+    --bento-blue: #007AFF;
+    --bento-green: #34C759;
+    --bento-orange: #FF9500;
+    --bento-red: #FF3B30;
+    --bento-purple: #AF52DE;
+    --bento-pink: #FF2D55;
+    --bento-teal: #5AC8FA;
+    --bento-indigo: #5856D6;
+    
+    /* === Grid Variables === */
+    --bento-gap: 16px;
+    --bento-radius: 20px;
+    --bento-radius-sm: 12px;
+    --bento-radius-lg: 28px;
+    
+    /* === Typography === */
+    --bento-font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+    --bento-font-arabic: 'Cairo', 'SF Pro AR', sans-serif;
+    --bento-text-primary: #1d1d1f;
+    --bento-text-secondary: #86868b;
+    --bento-text-tertiary: #a1a1a6;
+    
+    /* === Transitions === */
+    --bento-transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    --bento-spring: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🌈 BASE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+html[data-theme="bento-grids"],
+body[data-theme="bento-grids"],
+.theme-bento-grids {
+    background: var(--bento-bg) !important;
+    font-family: var(--bento-font);
+    color: var(--bento-text-primary);
+}
+
+.theme-bento-grids *:lang(ar),
+.theme-bento-grids [dir="rtl"] {
+    font-family: var(--bento-font-arabic);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📦 BENTO CARD SYSTEM
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--bento-gap);
+    padding: var(--bento-gap);
+}
+
+.bento-card {
+    background: var(--bento-card-bg);
+    border-radius: var(--bento-radius);
+    padding: 24px;
+    border: 1px solid var(--bento-border);
+    box-shadow: var(--bento-shadow);
+    transition: all var(--bento-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--bento-shadow-hover);
+}
+
+/* Card Sizes */
+.bento-card--sm {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.bento-card--md {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.bento-card--lg {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.bento-card--wide {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.bento-card--tall {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* Card Colors */
+.bento-card--blue { background: linear-gradient(135deg, #e8f4fd 0%, #d0e8fc 100%); }
+.bento-card--green { background: linear-gradient(135deg, #e8f8ed 0%, #d0f0dc 100%); }
+.bento-card--orange { background: linear-gradient(135deg, #fff4e6 0%, #ffe8cc 100%); }
+.bento-card--purple { background: linear-gradient(135deg, #f3e8fc 0%, #e6d0f8 100%); }
+.bento-card--pink { background: linear-gradient(135deg, #fce8ed 0%, #f8d0dc 100%); }
+.bento-card--dark { background: linear-gradient(135deg, #1d1d1f 0%, #2d2d2f 100%); color: #f5f5f7; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎯 FRAPPE/ERPNEXT INTEGRATION
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Main Layout */
+.theme-bento-grids .layout-main-section {
+    background: var(--bento-bg);
+    padding: var(--bento-gap);
+}
+
+/* Page Container */
+.theme-bento-grids .page-container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* Form Cards */
+.theme-bento-grids .form-section,
+.theme-bento-grids .section-body {
+    background: var(--bento-card-bg);
+    border-radius: var(--bento-radius);
+    padding: 24px;
+    margin-bottom: var(--bento-gap);
+    border: 1px solid var(--bento-border);
+    box-shadow: var(--bento-shadow);
+}
+
+.theme-bento-grids .section-head {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--bento-text-primary);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+/* Navbar */
+.theme-bento-grids .navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border-bottom: 1px solid var(--bento-border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Sidebar */
+.theme-bento-grids .desk-sidebar {
+    background: var(--bento-bg);
+    border-right: none;
+}
+
+.theme-bento-grids .sidebar-menu .desk-sidebar-item {
+    border-radius: var(--bento-radius-sm);
+    margin: 4px 8px;
+    transition: all var(--bento-transition);
+}
+
+.theme-bento-grids .sidebar-menu .desk-sidebar-item:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.theme-bento-grids .sidebar-menu .desk-sidebar-item.active {
+    background: var(--bento-blue);
+    color: var(--bento-card-bg);
+}
+
+/* List View */
+.theme-bento-grids .list-row {
+    background: var(--bento-card-bg);
+    border-radius: var(--bento-radius-sm);
+    margin-bottom: 8px;
+    border: 1px solid var(--bento-border);
+    transition: all var(--bento-transition);
+}
+
+.theme-bento-grids .list-row:hover {
+    box-shadow: var(--bento-shadow);
+    transform: translateY(-2px);
+}
+
+/* Buttons */
+.theme-bento-grids .btn-primary {
+    background: var(--bento-blue);
+    border: none;
+    border-radius: var(--bento-radius-sm);
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all var(--bento-transition);
+}
+
+.theme-bento-grids .btn-primary:hover {
+    background: #0066cc;
+    transform: scale(1.02);
+}
+
+.theme-bento-grids .btn-secondary {
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: var(--bento-radius-sm);
+    color: var(--bento-text-primary);
+}
+
+.theme-bento-grids .btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Cards & Widgets */
+.theme-bento-grids .frappe-card,
+.theme-bento-grids .widget {
+    background: var(--bento-card-bg);
+    border-radius: var(--bento-radius);
+    border: 1px solid var(--bento-border);
+    box-shadow: var(--bento-shadow);
+    overflow: hidden;
+}
+
+.theme-bento-grids .widget-head {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--bento-border);
+    font-weight: 600;
+}
+
+.theme-bento-grids .widget-body {
+    padding: 20px;
+}
+
+/* Shortcuts in Workspace */
+.theme-bento-grids .shortcut-widget-box {
+    background: var(--bento-card-bg);
+    border-radius: var(--bento-radius);
+    border: 1px solid var(--bento-border);
+    box-shadow: var(--bento-shadow);
+    padding: 20px;
+    transition: all var(--bento-transition);
+}
+
+.theme-bento-grids .shortcut-widget-box:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--bento-shadow-hover);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🏠 WORKSPACE BENTO CARDS - Enhanced Styling
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Workspace Container */
+.theme-bento-grids .workspace-container,
+.theme-bento-grids .codex-editor {
+    background: var(--bento-bg);
+}
+
+/* All Workspace Widgets as Bento Cards */
+.theme-bento-grids .widget.shortcut-widget-box,
+.theme-bento-grids .widget.number-widget-box,
+.theme-bento-grids .widget.links-widget-box,
+.theme-bento-grids .widget.onboarding-widget-box,
+.theme-bento-grids .ce-block .widget {
+    background: var(--bento-card-bg) !important;
+    border-radius: var(--bento-radius) !important;
+    border: 1px solid var(--bento-border) !important;
+    box-shadow: var(--bento-shadow) !important;
+    overflow: hidden;
+    transition: all var(--bento-transition);
+}
+
+.theme-bento-grids .widget.shortcut-widget-box:hover,
+.theme-bento-grids .widget.number-widget-box:hover,
+.theme-bento-grids .widget.links-widget-box:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--bento-shadow-hover) !important;
+}
+
+/* Shortcut Cards - Bento Style */
+.theme-bento-grids .shortcut-widget-box .widget-head {
+    padding: 16px 20px 12px;
+    border-bottom: none;
+}
+
+.theme-bento-grids .shortcut-widget-box .widget-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--bento-text-primary);
+    letter-spacing: -0.01em;
+}
+
+.theme-bento-grids .shortcut-widget-box .widget-subtitle {
+    font-size: 12px;
+    color: var(--bento-text-secondary);
+    margin-top: 4px;
+}
+
+.theme-bento-grids .shortcut-widget-box .indicator-pill {
+    border-radius: 100px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* Links Widget - Bento Style */
+.theme-bento-grids .links-widget-box .widget-head {
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid var(--bento-border);
+}
+
+.theme-bento-grids .links-widget-box .widget-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--bento-text-primary);
+}
+
+.theme-bento-grids .links-widget-box .link-item {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all var(--bento-transition);
+}
+
+.theme-bento-grids .links-widget-box .link-item:last-child {
+    border-bottom: none;
+}
+
+.theme-bento-grids .links-widget-box .link-item:hover {
+    background: rgba(0, 122, 255, 0.06);
+}
+
+.theme-bento-grids .links-widget-box .link-item a {
+    color: var(--bento-text-primary);
+    font-weight: 500;
+}
+
+.theme-bento-grids .links-widget-box .link-item a:hover {
+    color: var(--bento-blue);
+}
+
+/* Number Widget - Bento Stats Style */
+.theme-bento-grids .number-widget-box {
+    position: relative;
+    overflow: hidden;
+    background: var(--bento-card-bg);
+    border-radius: var(--bento-radius);
+    padding: 24px;
+    border: 1px solid var(--bento-border);
+    box-shadow: var(--bento-shadow);
+}
+
+.theme-bento-grids .number-widget-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--bento-blue) 0%, transparent 70%);
+    opacity: 0.08;
+    border-radius: 0 0 0 80px;
+}
+
+.theme-bento-grids .number-widget-box .widget-head {
+    padding: 20px 20px 8px;
+    border-bottom: none;
+}
+
+.theme-bento-grids .number-widget-box .widget-body {
+    padding: 0 20px 20px;
+}
+
+/* Onboarding Widget */
+.theme-bento-grids .onboarding-widget-box {
+    background: linear-gradient(135deg, #e8f4fd 0%, #d0e8fc 100%) !important;
+}
+
+.theme-bento-grids .onboarding-widget-box .widget-head {
+    background: transparent;
+    border-bottom: 1px solid rgba(0, 122, 255, 0.15);
+}
+
+/* Quick List Widget */
+.theme-bento-grids .quick-list-widget-box {
+    background: var(--bento-card-bg) !important;
+    border-radius: var(--bento-radius) !important;
+    border: 1px solid var(--bento-border) !important;
+    box-shadow: var(--bento-shadow) !important;
+}
+
+.theme-bento-grids .quick-list-widget-box .quick-list-item {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--bento-border);
+    transition: background var(--bento-transition);
+}
+
+.theme-bento-grids .quick-list-widget-box .quick-list-item:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+/* Workspace Section Headers */
+.theme-bento-grids .workspace-section .section-header {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bento-text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    padding-left: 4px;
+}
+
+/* Grid Layout for Widgets in Workspace */
+.theme-bento-grids .widget-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--bento-gap);
+}
+
+/* Chart Widget */
+.theme-bento-grids .chart-widget-box {
+    background: var(--bento-card-bg) !important;
+    border-radius: var(--bento-radius) !important;
+    border: 1px solid var(--bento-border) !important;
+    box-shadow: var(--bento-shadow) !important;
+    padding: 20px;
+}
+
+/* Additional Number Widget Styles */
+.theme-bento-grids .number-widget-box .widget-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--bento-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.theme-bento-grids .number-widget-box .number {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--bento-text-primary);
+    letter-spacing: -0.02em;
+}
+
+/* Modals */
+.theme-bento-grids .modal-content {
+    border-radius: var(--bento-radius-lg);
+    border: none;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+}
+
+.theme-bento-grids .modal-header {
+    border-bottom: 1px solid var(--bento-border);
+    padding: 20px 24px;
+}
+
+.theme-bento-grids .modal-body {
+    padding: 24px;
+}
+
+/* Inputs */
+.theme-bento-grids .form-control,
+.theme-bento-grids .input-with-feedback {
+    border-radius: var(--bento-radius-sm);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 6px 12px;
+    min-height: 32px;
+    font-size: 14px;
+    transition: all var(--bento-transition);
+}
+
+.theme-bento-grids .form-control:focus {
+    border-color: var(--bento-blue);
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.15);
+}
+
+/* Dropdown */
+.theme-bento-grids .dropdown-menu {
+    border-radius: var(--bento-radius);
+    border: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    padding: 8px;
+}
+
+.theme-bento-grids .dropdown-item {
+    border-radius: var(--bento-radius-sm);
+    padding: 10px 16px;
+    transition: all var(--bento-transition);
+}
+
+.theme-bento-grids .dropdown-item:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🌙 DARK MODE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-bento-grids.dark,
+.theme-bento-grids[data-theme-mode="dark"] {
+    --bento-bg: #000000;
+    --bento-card-bg: #1c1c1e;
+    --bento-card-hover: #2c2c2e;
+    --bento-border: rgba(255, 255, 255, 0.08);
+    --bento-text-primary: #f5f5f7;
+    --bento-text-secondary: #98989d;
+    --bento-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.theme-bento-grids.dark .navbar {
+    background: rgba(28, 28, 30, 0.95) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode Workspace Cards */
+.theme-bento-grids.dark .onboarding-widget-box {
+    background: linear-gradient(135deg, #0a2540 0%, #0d3a5c 100%) !important;
+}
+
+.theme-bento-grids.dark .number-widget-box::before {
+    background: linear-gradient(135deg, var(--bento-teal) 0%, transparent 70%);
+}
+
+.theme-bento-grids.dark .bento-card--blue { background: linear-gradient(135deg, #0a2540 0%, #0d3a5c 100%); }
+.theme-bento-grids.dark .bento-card--green { background: linear-gradient(135deg, #0a2a1a 0%, #0d3a24 100%); }
+.theme-bento-grids.dark .bento-card--purple { background: linear-gradient(135deg, #1a0a2a 0%, #2a0d3a 100%); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📱 RESPONSIVE DESIGN
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+    .bento-card--lg,
+    .bento-card--wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bento-card--md,
+    .bento-card--lg,
+    .bento-card--wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    :root {
+        --bento-gap: 12px;
+        --bento-radius: 16px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ✨ ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes bento-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.theme-bento-grids .bento-card,
+.theme-bento-grids .frappe-card,
+.theme-bento-grids .widget {
+    animation: bento-fade-in 0.5s ease-out;
+}
+
+/* Staggered animation for multiple cards */
+.theme-bento-grids .bento-card:nth-child(1) { animation-delay: 0.05s; }
+.theme-bento-grids .bento-card:nth-child(2) { animation-delay: 0.1s; }
+.theme-bento-grids .bento-card:nth-child(3) { animation-delay: 0.15s; }
+.theme-bento-grids .bento-card:nth-child(4) { animation-delay: 0.2s; }
+.theme-bento-grids .bento-card:nth-child(5) { animation-delay: 0.25s; }
+.theme-bento-grids .bento-card:nth-child(6) { animation-delay: 0.3s; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.bento-text-blue { color: var(--bento-blue); }
+.bento-text-green { color: var(--bento-green); }
+.bento-text-orange { color: var(--bento-orange); }
+.bento-text-purple { color: var(--bento-purple); }
+.bento-text-pink { color: var(--bento-pink); }
+
+.bento-bg-blue { background-color: var(--bento-blue); }
+.bento-bg-green { background-color: var(--bento-green); }
+.bento-bg-orange { background-color: var(--bento-orange); }
+.bento-bg-purple { background-color: var(--bento-purple); }
+.bento-bg-pink { background-color: var(--bento-pink); }
+
+/* Icon Container */
+.bento-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.bento-icon--sm { width: 32px; height: 32px; font-size: 16px; }
+.bento-icon--lg { width: 64px; height: 64px; font-size: 32px; }
+
+/* Stat Display */
+.bento-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.bento-stat__value {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.bento-stat__label {
+    font-size: 13px;
+    color: var(--bento-text-secondary);
+    font-weight: 500;
+}
+
+/* Progress Bar */
+.bento-progress {
+    height: 8px;
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bento-progress__bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width var(--bento-transition);
+}
+
+/* Tags */
+.bento-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.bento-tag--blue { background: rgba(0, 122, 255, 0.12); color: var(--bento-blue); }
+.bento-tag--green { background: rgba(52, 199, 89, 0.12); color: var(--bento-green); }
+.bento-tag--orange { background: rgba(255, 149, 0, 0.12); color: var(--bento-orange); }
+.bento-tag--red { background: rgba(255, 59, 48, 0.12); color: var(--bento-red); }

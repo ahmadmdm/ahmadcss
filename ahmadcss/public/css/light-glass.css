@@ -1,0 +1,583 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   AhmadCSS - Light Glassmorphism Theme v15.0
+   Modern Light Glass UI for Frappe/ERPNext
+   
+   ☁️ Light Glass - Calm, Minimal, Professional
+   
+   Features:
+   - Light gradient background with soft neutral tones
+   - Semi-transparent white glass panels
+   - Calm blue accent color
+   - High readability and accessibility
+   - Eye-friendly for long usage
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 LIGHT GLASS DESIGN TOKENS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root[data-ahmadcss-theme="light-glass"],
+body.ahmadcss-theme-light-glass {
+    /* === Background Colors === */
+    --bg-start: #F8FAFC;
+    --bg-end: #E2E8F0;
+    --bg-gradient: linear-gradient(135deg, #F8FAFC 0%, #EEF2F7 50%, #E2E8F0 100%);
+    
+    /* === Primary Accent - Calm Blue === */
+    --primary-50: #EFF6FF;
+    --primary-100: #DBEAFE;
+    --primary-200: #BFDBFE;
+    --primary-300: #93C5FD;
+    --primary-400: #60A5FA;
+    --primary-500: #3B82F6;
+    --primary-600: #2563EB;
+    --primary-700: #1D4ED8;
+    --primary-800: #1E40AF;
+    --primary-900: #1E3A8A;
+    
+    /* === Text Colors === */
+    --text-heading: #020617;
+    --text-primary: #1E293B;
+    --text-secondary: #64748B;
+    --text-muted: #94A3B8;
+    --text-on-primary: #FFFFFF;
+    
+    /* === Glass Effect Variables === */
+    --glass-bg: rgba(255, 255, 255, 0.55);
+    --glass-bg-hover: rgba(255, 255, 255, 0.70);
+    --glass-bg-strong: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(15, 23, 42, 0.08);
+    --glass-border-hover: rgba(15, 23, 42, 0.12);
+    --glass-blur: 14px;
+    --glass-shadow: 0 4px 24px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+    --glass-shadow-hover: 0 8px 32px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+    
+    /* === Layout === */
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+    --radius-xl: 22px;
+    
+    /* === Transitions === */
+    --transition-fast: 150ms ease;
+    --transition-base: 200ms ease;
+    --transition-slow: 250ms ease;
+    
+    /* === Override defaults === */
+    --gradient-bg: var(--bg-gradient);
+    --gradient-navbar: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(248, 250, 252, 0.9) 100%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🌈 BACKGROUND - Soft Light Gradient
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass {
+    background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F7 50%, #E2E8F0 100%) !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
+    color: var(--text-primary) !important;
+}
+
+body.ahmadcss-theme-light-glass::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse 80% 50% at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 30% at 50% 50%, rgba(255, 255, 255, 0.5) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔝 NAVBAR - Light Glass Header
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass .navbar {
+    background: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+}
+
+body.ahmadcss-theme-light-glass .navbar *,
+body.ahmadcss-theme-light-glass .navbar a,
+body.ahmadcss-theme-light-glass .navbar .nav-link,
+body.ahmadcss-theme-light-glass .navbar .navbar-brand {
+    color: var(--text-primary) !important;
+}
+
+body.ahmadcss-theme-light-glass .navbar .nav-link:hover,
+body.ahmadcss-theme-light-glass .navbar .dropdown-item:hover {
+    background: rgba(59, 130, 246, 0.08) !important;
+    color: var(--primary-600) !important;
+}
+
+/* Navbar Logo */
+body.ahmadcss-theme-light-glass .navbar .navbar-home::before,
+body.ahmadcss-theme-light-glass .navbar .navbar-brand::before {
+    filter: brightness(0.2) !important;
+}
+
+/* Search Input */
+body.ahmadcss-theme-light-glass .navbar #navbar-search,
+body.ahmadcss-theme-light-glass .navbar input[type="search"],
+body.ahmadcss-theme-light-glass .navbar .search-bar input {
+    background: rgba(15, 23, 42, 0.04) !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px !important;
+}
+
+body.ahmadcss-theme-light-glass .navbar #navbar-search:focus,
+body.ahmadcss-theme-light-glass .navbar input[type="search"]:focus {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: var(--primary-300) !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+body.ahmadcss-theme-light-glass .navbar #navbar-search::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📋 SIDEBAR - Light Glass Navigation
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass .layout-side-section {
+    background: rgba(255, 255, 255, 0.55) !important;
+    backdrop-filter: blur(14px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(180%) !important;
+    border-right: 1px solid rgba(15, 23, 42, 0.06) !important;
+    box-shadow: 2px 0 16px rgba(15, 23, 42, 0.03) !important;
+}
+
+body.ahmadcss-theme-light-glass .layout-side-section *,
+body.ahmadcss-theme-light-glass .layout-side-section a,
+body.ahmadcss-theme-light-glass .desk-sidebar a,
+body.ahmadcss-theme-light-glass .sidebar-menu a {
+    color: var(--text-secondary) !important;
+}
+
+body.ahmadcss-theme-light-glass .layout-side-section a:hover,
+body.ahmadcss-theme-light-glass .desk-sidebar a:hover,
+body.ahmadcss-theme-light-glass .sidebar-menu a:hover,
+body.ahmadcss-theme-light-glass .standard-sidebar-item:hover {
+    background: rgba(59, 130, 246, 0.08) !important;
+    color: var(--primary-600) !important;
+}
+
+body.ahmadcss-theme-light-glass .standard-sidebar-item.selected,
+body.ahmadcss-theme-light-glass .sidebar-menu .active {
+    background: rgba(59, 130, 246, 0.12) !important;
+    color: var(--primary-600) !important;
+    border-left: 3px solid var(--primary-500) !important;
+}
+
+body.ahmadcss-theme-light-glass .sidebar-label,
+body.ahmadcss-theme-light-glass .desk-sidebar-item .label {
+    color: var(--text-muted) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 11px !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📄 MAIN CONTENT AREA
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass .main-section,
+body.ahmadcss-theme-light-glass .layout-main-section {
+    background: transparent !important;
+}
+
+/* Page Head */
+body.ahmadcss-theme-light-glass .page-head {
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+body.ahmadcss-theme-light-glass .page-head .title-text,
+body.ahmadcss-theme-light-glass .page-title {
+    color: var(--text-heading) !important;
+    font-weight: 600 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🃏 GLASS CARDS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass .card,
+body.ahmadcss-theme-light-glass .frappe-card,
+body.ahmadcss-theme-light-glass .form-group,
+body.ahmadcss-theme-light-glass .page-container,
+body.ahmadcss-theme-light-glass .frappe-list,
+body.ahmadcss-theme-light-glass .report-wrapper {
+    background: rgba(255, 255, 255, 0.55) !important;
+    backdrop-filter: blur(14px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(180%) !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--glass-shadow) !important;
+    transition: all var(--transition-base) !important;
+}
+
+body.ahmadcss-theme-light-glass .card:hover,
+body.ahmadcss-theme-light-glass .frappe-card:hover {
+    background: rgba(255, 255, 255, 0.70) !important;
+    border-color: rgba(15, 23, 42, 0.12) !important;
+    box-shadow: var(--glass-shadow-hover) !important;
+    transform: translateY(-2px);
+}
+
+/* Card Headers */
+body.ahmadcss-theme-light-glass .card-header,
+body.ahmadcss-theme-light-glass .section-head {
+    background: rgba(248, 250, 252, 0.5) !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06) !important;
+    color: var(--text-heading) !important;
+}
+
+/* Card Body */
+body.ahmadcss-theme-light-glass .card-body {
+    color: var(--text-primary) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔘 BUTTONS - Soft Translucent
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Primary Button */
+body.ahmadcss-theme-light-glass .btn-primary,
+body.ahmadcss-theme-light-glass .btn-primary-dark {
+    background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%) !important;
+    color: var(--text-on-primary) !important;
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25) !important;
+    transition: all var(--transition-base) !important;
+}
+
+body.ahmadcss-theme-light-glass .btn-primary:hover,
+body.ahmadcss-theme-light-glass .btn-primary-dark:hover {
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%) !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35) !important;
+    transform: translateY(-1px);
+}
+
+/* Secondary/Default Button */
+body.ahmadcss-theme-light-glass .btn-default,
+body.ahmadcss-theme-light-glass .btn-secondary {
+    background: rgba(255, 255, 255, 0.6) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(15, 23, 42, 0.1) !important;
+    border-radius: var(--radius-md) !important;
+    backdrop-filter: blur(8px) !important;
+    transition: all var(--transition-base) !important;
+}
+
+body.ahmadcss-theme-light-glass .btn-default:hover,
+body.ahmadcss-theme-light-glass .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-color: rgba(15, 23, 42, 0.15) !important;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Icon Buttons */
+body.ahmadcss-theme-light-glass .icon-btn,
+body.ahmadcss-theme-light-glass .btn-icon {
+    background: rgba(255, 255, 255, 0.5) !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    color: var(--text-secondary) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+body.ahmadcss-theme-light-glass .icon-btn:hover,
+body.ahmadcss-theme-light-glass .btn-icon:hover {
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: var(--primary-600) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📝 FORM CONTROLS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass .form-control,
+body.ahmadcss-theme-light-glass .frappe-control input,
+body.ahmadcss-theme-light-glass .frappe-control select,
+body.ahmadcss-theme-light-glass .frappe-control textarea,
+body.ahmadcss-theme-light-glass input[type="text"],
+body.ahmadcss-theme-light-glass input[type="email"],
+body.ahmadcss-theme-light-glass input[type="password"],
+body.ahmadcss-theme-light-glass input[type="number"],
+body.ahmadcss-theme-light-glass select,
+body.ahmadcss-theme-light-glass textarea {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid rgba(15, 23, 42, 0.1) !important;
+    color: var(--text-primary) !important;
+    padding: 6px 12px !important;
+    min-height: 32px !important;
+    border-radius: var(--radius-sm) !important;
+    transition: all var(--transition-fast) !important;
+}
+
+body.ahmadcss-theme-light-glass .form-control:focus,
+body.ahmadcss-theme-light-glass .frappe-control input:focus,
+body.ahmadcss-theme-light-glass .frappe-control select:focus,
+body.ahmadcss-theme-light-glass .frappe-control textarea:focus {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: var(--primary-400) !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12) !important;
+    outline: none !important;
+}
+
+body.ahmadcss-theme-light-glass .form-control::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* Labels */
+body.ahmadcss-theme-light-glass label,
+body.ahmadcss-theme-light-glass .control-label {
+    color: var(--text-secondary) !important;
+    font-weight: 500 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📊 TABLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass .frappe-list,
+body.ahmadcss-theme-light-glass .datatable {
+    background: rgba(255, 255, 255, 0.55) !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden;
+}
+
+body.ahmadcss-theme-light-glass .list-row,
+body.ahmadcss-theme-light-glass .dt-row {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05) !important;
+    transition: background var(--transition-fast) !important;
+}
+
+body.ahmadcss-theme-light-glass .list-row:hover,
+body.ahmadcss-theme-light-glass .dt-row:hover {
+    background: rgba(59, 130, 246, 0.05) !important;
+}
+
+body.ahmadcss-theme-light-glass .list-row-head,
+body.ahmadcss-theme-light-glass .dt-header {
+    background: rgba(248, 250, 252, 0.7) !important;
+    color: var(--text-secondary) !important;
+    font-weight: 600 !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+body.ahmadcss-theme-light-glass .list-row a,
+body.ahmadcss-theme-light-glass .dt-cell a {
+    color: var(--primary-600) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔔 DROPDOWNS & MODALS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass .dropdown-menu {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.12) !important;
+}
+
+body.ahmadcss-theme-light-glass .dropdown-item {
+    color: var(--text-primary) !important;
+    border-radius: var(--radius-sm) !important;
+    margin: 2px 4px !important;
+    transition: all var(--transition-fast) !important;
+}
+
+body.ahmadcss-theme-light-glass .dropdown-item:hover {
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: var(--primary-600) !important;
+}
+
+/* Modal */
+body.ahmadcss-theme-light-glass .modal-content {
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: 0 24px 64px rgba(15, 23, 42, 0.15) !important;
+}
+
+body.ahmadcss-theme-light-glass .modal-header {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+body.ahmadcss-theme-light-glass .modal-footer {
+    border-top: 1px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+body.ahmadcss-theme-light-glass .modal-title {
+    color: var(--text-heading) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🏷️ BADGES & INDICATORS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass .badge,
+body.ahmadcss-theme-light-glass .indicator-pill {
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: var(--primary-600) !important;
+    border-radius: 20px !important;
+    font-weight: 500 !important;
+}
+
+body.ahmadcss-theme-light-glass .indicator-pill.green,
+body.ahmadcss-theme-light-glass .badge-success {
+    background: rgba(34, 197, 94, 0.1) !important;
+    color: #16A34A !important;
+}
+
+body.ahmadcss-theme-light-glass .indicator-pill.red,
+body.ahmadcss-theme-light-glass .badge-danger {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #DC2626 !important;
+}
+
+body.ahmadcss-theme-light-glass .indicator-pill.orange,
+body.ahmadcss-theme-light-glass .badge-warning {
+    background: rgba(245, 158, 11, 0.1) !important;
+    color: #D97706 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔗 LINKS & TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass a:not(.btn):not(.nav-link):not(.dropdown-item) {
+    color: var(--primary-600) !important;
+    transition: color var(--transition-fast) !important;
+}
+
+body.ahmadcss-theme-light-glass a:not(.btn):not(.nav-link):not(.dropdown-item):hover {
+    color: var(--primary-700) !important;
+}
+
+body.ahmadcss-theme-light-glass h1, 
+body.ahmadcss-theme-light-glass h2, 
+body.ahmadcss-theme-light-glass h3, 
+body.ahmadcss-theme-light-glass h4, 
+body.ahmadcss-theme-light-glass h5, 
+body.ahmadcss-theme-light-glass h6 {
+    color: var(--text-heading) !important;
+}
+
+body.ahmadcss-theme-light-glass p,
+body.ahmadcss-theme-light-glass span:not(.indicator),
+body.ahmadcss-theme-light-glass div:not(.btn):not(.badge) {
+    color: var(--text-primary);
+}
+
+body.ahmadcss-theme-light-glass .text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📱 WIDGETS & SHORTCUTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass .shortcut-widget-box,
+body.ahmadcss-theme-light-glass .widget-box {
+    background: rgba(255, 255, 255, 0.55) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    border-radius: var(--radius-lg) !important;
+    transition: all var(--transition-base) !important;
+}
+
+body.ahmadcss-theme-light-glass .shortcut-widget-box:hover,
+body.ahmadcss-theme-light-glass .widget-box:hover {
+    background: rgba(255, 255, 255, 0.75) !important;
+    box-shadow: var(--glass-shadow-hover) !important;
+    transform: translateY(-2px);
+}
+
+body.ahmadcss-theme-light-glass .widget-title {
+    color: var(--text-heading) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔐 LOGIN PAGE - Light Glass
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass[data-path="login"],
+body.ahmadcss-theme-light-glass[data-route="login"] {
+    background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F7 50%, #E2E8F0 100%) !important;
+}
+
+body.ahmadcss-theme-light-glass .login-content.page-card,
+body.ahmadcss-theme-light-glass .page-card {
+    background: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 8px 40px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎛️ SCROLLBARS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body.ahmadcss-theme-light-glass ::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.04);
+    border-radius: 4px;
+}
+
+body.ahmadcss-theme-light-glass ::-webkit-scrollbar-thumb {
+    background: rgba(15, 23, 42, 0.15);
+    border-radius: 4px;
+}
+
+body.ahmadcss-theme-light-glass ::-webkit-scrollbar-thumb:hover {
+    background: rgba(15, 23, 42, 0.25);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ✨ ANIMATIONS & EFFECTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body.ahmadcss-theme-light-glass * {
+    transition-property: background, border-color, box-shadow, transform, opacity;
+    transition-duration: var(--transition-base);
+    transition-timing-function: ease;
+}
+
+/* Subtle floating animation for cards */
+@keyframes lightGlassFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+body.ahmadcss-theme-light-glass .widget-box:hover {
+    animation: lightGlassFloat 2s ease-in-out infinite;
+}

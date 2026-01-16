@@ -1,0 +1,995 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   AhmadCSS - Material Design 3 Theme
+   Modern Material You with Calm, Professional Colors
+   
+   🎨 Design System: Material Design 3 (Material You)
+   📐 Layout: Adaptive Material Components
+   ✨ Colors: Calm, Soft, Professional Palette
+   🔤 Fonts: Roboto / Google Sans / Material Symbols
+   🌊 Motion: Smooth, Purposeful Animations
+   
+   Design Philosophy:
+   - Clean, functional, accessible
+   - Calm colors suitable for long work sessions
+   - No aggressive or high-saturation colors
+   - Material elevation through soft shadows
+   - Clear typography hierarchy
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔤 TYPOGRAPHY - Google Fonts + Material Symbols
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Google+Sans:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 MATERIAL DESIGN 3 COLOR TOKENS - Calm & Professional
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web,
+html[data-theme="material-web"],
+body[data-theme="material-web"] {
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       PRIMARY COLOR - Calm Blue (#5C7CFA - Soft, Professional)
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-primary: #5C7CFA;
+    --md-on-primary: #FFFFFF;
+    --md-primary-container: #E0E7FF;
+    --md-on-primary-container: #001C3B;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       SECONDARY COLOR - Muted Teal (#4DB6AC)
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-secondary: #4DB6AC;
+    --md-on-secondary: #FFFFFF;
+    --md-secondary-container: #D0F0ED;
+    --md-on-secondary-container: #002726;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       TERTIARY COLOR - Soft Purple
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-tertiary: #8B7EC8;
+    --md-on-tertiary: #FFFFFF;
+    --md-tertiary-container: #E9DFFF;
+    --md-on-tertiary-container: #2A1C5A;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       ERROR COLOR - Material Red (Calm)
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-error: #C93838;
+    --md-on-error: #FFFFFF;
+    --md-error-container: #FFDAD6;
+    --md-on-error-container: #410002;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       SUCCESS COLOR - Calm Green
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-success: #2E7D32;
+    --md-on-success: #FFFFFF;
+    --md-success-container: #C8E6C9;
+    --md-on-success-container: #00250A;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       WARNING COLOR - Soft Amber
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-warning: #F57C00;
+    --md-on-warning: #FFFFFF;
+    --md-warning-container: #FFE0B2;
+    --md-on-warning-container: #2E1800;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       INFO COLOR - Light Blue
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-info: #0288D1;
+    --md-on-info: #FFFFFF;
+    --md-info-container: #B3E5FC;
+    --md-on-info-container: #001A2E;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       SURFACE COLORS - Off-White / Light Gray
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-surface: #F8FAFC;
+    --md-on-surface: #1A1C1E;
+    --md-surface-variant: #E2E8F0;
+    --md-on-surface-variant: #44474E;
+    
+    /* Surface Container Hierarchy (Material Elevation Levels) */
+    --md-surface-dim: #D9DBDD;
+    --md-surface-bright: #FFFFFF;
+    --md-surface-container-lowest: #FFFFFF;
+    --md-surface-container-low: #F1F3F5;
+    --md-surface-container: #E9ECEF;
+    --md-surface-container-high: #E2E5E8;
+    --md-surface-container-highest: #DEE2E6;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       BACKGROUND
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-background: #F8FAFC;
+    --md-on-background: #1A1C1E;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       OUTLINE
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-outline: #74777F;
+    --md-outline-variant: #C4C7CF;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       SHADOW & SCRIM
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-shadow: rgba(0, 0, 0, 0.12);
+    --md-scrim: rgba(0, 0, 0, 0.32);
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       INVERSE COLORS
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-inverse-surface: #2F3033;
+    --md-inverse-on-surface: #F2F3F5;
+    --md-inverse-primary: #A8C7FA;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       TYPOGRAPHY SCALE
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-font-brand: 'Google Sans', 'Roboto', system-ui, sans-serif;
+    --md-font-plain: 'Roboto', system-ui, sans-serif;
+    --md-font-arabic: 'Cairo', sans-serif;
+    
+    /* Display */
+    --md-display-large: 400 57px/64px var(--md-font-brand);
+    --md-display-medium: 400 45px/52px var(--md-font-brand);
+    --md-display-small: 400 36px/44px var(--md-font-brand);
+    
+    /* Headline */
+    --md-headline-large: 400 32px/40px var(--md-font-brand);
+    --md-headline-medium: 400 28px/36px var(--md-font-brand);
+    --md-headline-small: 400 24px/32px var(--md-font-brand);
+    
+    /* Title */
+    --md-title-large: 500 22px/28px var(--md-font-brand);
+    --md-title-medium: 500 16px/24px var(--md-font-plain);
+    --md-title-small: 500 14px/20px var(--md-font-plain);
+    
+    /* Body */
+    --md-body-large: 400 16px/24px var(--md-font-plain);
+    --md-body-medium: 400 14px/20px var(--md-font-plain);
+    --md-body-small: 400 12px/16px var(--md-font-plain);
+    
+    /* Label */
+    --md-label-large: 500 14px/20px var(--md-font-plain);
+    --md-label-medium: 500 12px/16px var(--md-font-plain);
+    --md-label-small: 500 11px/16px var(--md-font-plain);
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       SHAPE SYSTEM - Corner Radius
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-shape-none: 0px;
+    --md-shape-xs: 4px;
+    --md-shape-sm: 8px;
+    --md-shape-md: 12px;
+    --md-shape-lg: 16px;
+    --md-shape-xl: 28px;
+    --md-shape-full: 9999px;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       ELEVATION - Soft Shadows (No Glass Effects)
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-elevation-0: none;
+    --md-elevation-1: 0 1px 3px 1px rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+    --md-elevation-2: 0 2px 6px 2px rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+    --md-elevation-3: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 4px 8px 3px rgba(0, 0, 0, 0.08);
+    --md-elevation-4: 0 2px 3px 0 rgba(0, 0, 0, 0.12), 0 6px 10px 4px rgba(0, 0, 0, 0.08);
+    --md-elevation-5: 0 4px 4px 0 rgba(0, 0, 0, 0.12), 0 8px 12px 6px rgba(0, 0, 0, 0.08);
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       MOTION - Easing & Duration
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+    --md-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+    --md-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+    --md-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+    
+    --md-duration-short: 150ms;
+    --md-duration-medium: 250ms;
+    --md-duration-long: 400ms;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       STATE LAYERS - Interaction Opacity
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-state-hover: 0.08;
+    --md-state-focus: 0.12;
+    --md-state-pressed: 0.12;
+    --md-state-dragged: 0.16;
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       SPACING - 4pt Grid System
+       ══════════════════════════════════════════════════════════════════════ */
+    --md-spacing-1: 4px;
+    --md-spacing-2: 8px;
+    --md-spacing-3: 12px;
+    --md-spacing-4: 16px;
+    --md-spacing-5: 20px;
+    --md-spacing-6: 24px;
+    --md-spacing-8: 32px;
+    --md-spacing-10: 40px;
+    --md-spacing-12: 48px;
+    --md-spacing-16: 64px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 BASE STYLES - Body & HTML
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web,
+.theme-material-web body,
+html[data-theme="material-web"],
+html[data-theme="material-web"] body {
+    background: var(--md-background) !important;
+    color: var(--md-on-background) !important;
+    font: var(--md-body-medium) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--md-duration-medium) var(--md-easing-standard);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔝 TOP APP BAR - Material 3 Navbar
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .navbar,
+html[data-theme="material-web"] .navbar {
+    background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%) !important;
+    color: #5C7CFA !important;
+    box-shadow: var(--md-elevation-3) !important;
+    border-bottom: none !important;
+    height: 64px !important;
+    padding: 0 var(--md-spacing-4) !important;
+    backdrop-filter: none !important;
+    transition: box-shadow var(--md-duration-short) var(--md-easing-standard);
+}
+
+.theme-material-web .navbar .navbar-brand,
+html[data-theme="material-web"] .navbar .navbar-brand {
+    font: var(--md-title-large) !important;
+    color: #5C7CFA !important;
+    font-weight: 600 !important;
+}
+
+/* Navbar Items */
+.theme-material-web .navbar .nav-link,
+html[data-theme="material-web"] .navbar .nav-link {
+    color: #A8C7FA !important;
+    font: var(--md-label-large) !important;
+    padding: var(--md-spacing-2) var(--md-spacing-4) !important;
+    border-radius: var(--md-shape-full) !important;
+    position: relative;
+    transition: all var(--md-duration-short) var(--md-easing-standard);
+}
+
+.theme-material-web .navbar .nav-link:hover,
+html[data-theme="material-web"] .navbar .nav-link:hover {
+    background: rgba(92, 124, 250, 0.15) !important;
+    color: #FFFFFF !important;
+}
+
+.theme-material-web .navbar .nav-link:active,
+html[data-theme="material-web"] .navbar .nav-link:active {
+    background: rgba(92, 124, 250, 0.25) !important;
+    color: #FFFFFF !important;
+}
+
+/* Navbar Icons */
+.theme-material-web .navbar .btn-icon,
+.theme-material-web .navbar [class*="icon"],
+html[data-theme="material-web"] .navbar .btn-icon,
+html[data-theme="material-web"] .navbar [class*="icon"] {
+    font-family: 'Material Symbols Rounded' !important;
+    font-size: 24px !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: var(--md-shape-full) !important;
+    transition: background var(--md-duration-short) var(--md-easing-standard);
+}
+
+.theme-material-web .navbar .btn-icon:hover,
+html[data-theme="material-web"] .navbar .btn-icon:hover {
+    background: rgba(var(--md-on-surface), var(--md-state-hover)) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📱 NAVIGATION DRAWER - Material Sidebar
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .layout-side-section,
+.theme-material-web .desk-sidebar,
+html[data-theme="material-web"] .layout-side-section,
+html[data-theme="material-web"] .desk-sidebar {
+    background: var(--md-surface-container-low) !important;
+    border-right: 1px solid var(--md-outline-variant) !important;
+    box-shadow: none !important;
+    width: 280px !important;
+    transition: transform var(--md-duration-medium) var(--md-easing-emphasized);
+}
+
+/* Sidebar Items */
+.theme-material-web .sidebar-item,
+.theme-material-web .desk-sidebar .standard-sidebar-item,
+html[data-theme="material-web"] .sidebar-item,
+html[data-theme="material-web"] .desk-sidebar .standard-sidebar-item {
+    border-radius: var(--md-shape-lg) !important;
+    margin: var(--md-spacing-1) var(--md-spacing-3) !important;
+    padding: var(--md-spacing-3) var(--md-spacing-4) !important;
+    color: var(--md-on-surface-variant) !important;
+    font: var(--md-label-large) !important;
+    transition: all var(--md-duration-short) var(--md-easing-standard);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-material-web .sidebar-item:hover,
+html[data-theme="material-web"] .sidebar-item:hover {
+    background: rgba(var(--md-on-surface), var(--md-state-hover)) !important;
+}
+
+.theme-material-web .sidebar-item.selected,
+.theme-material-web .sidebar-item.active,
+html[data-theme="material-web"] .sidebar-item.selected,
+html[data-theme="material-web"] .sidebar-item.active {
+    background: var(--md-secondary-container) !important;
+    color: var(--md-on-secondary-container) !important;
+    font-weight: 600 !important;
+}
+
+/* Sidebar Icons */
+.theme-material-web .sidebar-item-icon,
+html[data-theme="material-web"] .sidebar-item-icon {
+    font-family: 'Material Symbols Rounded' !important;
+    font-size: 24px !important;
+    margin-right: var(--md-spacing-3) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📦 MATERIAL CARDS - Elevated & Filled Variants
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .card,
+.theme-material-web .widget,
+.theme-material-web .form-section,
+html[data-theme="material-web"] .card,
+html[data-theme="material-web"] .widget,
+html[data-theme="material-web"] .form-section {
+    background: var(--md-surface-container-lowest) !important;
+    border: none !important;
+    border-radius: var(--md-shape-lg) !important;
+    box-shadow: var(--md-elevation-1) !important;
+    padding: var(--md-spacing-4) !important;
+    margin-bottom: var(--md-spacing-4) !important;
+    transition: box-shadow var(--md-duration-short) var(--md-easing-standard);
+}
+
+.theme-material-web .card:hover,
+html[data-theme="material-web"] .card:hover {
+    box-shadow: var(--md-elevation-2) !important;
+}
+
+/* Card Header */
+.theme-material-web .card-header,
+.theme-material-web .widget-head,
+html[data-theme="material-web"] .card-header,
+html[data-theme="material-web"] .widget-head {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 0 var(--md-spacing-3) 0 !important;
+    font: var(--md-title-medium) !important;
+    color: var(--md-on-surface) !important;
+}
+
+/* Card Body */
+.theme-material-web .card-body,
+html[data-theme="material-web"] .card-body {
+    padding: var(--md-spacing-3) 0 !important;
+    color: var(--md-on-surface-variant) !important;
+    font: var(--md-body-medium) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔘 MATERIAL BUTTONS - Filled, Tonal, Text Variants
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .btn,
+.theme-material-web button,
+html[data-theme="material-web"] .btn,
+html[data-theme="material-web"] button {
+    border-radius: var(--md-shape-full) !important;
+    font: var(--md-label-large) !important;
+    padding: var(--md-spacing-2) var(--md-spacing-6) !important;
+    height: 40px !important;
+    border: none !important;
+    text-transform: none !important;
+    letter-spacing: 0.1px !important;
+    transition: all var(--md-duration-short) var(--md-easing-emphasized);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Filled Button (Primary) */
+.theme-material-web .btn-primary,
+html[data-theme="material-web"] .btn-primary {
+    background: var(--md-primary) !important;
+    color: var(--md-on-primary) !important;
+    box-shadow: var(--md-elevation-1) !important;
+}
+
+.theme-material-web .btn-primary:hover,
+html[data-theme="material-web"] .btn-primary:hover {
+    background: color-mix(in srgb, var(--md-primary) 92%, black) !important;
+    box-shadow: var(--md-elevation-2) !important;
+}
+
+.theme-material-web .btn-primary:active,
+html[data-theme="material-web"] .btn-primary:active {
+    background: color-mix(in srgb, var(--md-primary) 88%, black) !important;
+    box-shadow: var(--md-elevation-1) !important;
+}
+
+/* Tonal Button (Secondary) */
+.theme-material-web .btn-secondary,
+html[data-theme="material-web"] .btn-secondary {
+    background: var(--md-secondary-container) !important;
+    color: var(--md-on-secondary-container) !important;
+    box-shadow: none !important;
+}
+
+.theme-material-web .btn-secondary:hover,
+html[data-theme="material-web"] .btn-secondary:hover {
+    background: color-mix(in srgb, var(--md-secondary-container) 92%, black) !important;
+    box-shadow: var(--md-elevation-1) !important;
+}
+
+/* Text Button */
+.theme-material-web .btn-default,
+.theme-material-web .btn-link,
+html[data-theme="material-web"] .btn-default,
+html[data-theme="material-web"] .btn-link {
+    background: transparent !important;
+    color: var(--md-primary) !important;
+    box-shadow: none !important;
+}
+
+.theme-material-web .btn-default:hover,
+.theme-material-web .btn-link:hover,
+html[data-theme="material-web"] .btn-default:hover,
+html[data-theme="material-web"] .btn-link:hover {
+    background: rgba(var(--md-primary), var(--md-state-hover)) !important;
+}
+
+/* Icon Buttons */
+.theme-material-web .btn-icon,
+html[data-theme="material-web"] .btn-icon {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: var(--md-shape-full) !important;
+}
+
+/* Button States */
+.theme-material-web .btn:disabled,
+html[data-theme="material-web"] .btn:disabled {
+    opacity: 0.38 !important;
+    pointer-events: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📝 FORM CONTROLS - Material Text Fields
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .form-control,
+.theme-material-web input[type="text"],
+.theme-material-web input[type="email"],
+.theme-material-web input[type="password"],
+.theme-material-web input[type="number"],
+.theme-material-web textarea,
+.theme-material-web select,
+html[data-theme="material-web"] .form-control,
+html[data-theme="material-web"] input[type="text"],
+html[data-theme="material-web"] input[type="email"],
+html[data-theme="material-web"] input[type="password"],
+html[data-theme="material-web"] input[type="number"],
+html[data-theme="material-web"] textarea,
+html[data-theme="material-web"] select {
+    background: var(--md-surface-container) !important;
+    border: 1px solid var(--md-outline-variant) !important;
+    border-radius: var(--md-shape-xs) !important;
+    padding: 10px 16px !important;
+    font: var(--md-body-large) !important;
+    color: var(--md-on-surface) !important;
+    transition: all var(--md-duration-short) var(--md-easing-standard);
+    min-height: 40px !important;
+    height: auto !important;
+}
+
+.theme-material-web .form-control:hover,
+html[data-theme="material-web"] .form-control:hover {
+    border-color: var(--md-on-surface) !important;
+}
+
+.theme-material-web .form-control:focus,
+html[data-theme="material-web"] .form-control:focus {
+    border-color: var(--md-primary) !important;
+    border-width: 2px !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Form Labels */
+.theme-material-web .form-label,
+.theme-material-web label,
+html[data-theme="material-web"] .form-label,
+html[data-theme="material-web"] label {
+    font: var(--md-body-medium) !important;
+    color: var(--md-on-surface-variant) !important;
+    margin-bottom: var(--md-spacing-2) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📊 TABLES - Material Data Tables
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web table,
+.theme-material-web .datatable,
+html[data-theme="material-web"] table,
+html[data-theme="material-web"] .datatable {
+    background: var(--md-surface-container-lowest) !important;
+    border-radius: var(--md-shape-md) !important;
+    border: none !important;
+    box-shadow: var(--md-elevation-1) !important;
+    overflow: hidden !important;
+}
+
+.theme-material-web table thead th,
+html[data-theme="material-web"] table thead th {
+    background: var(--md-surface-container) !important;
+    color: var(--md-on-surface) !important;
+    font: var(--md-title-small) !important;
+    padding: var(--md-spacing-4) !important;
+    border-bottom: 1px solid var(--md-outline-variant) !important;
+    text-align: left !important;
+}
+
+.theme-material-web table tbody td,
+html[data-theme="material-web"] table tbody td {
+    padding: var(--md-spacing-4) !important;
+    color: var(--md-on-surface-variant) !important;
+    font: var(--md-body-medium) !important;
+    border-bottom: 1px solid var(--md-surface-variant) !important;
+}
+
+.theme-material-web table tbody tr:hover,
+html[data-theme="material-web"] table tbody tr:hover {
+    background: rgba(var(--md-on-surface), var(--md-state-hover)) !important;
+}
+
+.theme-material-web table tbody tr:last-child td,
+html[data-theme="material-web"] table tbody tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎯 CHIPS & BADGES - Material Chips
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .badge,
+.theme-material-web .chip,
+html[data-theme="material-web"] .badge,
+html[data-theme="material-web"] .chip {
+    background: var(--md-secondary-container) !important;
+    color: var(--md-on-secondary-container) !important;
+    border-radius: var(--md-shape-sm) !important;
+    padding: var(--md-spacing-1) var(--md-spacing-3) !important;
+    font: var(--md-label-small) !important;
+    border: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--md-spacing-1) !important;
+}
+
+/* Badge Colors */
+.theme-material-web .badge-success,
+html[data-theme="material-web"] .badge-success {
+    background: var(--md-success-container) !important;
+    color: var(--md-on-success-container) !important;
+}
+
+.theme-material-web .badge-danger,
+.theme-material-web .badge-error,
+html[data-theme="material-web"] .badge-danger,
+html[data-theme="material-web"] .badge-error {
+    background: var(--md-error-container) !important;
+    color: var(--md-on-error-container) !important;
+}
+
+.theme-material-web .badge-warning,
+html[data-theme="material-web"] .badge-warning {
+    background: var(--md-warning-container) !important;
+    color: var(--md-on-warning-container) !important;
+}
+
+.theme-material-web .badge-info,
+html[data-theme="material-web"] .badge-info {
+    background: var(--md-info-container) !important;
+    color: var(--md-on-info-container) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎭 MODALS & DIALOGS - Material Dialogs
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .modal-content,
+html[data-theme="material-web"] .modal-content {
+    background: var(--md-surface-container-high) !important;
+    border: none !important;
+    border-radius: var(--md-shape-xl) !important;
+    box-shadow: var(--md-elevation-3) !important;
+    padding: var(--md-spacing-6) !important;
+}
+
+.theme-material-web .modal-header,
+html[data-theme="material-web"] .modal-header {
+    border: none !important;
+    padding: 0 0 var(--md-spacing-4) 0 !important;
+}
+
+.theme-material-web .modal-title,
+html[data-theme="material-web"] .modal-title {
+    font: var(--md-headline-small) !important;
+    color: var(--md-on-surface) !important;
+}
+
+.theme-material-web .modal-body,
+html[data-theme="material-web"] .modal-body {
+    padding: var(--md-spacing-4) 0 !important;
+    color: var(--md-on-surface-variant) !important;
+    font: var(--md-body-medium) !important;
+}
+
+.theme-material-web .modal-footer,
+html[data-theme="material-web"] .modal-footer {
+    border: none !important;
+    padding: var(--md-spacing-4) 0 0 0 !important;
+    justify-content: flex-end !important;
+    gap: var(--md-spacing-2) !important;
+}
+
+/* Modal Backdrop */
+.theme-material-web .modal-backdrop,
+html[data-theme="material-web"] .modal-backdrop {
+    background: var(--md-scrim) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📋 LISTS - Material Lists
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .list-group,
+html[data-theme="material-web"] .list-group {
+    border-radius: var(--md-shape-md) !important;
+    overflow: hidden !important;
+}
+
+.theme-material-web .list-group-item,
+html[data-theme="material-web"] .list-group-item {
+    background: var(--md-surface-container-lowest) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--md-surface-variant) !important;
+    padding: var(--md-spacing-4) !important;
+    color: var(--md-on-surface) !important;
+    font: var(--md-body-medium) !important;
+    transition: background var(--md-duration-short) var(--md-easing-standard);
+}
+
+.theme-material-web .list-group-item:hover,
+html[data-theme="material-web"] .list-group-item:hover {
+    background: rgba(var(--md-on-surface), var(--md-state-hover)) !important;
+}
+
+.theme-material-web .list-group-item:last-child,
+html[data-theme="material-web"] .list-group-item:last-child {
+    border-bottom: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔽 DROPDOWN MENUS - Material Menus
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .dropdown-menu,
+html[data-theme="material-web"] .dropdown-menu {
+    background: var(--md-surface-container) !important;
+    border: none !important;
+    border-radius: var(--md-shape-md) !important;
+    box-shadow: var(--md-elevation-2) !important;
+    padding: var(--md-spacing-2) !important;
+    min-width: 200px !important;
+}
+
+.theme-material-web .dropdown-item,
+html[data-theme="material-web"] .dropdown-item {
+    color: var(--md-on-surface) !important;
+    font: var(--md-label-large) !important;
+    padding: var(--md-spacing-3) var(--md-spacing-4) !important;
+    border-radius: var(--md-shape-sm) !important;
+    margin: var(--md-spacing-1) 0 !important;
+    transition: background var(--md-duration-short) var(--md-easing-standard);
+}
+
+.theme-material-web .dropdown-item:hover,
+html[data-theme="material-web"] .dropdown-item:hover {
+    background: rgba(var(--md-on-surface), var(--md-state-hover)) !important;
+}
+
+.theme-material-web .dropdown-item:active,
+html[data-theme="material-web"] .dropdown-item:active {
+    background: rgba(var(--md-on-surface), var(--md-state-pressed)) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 ALERTS & NOTIFICATIONS - Material Snackbars
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .alert,
+html[data-theme="material-web"] .alert {
+    border: none !important;
+    border-radius: var(--md-shape-md) !important;
+    padding: var(--md-spacing-4) !important;
+    font: var(--md-body-medium) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--md-spacing-3) !important;
+}
+
+.theme-material-web .alert-success,
+html[data-theme="material-web"] .alert-success {
+    background: var(--md-success-container) !important;
+    color: var(--md-on-success-container) !important;
+}
+
+.theme-material-web .alert-danger,
+.theme-material-web .alert-error,
+html[data-theme="material-web"] .alert-danger,
+html[data-theme="material-web"] .alert-error {
+    background: var(--md-error-container) !important;
+    color: var(--md-on-error-container) !important;
+}
+
+.theme-material-web .alert-warning,
+html[data-theme="material-web"] .alert-warning {
+    background: var(--md-warning-container) !important;
+    color: var(--md-on-warning-container) !important;
+}
+
+.theme-material-web .alert-info,
+html[data-theme="material-web"] .alert-info {
+    background: var(--md-info-container) !important;
+    color: var(--md-on-info-container) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎚️ PROGRESS INDICATORS - Material Progress
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .progress,
+html[data-theme="material-web"] .progress {
+    background: var(--md-surface-variant) !important;
+    border-radius: var(--md-shape-full) !important;
+    height: 4px !important;
+    overflow: hidden !important;
+}
+
+.theme-material-web .progress-bar,
+html[data-theme="material-web"] .progress-bar {
+    background: var(--md-primary) !important;
+    transition: width var(--md-duration-medium) var(--md-easing-emphasized);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ⏱️ SCROLLBAR - Material Design
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web ::-webkit-scrollbar,
+html[data-theme="material-web"] ::-webkit-scrollbar {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+.theme-material-web ::-webkit-scrollbar-track,
+html[data-theme="material-web"] ::-webkit-scrollbar-track {
+    background: var(--md-surface) !important;
+}
+
+.theme-material-web ::-webkit-scrollbar-thumb,
+html[data-theme="material-web"] ::-webkit-scrollbar-thumb {
+    background: var(--md-outline-variant) !important;
+    border-radius: var(--md-shape-full) !important;
+    border: 3px solid var(--md-surface) !important;
+}
+
+.theme-material-web ::-webkit-scrollbar-thumb:hover,
+html[data-theme="material-web"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--md-outline) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📱 RESPONSIVE - Mobile & Tablet Adaptations
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .theme-material-web .navbar,
+    html[data-theme="material-web"] .navbar {
+        height: 56px !important;
+        padding: 0 var(--md-spacing-2) !important;
+    }
+    
+    .theme-material-web .layout-side-section,
+    html[data-theme="material-web"] .layout-side-section {
+        width: 100% !important;
+        transform: translateX(-100%);
+    }
+    
+    .theme-material-web .layout-side-section.opened,
+    html[data-theme="material-web"] .layout-side-section.opened {
+        transform: translateX(0);
+    }
+    
+    .theme-material-web .card,
+    html[data-theme="material-web"] .card {
+        border-radius: var(--md-shape-md) !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 LOGIN PAGE - Material Design
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .login-content,
+.theme-material-web .page-card,
+html[data-theme="material-web"] .login-content,
+html[data-theme="material-web"] .page-card {
+    background: var(--md-surface-container-lowest) !important;
+    border: none !important;
+    border-radius: var(--md-shape-xl) !important;
+    box-shadow: var(--md-elevation-2) !important;
+    padding: var(--md-spacing-8) !important;
+    max-width: 400px !important;
+    margin: auto !important;
+}
+
+.theme-material-web .login-content h3,
+.theme-material-web .page-card h3,
+html[data-theme="material-web"] .login-content h3,
+html[data-theme="material-web"] .page-card h3 {
+    font: var(--md-headline-medium) !important;
+    color: var(--md-on-surface) !important;
+    margin-bottom: var(--md-spacing-6) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ♿ ACCESSIBILITY - Focus Indicators
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web *:focus-visible,
+html[data-theme="material-web"] *:focus-visible {
+    outline: 2px solid var(--md-primary) !important;
+    outline-offset: 2px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ✨ MATERIAL RIPPLE EFFECT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.theme-material-web .btn::after,
+.theme-material-web .sidebar-item::after,
+html[data-theme="material-web"] .btn::after,
+html[data-theme="material-web"] .sidebar-item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+}
+
+.theme-material-web .btn:active::after,
+.theme-material-web .sidebar-item:active::after,
+html[data-theme="material-web"] .btn:active::after,
+html[data-theme="material-web"] .sidebar-item:active::after {
+    animation: ripple 0.6s var(--md-easing-standard);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎯 PAGE HEADER - Material Top App Bar Style
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .page-head,
+html[data-theme="material-web"] .page-head {
+    background: transparent !important;
+    border: none !important;
+    padding: var(--md-spacing-6) 0 !important;
+}
+
+.theme-material-web .page-head .page-title,
+html[data-theme="material-web"] .page-head .page-title {
+    font: var(--md-headline-medium) !important;
+    color: var(--md-on-surface) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 DASHBOARD WIDGETS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .widget-head,
+html[data-theme="material-web"] .widget-head {
+    font: var(--md-title-large) !important;
+    color: var(--md-on-surface) !important;
+    padding-bottom: var(--md-spacing-3) !important;
+}
+
+.theme-material-web .widget-body,
+html[data-theme="material-web"] .widget-body {
+    color: var(--md-on-surface-variant) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.theme-material-web .text-primary,
+html[data-theme="material-web"] .text-primary {
+    color: var(--md-primary) !important;
+}
+
+.theme-material-web .text-secondary,
+html[data-theme="material-web"] .text-secondary {
+    color: var(--md-secondary) !important;
+}
+
+.theme-material-web .text-muted,
+html[data-theme="material-web"] .text-muted {
+    color: var(--md-on-surface-variant) !important;
+}
+
+.theme-material-web .bg-primary,
+html[data-theme="material-web"] .bg-primary {
+    background: var(--md-primary) !important;
+    color: var(--md-on-primary) !important;
+}
+
+.theme-material-web .bg-secondary,
+html[data-theme="material-web"] .bg-secondary {
+    background: var(--md-secondary-container) !important;
+    color: var(--md-on-secondary-container) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   END OF MATERIAL WEB THEME
+   ═══════════════════════════════════════════════════════════════════════════ */

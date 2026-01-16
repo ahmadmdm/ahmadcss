@@ -276,6 +276,8 @@ body.ahmadcss-theme-silver select {
     background: rgba(255, 255, 255, 0.85) !important;
     border: 1px solid rgba(148, 163, 184, 0.4) !important;
     border-radius: 10px !important;
+    padding: 6px 12px !important;
+    min-height: 32px !important;
     color: #1e293b !important;
     transition: all 0.25s ease !important;
 }

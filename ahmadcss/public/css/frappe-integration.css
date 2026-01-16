@@ -1,0 +1,758 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   AhmadCSS - Frappe Integration Layer v3.0
+   Enhances Frappe Desk UI with modern styling
+   
+   🎯 This file applies design tokens to Frappe components
+   - Works WITH Frappe's existing layout
+   - Applies modern glassmorphism effects
+   - Maintains full compatibility
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 FALLBACK VARIABLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+    
+    /* Glass Effects */
+    --glass-bg-solid: rgba(255, 255, 255, 0.95);
+    --glass-blur: 20px;
+    --glass-border-subtle: rgba(0, 0, 0, 0.06);
+    --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+    
+    /* Transitions */
+    --transition-fast: 100ms ease;
+    --transition-base: 200ms ease;
+    
+    /* Typography */
+    --font-family: 'Cairo', 'Inter', system-ui, sans-serif;
+    --text-sm: 0.8125rem;
+    --text-base: 0.875rem;
+    --text-lg: 1rem;
+    --text-xl: 1.125rem;
+    --text-primary: #18181b;
+    --text-secondary: #52525b;
+    
+    /* Neutrals */
+    --neutral-0: #ffffff;
+    --neutral-50: #fafafa;
+    --neutral-100: #f4f4f5;
+    --neutral-150: #ebebec;
+    --neutral-200: #e4e4e7;
+    --neutral-300: #d4d4d8;
+    --neutral-400: #a1a1aa;
+    
+    /* Accent */
+    --accent-50: #eef2ff;
+    --accent-100: #e0e7ff;
+    --accent-200: #c7d2fe;
+    --accent-600: #4f46e5;
+    --accent-700: #4338ca;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📐 LAYOUT FIXES - Proper Centering
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* IMPORTANT: Override any margin-left from erp-shell.css */
+/* The shell elements don't exist in Frappe, so don't apply their margins */
+
+body .shell__content,
+body .shell__body,
+body .shell-content,
+body .main-section,
+body .page-wrapper,
+body #body,
+body #page-container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Fix main content area centering */
+.main-section {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Ensure page body is properly centered */
+.page-container .page-body {
+    max-width: 100%;
+    padding: 0 16px;
+}
+
+/* Fix layout-main-section width */
+.layout-main-section-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.layout-main-section {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📂 FRAPPE WORKSPACE SIDEBAR STYLING
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Style Frappe's workspace sidebar instead of hiding it */
+.desk-sidebar {
+    background: var(--glass-bg-solid, rgba(255,255,255,0.95)) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid var(--glass-border-subtle, rgba(0,0,0,0.06)) !important;
+}
+
+.desk-sidebar .sidebar-menu .sidebar-item {
+    border-radius: 8px;
+    margin: 2px 8px;
+    transition: all 0.2s ease;
+}
+
+.desk-sidebar .sidebar-menu .sidebar-item:hover {
+    background: var(--accent-50, #eef2ff) !important;
+}
+
+.desk-sidebar .sidebar-menu .sidebar-item.active {
+    background: var(--accent-100, #e0e7ff) !important;
+    color: var(--accent-700, #4338ca) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📄 PAGE CONTAINER ADJUSTMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.page-container {
+    background: transparent !important;
+}
+
+.container.page-body {
+    padding: 16px 24px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎴 PAGE HEAD STYLING
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.page-head {
+    background: var(--glass-bg-solid) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 1px solid var(--glass-border-subtle);
+    padding: var(--space-3) var(--space-6);
+    margin-bottom: var(--space-4);
+    border-radius: var(--radius-lg);
+}
+
+.page-head .page-title {
+    font-family: var(--font-family);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.page-head .page-title .title-text {
+    color: inherit;
+}
+
+/* Page Actions */
+.page-head .page-actions {
+    gap: var(--space-2);
+}
+
+.page-head .btn-primary-dark {
+    background: var(--accent-600) !important;
+    border-color: var(--accent-600) !important;
+    color: white !important;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    padding: var(--space-2) var(--space-4);
+    transition: all var(--transition-fast);
+}
+
+.page-head .btn-primary-dark:hover {
+    background: var(--accent-700) !important;
+    border-color: var(--accent-700) !important;
+}
+
+.page-head .btn-default {
+    background: var(--neutral-0) !important;
+    border-color: var(--neutral-300) !important;
+    color: var(--text-primary) !important;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.page-head .btn-default:hover {
+    background: var(--neutral-50) !important;
+    border-color: var(--neutral-400) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📊 WORKSPACE STYLING
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.workspace-container {
+    padding: var(--space-6);
+}
+
+.widget-group {
+    background: var(--glass-bg-solid);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    margin-bottom: var(--space-4);
+}
+
+.widget-group-head {
+    font-family: var(--font-family);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--neutral-150);
+}
+
+/* Shortcut Cards */
+.shortcut-widget-box {
+    background: var(--neutral-50) !important;
+    border: 1px solid var(--neutral-200) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: var(--space-4) !important;
+    transition: all var(--transition-base);
+}
+
+.shortcut-widget-box:hover {
+    background: var(--accent-50) !important;
+    border-color: var(--accent-200) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--glass-shadow);
+}
+
+.shortcut-widget-box .widget-title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Number Cards */
+.number-widget-box {
+    background: var(--glass-bg-solid) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-xl) !important;
+    padding: var(--space-5) !important;
+}
+
+.number-widget-box .widget-title {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.number-widget-box .number-card-value {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📋 LIST VIEW STYLING
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.frappe-list {
+    background: var(--glass-bg-solid);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.list-row-head {
+    background: var(--neutral-50) !important;
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.list-row-head .list-header-subject {
+    font-family: var(--font-family);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.list-row {
+    border-bottom: 1px solid var(--neutral-100);
+    transition: background var(--transition-fast);
+}
+
+.list-row:hover {
+    background: var(--neutral-50);
+}
+
+.list-row:last-child {
+    border-bottom: none;
+}
+
+.list-row .list-row-container {
+    padding: var(--space-3) var(--space-4);
+}
+
+.level-left .list-subject {
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.level-left .list-subject a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.level-left .list-subject a:hover {
+    color: var(--accent-600);
+}
+
+/* List Sidebar Filters */
+.list-sidebar {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📝 FORM VIEW STYLING
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.form-page {
+    background: transparent;
+}
+
+.form-layout {
+    background: var(--glass-bg-solid);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+}
+
+.section-head {
+    font-family: var(--font-family);
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: var(--text-primary);
+    padding-bottom: var(--space-3);
+    margin-bottom: var(--space-4);
+    border-bottom: 1px solid var(--neutral-150);
+}
+
+.form-section {
+    margin-bottom: var(--space-6);
+}
+
+/* Form Controls */
+.form-control {
+    font-family: var(--font-family);
+    font-size: var(--text-sm);
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+    transition: all var(--transition-base);
+}
+
+.form-control:focus {
+    border-color: var(--accent-400);
+    box-shadow: 0 0 0 3px var(--accent-100);
+}
+
+.frappe-control .label-area {
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-1);
+}
+
+.frappe-control[data-fieldtype="Check"] .label-area {
+    color: var(--text-primary);
+}
+
+/* Link Field */
+.link-field .awesomplete {
+    width: 100%;
+}
+
+.awesomplete > ul {
+    background: var(--neutral-0);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+    padding: var(--space-2);
+}
+
+.awesomplete > ul > li {
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+}
+
+.awesomplete > ul > li:hover,
+.awesomplete > ul > li[aria-selected="true"] {
+    background: var(--accent-50);
+    color: var(--accent-700);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎯 INDICATORS & STATUS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.indicator-pill {
+    font-family: var(--font-family);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+}
+
+.indicator-pill.green,
+.indicator-pill.darkgreen {
+    background: var(--status-success-100);
+    color: var(--status-success-700);
+}
+
+.indicator-pill.blue,
+.indicator-pill.lightblue {
+    background: var(--status-info-100);
+    color: var(--status-info-600);
+}
+
+.indicator-pill.orange {
+    background: var(--status-warning-100);
+    color: var(--status-warning-600);
+}
+
+.indicator-pill.red {
+    background: var(--status-danger-100);
+    color: var(--status-danger-600);
+}
+
+.indicator-pill.gray,
+.indicator-pill.grey {
+    background: var(--neutral-100);
+    color: var(--neutral-600);
+}
+
+.indicator-pill.purple {
+    background: var(--accent-100);
+    color: var(--accent-700);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   💬 MODALS & DIALOGS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.modal-content {
+    background: var(--neutral-0);
+    border: none;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--glass-shadow);
+}
+
+.modal-header {
+    background: var(--neutral-50);
+    border-bottom: 1px solid var(--neutral-150);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    padding: var(--space-4) var(--space-5);
+}
+
+.modal-title {
+    font-family: var(--font-family);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: var(--space-5);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--neutral-150);
+    padding: var(--space-4) var(--space-5);
+    gap: var(--space-2);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📊 REPORT VIEW
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.report-wrapper {
+    background: var(--glass-bg-solid);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+}
+
+.report-wrapper .dt-header {
+    background: var(--neutral-50);
+}
+
+.report-wrapper .dt-cell__content {
+    font-family: var(--font-family);
+    font-size: var(--text-sm);
+}
+
+.report-wrapper .dt-cell--header .dt-cell__content {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔍 SEARCH MODAL (Frappe Awesomebar)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.search-dialog .modal-content {
+    background: var(--glass-bg-solid);
+    backdrop-filter: blur(calc(var(--glass-blur) * 2));
+    -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 2));
+}
+
+.search-dialog .search-box {
+    border: none;
+    border-bottom: 1px solid var(--neutral-200);
+    border-radius: 0;
+}
+
+.search-dialog .search-box input {
+    font-family: var(--font-family);
+    font-size: var(--text-lg);
+    padding: var(--space-4);
+}
+
+.search-dialog .search-results {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.search-dialog .search-result {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    margin: var(--space-1);
+    transition: background var(--transition-fast);
+}
+
+.search-dialog .search-result:hover,
+.search-dialog .search-result.selected {
+    background: var(--accent-50);
+}
+
+.search-dialog .search-result .result-title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.search-dialog .search-result .result-subtext {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 TIMELINE & COMMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.timeline {
+    border-left: 2px solid var(--neutral-200);
+    margin-left: var(--space-4);
+    padding-left: var(--space-5);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: var(--space-5);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--space-5) - 5px);
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    background: var(--neutral-0);
+    border: 2px solid var(--accent-400);
+    border-radius: 50%;
+}
+
+.timeline-item .timeline-content {
+    background: var(--neutral-50);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3) var(--space-4);
+}
+
+.timeline-item .timeline-head {
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.timeline-item .timeline-message {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📅 DATE PICKER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.datepicker {
+    font-family: var(--font-family);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+}
+
+.datepicker--nav {
+    border-bottom: 1px solid var(--neutral-150);
+    padding: var(--space-2);
+}
+
+.datepicker--cell.-selected- {
+    background: var(--accent-500);
+    border-radius: var(--radius-md);
+}
+
+.datepicker--cell.-current- {
+    color: var(--accent-600);
+}
+
+.datepicker--cell:hover {
+    background: var(--accent-50);
+    border-radius: var(--radius-md);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🔔 NOTIFICATIONS PANEL
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.notifications-list {
+    background: var(--neutral-0);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--glass-shadow);
+}
+
+.notifications-list .notification-item {
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--neutral-100);
+    transition: background var(--transition-fast);
+}
+
+.notifications-list .notification-item:hover {
+    background: var(--neutral-50);
+}
+
+.notifications-list .notification-item:last-child {
+    border-bottom: none;
+}
+
+.notifications-list .notification-subject {
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.notifications-list .notification-body {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🌐 RTL SUPPORT FOR FRAPPE COMPONENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+[dir="rtl"] .main-section {
+    margin-left: 0;
+    margin-right: var(--shell-sidebar-width);
+}
+
+[dir="rtl"] body.erp-shell.erp-layout--sidebar-collapsed .main-section {
+    margin-right: var(--shell-sidebar-collapsed);
+}
+
+@media (max-width: 1024px) {
+    [dir="rtl"] .main-section {
+        margin-right: 0;
+    }
+}
+
+[dir="rtl"] .timeline {
+    border-left: none;
+    border-right: 2px solid var(--neutral-200);
+    margin-left: 0;
+    margin-right: var(--space-4);
+    padding-left: 0;
+    padding-right: var(--space-5);
+}
+
+[dir="rtl"] .timeline-item::before {
+    left: auto;
+    right: calc(-1 * var(--space-5) - 5px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎭 DARK MODE ADJUSTMENTS FOR FRAPPE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .frappe-list,
+[data-theme="dark"] .form-layout,
+[data-theme="dark"] .report-wrapper,
+[data-theme="dark"] .widget-group {
+    background: var(--glass-bg);
+}
+
+[data-theme="dark"] .list-row-head,
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .section-head {
+    background: var(--neutral-100);
+}
+
+[data-theme="dark"] .form-control {
+    background: var(--neutral-100);
+    border-color: var(--neutral-300);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .modal-content,
+[data-theme="dark"] .awesomplete > ul,
+[data-theme="dark"] .notifications-list {
+    background: var(--neutral-50);
+}
