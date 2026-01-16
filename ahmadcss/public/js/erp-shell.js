@@ -1145,13 +1145,79 @@
 
     // Initialize when DOM is ready
     function initializeShell() {
-        Shell.init();
-        Favorites.init();
-        RecentActivity.init();
+        // Check if we should initialize the full shell or just enhancements
+        const hasShellStructure = document.querySelector('.shell-sidebar') || 
+                                   document.querySelector('.erp-shell');
         
-        // Initialize workspace content if we're in a workspace
-        if (Shell.state.currentWorkspace && Shell.state.currentWorkspace !== 'home') {
-            WorkspaceContent.init(Shell.state.currentWorkspace);
+        if (hasShellStructure) {
+            // Full shell mode - all components
+            Shell.init();
+            Favorites.init();
+            RecentActivity.init();
+            
+            // Initialize workspace content if we're in a workspace
+            if (Shell.state.currentWorkspace && Shell.state.currentWorkspace !== 'home') {
+                WorkspaceContent.init(Shell.state.currentWorkspace);
+            }
+        } else {
+            // Enhancement mode - just enhance Frappe's existing UI
+            enhanceFrappeUI();
+        }
+    }
+
+    // Enhance Frappe's existing UI without creating new shell
+    function enhanceFrappeUI() {
+        // Add body class for styling
+        document.body.classList.add('ahmadcss-enhanced');
+        
+        // Enhance sidebar styling
+        enhanceSidebar();
+        
+        // Enhance navbar
+        enhanceNavbar();
+        
+        // Enhance cards
+        enhanceCards();
+        
+        // Log success
+        if (window.frappe?.boot?.developer_mode) {
+            console.log('✨ AhmadCSS UI enhancements applied');
+        }
+    }
+
+    function enhanceSidebar() {
+        const sidebar = document.querySelector('.desk-sidebar, .layout-side-section');
+        if (sidebar) {
+            sidebar.classList.add('ahmadcss-sidebar');
+            
+            // Enhance sidebar items
+            sidebar.querySelectorAll('.sidebar-item, .standard-sidebar-item').forEach(item => {
+                item.classList.add('ahmadcss-sidebar-item');
+            });
+        }
+    }
+
+    function enhanceNavbar() {
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            navbar.classList.add('ahmadcss-navbar');
+        }
+    }
+
+    function enhanceCards() {
+        document.querySelectorAll('.frappe-card, .form-layout').forEach(card => {
+            card.classList.add('ahmadcss-card');
+        });
+        
+        // Re-run on page changes
+        if (window.frappe?.router) {
+            frappe.router.on('change', () => {
+                setTimeout(() => {
+                    document.querySelectorAll('.frappe-card, .form-layout').forEach(card => {
+                        card.classList.add('ahmadcss-card');
+                    });
+                }, 200);
+            });
         }
     }
 

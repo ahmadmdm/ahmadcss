@@ -65,6 +65,59 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   ✨ AHMADCSS ENHANCEMENT CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Enhanced body */
+body.ahmadcss-enhanced {
+    font-family: var(--font-family);
+}
+
+/* Enhanced Sidebar */
+.ahmadcss-sidebar {
+    background: var(--glass-bg-solid) !important;
+    backdrop-filter: blur(var(--glass-blur)) !important;
+    -webkit-backdrop-filter: blur(var(--glass-blur)) !important;
+    border-right: 1px solid var(--glass-border-subtle) !important;
+}
+
+.ahmadcss-sidebar-item {
+    border-radius: var(--radius-md) !important;
+    margin: 2px 8px !important;
+    padding: 8px 12px !important;
+    transition: all var(--transition-base) !important;
+}
+
+.ahmadcss-sidebar-item:hover {
+    background: var(--accent-50) !important;
+}
+
+.ahmadcss-sidebar-item.selected,
+.ahmadcss-sidebar-item.active {
+    background: var(--accent-100) !important;
+    color: var(--accent-700) !important;
+}
+
+/* Enhanced Navbar */
+.ahmadcss-navbar {
+    background: var(--glass-bg-solid) !important;
+    backdrop-filter: blur(var(--glass-blur)) !important;
+    -webkit-backdrop-filter: blur(var(--glass-blur)) !important;
+    border-bottom: 1px solid var(--glass-border-subtle) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Enhanced Cards */
+.ahmadcss-card {
+    background: var(--glass-bg-solid) !important;
+    backdrop-filter: blur(var(--glass-blur)) !important;
+    -webkit-backdrop-filter: blur(var(--glass-blur)) !important;
+    border: 1px solid var(--glass-border-subtle) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--glass-shadow) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
    📐 LAYOUT FIXES - Proper Centering
    ═══════════════════════════════════════════════════════════════════════════ */
 
@@ -113,26 +166,102 @@ body #page-container {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 /* Style Frappe's workspace sidebar instead of hiding it */
-.desk-sidebar {
+.desk-sidebar,
+.layout-side-section {
     background: var(--glass-bg-solid, rgba(255,255,255,0.95)) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-right: 1px solid var(--glass-border-subtle, rgba(0,0,0,0.06)) !important;
 }
 
-.desk-sidebar .sidebar-menu .sidebar-item {
+.desk-sidebar .sidebar-menu .sidebar-item,
+.layout-side-section .sidebar-menu a,
+.standard-sidebar-item {
     border-radius: 8px;
     margin: 2px 8px;
+    padding: 8px 12px !important;
     transition: all 0.2s ease;
 }
 
-.desk-sidebar .sidebar-menu .sidebar-item:hover {
+.desk-sidebar .sidebar-menu .sidebar-item:hover,
+.layout-side-section .sidebar-menu a:hover,
+.standard-sidebar-item:hover {
     background: var(--accent-50, #eef2ff) !important;
 }
 
-.desk-sidebar .sidebar-menu .sidebar-item.active {
+.desk-sidebar .sidebar-menu .sidebar-item.active,
+.layout-side-section .sidebar-menu a.active,
+.standard-sidebar-item.selected {
     background: var(--accent-100, #e0e7ff) !important;
     color: var(--accent-700, #4338ca) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🧭 FRAPPE NAVBAR STYLING
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.navbar {
+    background: var(--glass-bg-solid, rgba(255,255,255,0.95)) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid var(--glass-border-subtle, rgba(0,0,0,0.06)) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-home {
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+.navbar .nav-link {
+    font-family: var(--font-family);
+    color: var(--text-primary, #18181b) !important;
+    border-radius: var(--radius-md, 8px);
+    padding: 6px 12px !important;
+    transition: all 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+    background: var(--accent-50, #eef2ff) !important;
+}
+
+.navbar .dropdown-menu {
+    background: var(--glass-bg-solid, rgba(255,255,255,0.98)) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border-subtle, rgba(0,0,0,0.06)) !important;
+    border-radius: var(--radius-lg, 12px) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1) !important;
+    padding: 8px !important;
+}
+
+.navbar .dropdown-item {
+    font-family: var(--font-family);
+    border-radius: var(--radius-md, 8px);
+    padding: 8px 12px !important;
+    margin: 2px 0;
+    transition: all 0.2s ease;
+}
+
+.navbar .dropdown-item:hover {
+    background: var(--accent-50, #eef2ff) !important;
+}
+
+/* Search Bar in Navbar */
+.navbar .search-bar,
+.navbar #navbar-search {
+    background: var(--neutral-100, #f4f4f5) !important;
+    border: 1px solid var(--neutral-200, #e4e4e7) !important;
+    border-radius: var(--radius-full, 9999px) !important;
+    font-family: var(--font-family);
+}
+
+.navbar .search-bar:focus,
+.navbar #navbar-search:focus {
+    background: var(--neutral-0, #ffffff) !important;
+    border-color: var(--accent-300, #a5b4fc) !important;
+    box-shadow: 0 0 0 3px var(--accent-100, rgba(79, 70, 229, 0.1)) !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -699,18 +828,15 @@ body #page-container {
    🌐 RTL SUPPORT FOR FRAPPE COMPONENTS
    ═══════════════════════════════════════════════════════════════════════════ */
 
+/* RTL margins are handled by Frappe - just ensure proper reset */
 [dir="rtl"] .main-section {
-    margin-left: 0;
-    margin-right: var(--shell-sidebar-width);
-}
-
-[dir="rtl"] body.erp-shell.erp-layout--sidebar-collapsed .main-section {
-    margin-right: var(--shell-sidebar-collapsed);
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 @media (max-width: 1024px) {
     [dir="rtl"] .main-section {
-        margin-right: 0;
+        margin-right: 0 !important;
     }
 }
 

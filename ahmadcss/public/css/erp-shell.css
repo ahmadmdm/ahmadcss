@@ -204,19 +204,20 @@ body.erp-shell::before {
    📐 SHELL LAYOUT STRUCTURE
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.shell {
+/* Shell structure - only applies when using full shell mode */
+body.erp-shell .shell {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-.shell__body {
+body.erp-shell .shell__body {
     display: flex;
     flex: 1;
     padding-top: var(--shell-header-height);
 }
 
-.shell__content {
+body.erp-shell .shell__content {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -225,7 +226,7 @@ body.erp-shell::before {
     transition: margin-left var(--transition-smooth);
 }
 
-.shell--collapsed .shell__content {
+body.erp-shell.shell--collapsed .shell__content {
     margin-left: var(--shell-sidebar-collapsed);
 }
 
@@ -233,7 +234,7 @@ body.erp-shell::before {
    🔝 HEADER (SYSTEM-LEVEL - IMMUTABLE)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.shell-header {
+body.erp-shell .shell-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -251,14 +252,14 @@ body.erp-shell::before {
 }
 
 /* Header Left */
-.shell-header__left {
+body.erp-shell .shell-header__left {
     display: flex;
     align-items: center;
     gap: var(--space-3);
     min-width: 180px;
 }
 
-.shell-header__toggle {
+body.erp-shell .shell-header__toggle {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -272,12 +273,12 @@ body.erp-shell::before {
     transition: all var(--transition-fast);
 }
 
-.shell-header__toggle:hover {
+body.erp-shell .shell-header__toggle:hover {
     background: var(--neutral-100);
     color: var(--text-primary);
 }
 
-.shell-header__brand {
+body.erp-shell .shell-header__brand {
     display: flex;
     align-items: center;
     gap: var(--space-2);
@@ -285,20 +286,20 @@ body.erp-shell::before {
     color: inherit;
 }
 
-.shell-header__logo {
+body.erp-shell .shell-header__logo {
     width: 28px;
     height: 28px;
     border-radius: var(--radius-sm);
 }
 
-.shell-header__title {
+body.erp-shell .shell-header__title {
     font-weight: 600;
     font-size: var(--text-md);
     color: var(--text-primary);
 }
 
 /* Header Center - Global Search */
-.shell-header__center {
+body.erp-shell .shell-header__center {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -306,12 +307,12 @@ body.erp-shell::before {
     margin: 0 auto;
 }
 
-.shell-search {
+body.erp-shell .shell-search {
     position: relative;
     width: 100%;
 }
 
-.shell-search__input {
+body.erp-shell .shell-search__input {
     width: 100%;
     height: 38px;
     padding: 0 var(--space-4) 0 40px;
@@ -324,18 +325,18 @@ body.erp-shell::before {
     transition: all var(--transition-base);
 }
 
-.shell-search__input::placeholder {
+body.erp-shell .shell-search__input::placeholder {
     color: var(--text-muted);
 }
 
-.shell-search__input:focus {
+body.erp-shell .shell-search__input:focus {
     outline: none;
     background: var(--neutral-0);
     border-color: var(--accent-400);
     box-shadow: 0 0 0 3px var(--accent-100);
 }
 
-.shell-search__icon {
+body.erp-shell .shell-search__icon {
     position: absolute;
     left: var(--space-3);
     top: 50%;
@@ -346,7 +347,7 @@ body.erp-shell::before {
     pointer-events: none;
 }
 
-.shell-search__kbd {
+body.erp-shell .shell-search__kbd {
     position: absolute;
     right: var(--space-3);
     top: 50%;
@@ -363,7 +364,7 @@ body.erp-shell::before {
 }
 
 /* Header Right */
-.shell-header__right {
+body.erp-shell .shell-header__right {
     display: flex;
     align-items: center;
     gap: var(--space-2);
@@ -371,7 +372,7 @@ body.erp-shell::before {
     justify-content: flex-end;
 }
 
-.shell-header__action {
+body.erp-shell .shell-header__action {
     position: relative;
     display: flex;
     align-items: center;
@@ -386,17 +387,17 @@ body.erp-shell::before {
     transition: all var(--transition-fast);
 }
 
-.shell-header__action:hover {
+body.erp-shell .shell-header__action:hover {
     background: var(--neutral-100);
     color: var(--text-primary);
 }
 
-.shell-header__action svg {
+body.erp-shell .shell-header__action svg {
     width: 20px;
     height: 20px;
 }
 
-.shell-header__badge {
+body.erp-shell .shell-header__badge {
     position: absolute;
     top: 4px;
     right: 4px;
@@ -414,7 +415,7 @@ body.erp-shell::before {
 }
 
 /* User Menu */
-.shell-header__user {
+body.erp-shell .shell-header__user {
     display: flex;
     align-items: center;
     gap: var(--space-2);
@@ -426,11 +427,11 @@ body.erp-shell::before {
     transition: all var(--transition-fast);
 }
 
-.shell-header__user:hover {
+body.erp-shell .shell-header__user:hover {
     background: var(--neutral-100);
 }
 
-.shell-header__avatar {
+body.erp-shell .shell-header__avatar {
     width: 32px;
     height: 32px;
     border-radius: var(--radius-full);
@@ -444,13 +445,13 @@ body.erp-shell::before {
     overflow: hidden;
 }
 
-.shell-header__avatar img {
+body.erp-shell .shell-header__avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.shell-header__username {
+body.erp-shell .shell-header__username {
     font-size: var(--text-sm);
     font-weight: 500;
     color: var(--text-primary);
@@ -464,7 +465,7 @@ body.erp-shell::before {
    📂 PRIMARY SIDEBAR (WORKSPACE NAVIGATION - IMMUTABLE)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.shell-sidebar {
+body.erp-shell .shell-sidebar {
     position: fixed;
     top: var(--shell-header-height);
     left: 0;
@@ -482,49 +483,49 @@ body.erp-shell::before {
 }
 
 /* Collapsed State */
-.shell-sidebar--collapsed {
+body.erp-shell .shell-sidebar--collapsed {
     width: var(--shell-sidebar-collapsed);
 }
 
-.shell-sidebar--collapsed .shell-sidebar__label,
-.shell-sidebar--collapsed .shell-sidebar__section-title {
+body.erp-shell .shell-sidebar--collapsed .shell-sidebar__label,
+body.erp-shell .shell-sidebar--collapsed .shell-sidebar__section-title {
     opacity: 0;
     visibility: hidden;
     width: 0;
 }
 
-.shell-sidebar--collapsed .shell-sidebar__item {
+body.erp-shell .shell-sidebar--collapsed .shell-sidebar__item {
     justify-content: center;
     padding: var(--space-3);
 }
 
-.shell-sidebar--collapsed .shell-sidebar__icon {
+body.erp-shell .shell-sidebar--collapsed .shell-sidebar__icon {
     margin-right: 0;
 }
 
 /* Sidebar Content */
-.shell-sidebar__content {
+body.erp-shell .shell-sidebar__content {
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
     padding: var(--space-4) 0;
 }
 
-.shell-sidebar__content::-webkit-scrollbar {
+body.erp-shell .shell-sidebar__content::-webkit-scrollbar {
     width: 4px;
 }
 
-.shell-sidebar__content::-webkit-scrollbar-thumb {
+body.erp-shell .shell-sidebar__content::-webkit-scrollbar-thumb {
     background: var(--neutral-300);
     border-radius: var(--radius-full);
 }
 
 /* Sidebar Section */
-.shell-sidebar__section {
+body.erp-shell .shell-sidebar__section {
     margin-bottom: var(--space-2);
 }
 
-.shell-sidebar__section-title {
+body.erp-shell .shell-sidebar__section-title {
     padding: var(--space-2) var(--space-4);
     font-size: 11px;
     font-weight: 600;
@@ -536,13 +537,13 @@ body.erp-shell::before {
 }
 
 /* Sidebar Navigation */
-.shell-sidebar__nav {
+body.erp-shell .shell-sidebar__nav {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.shell-sidebar__item {
+body.erp-shell .shell-sidebar__item {
     display: flex;
     align-items: center;
     gap: var(--space-3);
@@ -559,17 +560,17 @@ body.erp-shell::before {
     position: relative;
 }
 
-.shell-sidebar__item:hover {
+body.erp-shell .shell-sidebar__item:hover {
     background: var(--neutral-100);
     color: var(--text-primary);
 }
 
-.shell-sidebar__item--active {
+body.erp-shell .shell-sidebar__item--active {
     background: var(--accent-50) !important;
     color: var(--accent-700) !important;
 }
 
-.shell-sidebar__item--active::before {
+body.erp-shell .shell-sidebar__item--active::before {
     content: '';
     position: absolute;
     left: 0;
@@ -581,14 +582,14 @@ body.erp-shell::before {
     border-radius: 0 var(--radius-full) var(--radius-full) 0;
 }
 
-.shell-sidebar__icon {
+body.erp-shell .shell-sidebar__icon {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
     transition: margin var(--transition-smooth);
 }
 
-.shell-sidebar__label {
+body.erp-shell .shell-sidebar__label {
     flex: 1;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -599,13 +600,13 @@ body.erp-shell::before {
    📄 MAIN CONTENT AREA
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.shell-main {
+body.erp-shell .shell-main {
     flex: 1;
     padding: var(--space-6);
     overflow-y: auto;
 }
 
-.shell-main__container {
+body.erp-shell .shell-main__container {
     max-width: var(--shell-content-max-width);
     margin: 0 auto;
 }
@@ -614,7 +615,7 @@ body.erp-shell::before {
    🦶 FOOTER (GLOBAL - MINIMAL)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.shell-footer {
+body.erp-shell .shell-footer {
     height: var(--shell-footer-height);
     display: flex;
     align-items: center;
@@ -627,7 +628,7 @@ body.erp-shell::before {
     color: var(--text-muted);
 }
 
-.shell-footer__divider {
+body.erp-shell .shell-footer__divider {
     color: var(--neutral-300);
 }
 
