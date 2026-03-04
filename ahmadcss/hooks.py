@@ -14,7 +14,7 @@ app_license = "mit"
 add_to_apps_screen = [
 	{
 		"name": "ahmadcss",
-		"logo": "/assets/ahmadcss/images/ahmad-logo.svg",
+		"logo": "/assets/ahmadcss/images/ideaorbit-logo.svg",
 		"title": "AhmadCSS Settings",
 		"route": "/app/ahmadcss-settings",
 	}

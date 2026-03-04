@@ -14,7 +14,14 @@
     "type": "git",
     "url": "git+https://github.com/ahmadmdm/ahmadcss.git"
   },
-  "keywords": ["frappe", "erpnext", "theme", "glassmorphism", "material-design", "css"],
+  "keywords": [
+    "frappe",
+    "erpnext",
+    "theme",
+    "glassmorphism",
+    "material-design",
+    "css"
+  ],
   "author": "Ahmad Dev",
   "license": "MIT",
   "type": "commonjs",
@@ -27,6 +34,6 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "sass": "^1.69.0"
+    "sass": "^1.97.3"
   }
 }

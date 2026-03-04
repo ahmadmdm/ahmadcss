@@ -34,11 +34,20 @@ body::before {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(ellipse 80% 50% at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(147, 51, 234, 0.25) 0%, transparent 50%),
-        radial-gradient(ellipse 50% 30% at 50% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
+        radial-gradient(circle at 15% 50%, rgba(5, 150, 105, 0.4), transparent 35%),
+        radial-gradient(circle at 85% 30%, rgba(13, 148, 136, 0.35), transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.3), transparent 35%),
+        radial-gradient(circle at 50% 50%, rgba(52, 211, 153, 0.15), transparent 60%);
+    background-size: 250% 250%;
+    animation: gradientMesh 18s ease infinite;
     pointer-events: none;
     z-index: -1;
+}
+
+@keyframes gradientMesh {
+    0% { background-position: 0% 50%; opacity: 0.8; }
+    50% { background-position: 100% 50%; opacity: 1; }
+    100% { background-position: 0% 50%; opacity: 0.8; }
 }
 
 // Links
@@ -52,7 +61,7 @@ a:not(.btn):not(.nav-link):not(.dropdown-item) {
 
 // Main structure
 .main-section {
-    padding-top: var(--navbar-height) !important;
+    padding-top: calc(var(--navbar-height) + 32px) !important;
     min-height: 100vh;
     background: transparent !important;
 }
@@ -84,5 +93,115 @@ a:not(.btn):not(.nav-link):not(.dropdown-item) {
     
     &:hover {
         background: linear-gradient(180deg, rgba($primary-600, 0.5) 0%, rgba($secondary-500, 0.5) 100%);
+    }
+}
+
+// General Breadcrumbs & Workspace Routing
+.page-head {
+    .breadcrumb-item, .breadcrumb-item a, .breadcrumb-item.active {
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-weight: 500 !important;
+        
+        &:hover {
+            color: #ffffff !important;
+        }
+    }
+    
+    .breadcrumb-item + .breadcrumb-item::before,
+    .breadcrumb-item::after {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+}
+
+// Any top bar breadcrumb links
+ul.breadcrumb {
+    &, *, a, li {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    li.active {
+        color: #ffffff !important;
+    }
+}
+
+// Brutal force breadcrumb styles
+#page-desk, [data-page-route="Workspaces"] {
+    .page-title {
+        .title-text, .text-muted, svg, path {
+            color: #ffffff !important;
+            fill: #ffffff !important;
+            stroke: #ffffff !important;
+        }
+    }
+}
+
+.custom-breadcrumbs {
+    *, a, span, li, ul, div, svg {
+        color: #ffffff !important;
+        fill: #ffffff !important;
+    }
+}
+
+.navbar .text-gray-500, .navbar .text-gray-600, .navbar .text-gray-700, .navbar .text-muted {
+    color: #ffffff !important;
+}
+
+[data-page-route] .page-head .title-area .breadcrumb {
+    &, *, a, li {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+}
+
+// More brutal force for the layout section title
+.layout-side-section ~ .flex-1 .title-area,
+.page-title .title-area,
+.standard-sidebar-section ~ * .title-area,
+.navbar-breadcrumbs ul,
+.navbar-breadcrumbs li {
+    &, *, &::after, &::before {
+        color: #ffffff !important;
+        fill: #ffffff !important;
+    }
+}
+
+// Fix Page Title (Title Text) visibility when not hovering
+.page-title {
+    .title-text {
+        &, *, h1, h2, h3, h4, h5, h6, span {
+            color: #1e293b !important; // Dark clear text 
+        }
+    }
+}
+
+// Ensure the page title in standard views doesn't inherit the navbar white text accidently
+.page-head .title-text,
+.page-head .title-area h3,
+.page-head .title-area h1 {
+    color: #1e293b !important;
+}
+
+// Fix badge/status pill text inside the title area
+.page-title .title-area .badge,
+.page-title .title-area .indicator-pill {
+    color: #1e293b !important;
+}
+
+// Overwrite the previous brute force that might have turned the title white
+#page-desk, [data-page-route="Workspaces"] {
+    .page-title {
+        .title-text {
+            color: #1e293b !important;
+            fill: #1e293b !important;
+            stroke: none !important;
+        }
+    }
+}
+
+.layout-side-section ~ .flex-1 .title-area .title-text,
+.page-title .title-area .title-text,
+.standard-sidebar-section ~ * .title-area .title-text {
+    &, *, &::after, &::before {
+        color: #1e293b !important;
+        fill: #1e293b !important;
     }
 }
