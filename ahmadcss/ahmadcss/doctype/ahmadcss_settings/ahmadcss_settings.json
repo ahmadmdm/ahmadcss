@@ -5,236 +5,363 @@
     "doctype": "DocType",
     "engine": "InnoDB",
     "field_order": [
-        "theme_section",
+        "general_section",
         "enable_theme",
         "color_theme",
         "dark_mode",
-        "primary_color",
-        "secondary_color",
-        "gradient_start",
-        "gradient_end",
-        "column_break_1",
+        "column_break_general",
+        "enable_animations",
+        "animation_speed",
+        "header_section",
+        "header_style",
+        "header_gradient_start",
+        "header_gradient_end",
+        "column_break_header",
+        "header_blur",
+        "show_custom_logo",
+        "custom_logo",
+        "body_section",
+        "body_gradient_start",
+        "body_gradient_end",
+        "body_gradient_middle",
+        "column_break_body",
         "enable_glassmorphism",
         "glass_blur",
         "glass_opacity",
-        "enable_animations",
-        "animation_speed",
+        "sidebar_section",
+        "sidebar_style",
+        "sidebar_gradient_start",
+        "sidebar_gradient_end",
+        "column_break_sidebar",
+        "sidebar_width",
+        "sidebar_blur",
+        "sidebar_position",
+        "footer_section",
+        "footer_style",
+        "footer_gradient_start",
+        "footer_gradient_end",
+        "column_break_footer",
+        "footer_blur",
+        "show_footer",
         "typography_section",
         "font_family",
         "font_size_base",
-        "column_break_2",
+        "column_break_typography",
         "arabic_font",
         "enable_custom_fonts",
-        "navbar_section",
-        "navbar_style",
-        "navbar_blur",
-        "column_break_3",
-        "show_custom_logo",
-        "custom_logo",
-        "sidebar_section",
-        "sidebar_style",
-        "sidebar_width",
-        "column_break_4",
-        "sidebar_blur",
-        "sidebar_position",
+        "colors_section",
+        "primary_color",
+        "secondary_color",
+        "column_break_colors",
+        "success_color",
+        "warning_color",
+        "error_color",
         "advanced_section",
         "custom_css",
         "custom_js"
     ],
     "fields": [
         {
-            "fieldname": "theme_section",
+            "fieldname": "general_section",
             "fieldtype": "Section Break",
-            "label": "Theme Settings"
+            "label": "⚙️ General Settings | الإعدادات العامة"
         },
         {
             "default": "1",
             "fieldname": "enable_theme",
             "fieldtype": "Check",
-            "label": "Enable AhmadCSS Theme"
-        },
-        {
-            "default": "0",
-            "fieldname": "dark_mode",
-            "fieldtype": "Check",
-            "label": "Dark Mode"
+            "label": "Enable AhmadCSS Theme | تفعيل الثيم"
         },
         {
             "default": "Silver",
             "description": "Select the color theme for the interface",
             "fieldname": "color_theme",
             "fieldtype": "Select",
-            "label": "Color Theme",
+            "label": "Color Theme | نمط الألوان",
             "options": "Purple\nSilver"
         },
         {
-            "default": "#7c3aed",
-            "fieldname": "primary_color",
-            "fieldtype": "Color",
-            "label": "Primary Color"
+            "default": "0",
+            "fieldname": "dark_mode",
+            "fieldtype": "Check",
+            "label": "Dark Mode | الوضع الليلي"
         },
         {
-            "default": "#3b82f6",
-            "fieldname": "secondary_color",
-            "fieldtype": "Color",
-            "label": "Secondary Color"
+            "fieldname": "column_break_general",
+            "fieldtype": "Column Break"
         },
         {
-            "default": "#667eea",
-            "fieldname": "gradient_start",
-            "fieldtype": "Color",
-            "label": "Gradient Start Color"
+            "default": "1",
+            "fieldname": "enable_animations",
+            "fieldtype": "Check",
+            "label": "Enable Animations | تفعيل الحركات"
         },
         {
-            "default": "#764ba2",
-            "fieldname": "gradient_end",
-            "fieldtype": "Color",
-            "label": "Gradient End Color"
+            "default": "Normal",
+            "fieldname": "animation_speed",
+            "fieldtype": "Select",
+            "label": "Animation Speed | سرعة الحركات",
+            "options": "Slow\nNormal\nFast"
         },
         {
-            "fieldname": "column_break_1",
+            "fieldname": "header_section",
+            "fieldtype": "Section Break",
+            "label": "🔝 Header (Navbar) | الهيدر"
+        },
+        {
+            "default": "Gradient",
+            "fieldname": "header_style",
+            "fieldtype": "Select",
+            "label": "Header Style | نمط الهيدر",
+            "options": "Gradient\nSolid\nGlass\nTransparent"
+        },
+        {
+            "default": "#0f3b4a",
+            "fieldname": "header_gradient_start",
+            "fieldtype": "Color",
+            "label": "Header Gradient Start | بداية التدرج"
+        },
+        {
+            "default": "#0f766e",
+            "fieldname": "header_gradient_end",
+            "fieldtype": "Color",
+            "label": "Header Gradient End | نهاية التدرج"
+        },
+        {
+            "fieldname": "column_break_header",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "30",
+            "fieldname": "header_blur",
+            "fieldtype": "Int",
+            "label": "Header Blur (px) | ضبابية الهيدر"
+        },
+        {
+            "default": "0",
+            "fieldname": "show_custom_logo",
+            "fieldtype": "Check",
+            "label": "Show Custom Logo | إظهار شعار مخصص"
+        },
+        {
+            "depends_on": "show_custom_logo",
+            "fieldname": "custom_logo",
+            "fieldtype": "Attach Image",
+            "label": "Custom Logo | الشعار المخصص"
+        },
+        {
+            "fieldname": "body_section",
+            "fieldtype": "Section Break",
+            "label": "📄 Body (Background) | الخلفية"
+        },
+        {
+            "default": "#dceef0",
+            "fieldname": "body_gradient_start",
+            "fieldtype": "Color",
+            "label": "Body Gradient Start | بداية تدرج الخلفية"
+        },
+        {
+            "default": "#edf5f3",
+            "fieldname": "body_gradient_middle",
+            "fieldtype": "Color",
+            "label": "Body Gradient Middle | وسط تدرج الخلفية"
+        },
+        {
+            "default": "#efe1cd",
+            "fieldname": "body_gradient_end",
+            "fieldtype": "Color",
+            "label": "Body Gradient End | نهاية تدرج الخلفية"
+        },
+        {
+            "fieldname": "column_break_body",
             "fieldtype": "Column Break"
         },
         {
             "default": "1",
             "fieldname": "enable_glassmorphism",
             "fieldtype": "Check",
-            "label": "Enable Glassmorphism"
+            "label": "Enable Glassmorphism | تفعيل تأثير الزجاج"
         },
         {
             "default": "20",
-            "description": "Blur intensity in pixels",
+            "description": "Blur intensity in pixels (0-100)",
             "fieldname": "glass_blur",
             "fieldtype": "Int",
-            "label": "Glass Blur (px)"
+            "label": "Glass Blur (px) | ضبابية الزجاج"
         },
         {
             "default": "72",
             "description": "Opacity percentage (0-100)",
             "fieldname": "glass_opacity",
             "fieldtype": "Int",
-            "label": "Glass Opacity (%)"
+            "label": "Glass Opacity (%) | شفافية الزجاج"
+        },
+        {
+            "fieldname": "sidebar_section",
+            "fieldtype": "Section Break",
+            "label": "📋 Sidebar | الشريط الجانبي"
+        },
+        {
+            "default": "Glass",
+            "fieldname": "sidebar_style",
+            "fieldtype": "Select",
+            "label": "Sidebar Style | نمط الشريط الجانبي",
+            "options": "Glass\nSolid\nTransparent\nBordered\nGradient"
+        },
+        {
+            "default": "#1e1e2e",
+            "fieldname": "sidebar_gradient_start",
+            "fieldtype": "Color",
+            "label": "Sidebar Gradient Start | بداية تدرج الشريط"
+        },
+        {
+            "default": "#2d2d3f",
+            "fieldname": "sidebar_gradient_end",
+            "fieldtype": "Color",
+            "label": "Sidebar Gradient End | نهاية تدرج الشريط"
+        },
+        {
+            "fieldname": "column_break_sidebar",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "260",
+            "fieldname": "sidebar_width",
+            "fieldtype": "Int",
+            "label": "Sidebar Width (px) | عرض الشريط الجانبي"
+        },
+        {
+            "default": "20",
+            "fieldname": "sidebar_blur",
+            "fieldtype": "Int",
+            "label": "Sidebar Blur (px) | ضبابية الشريط"
+        },
+        {
+            "default": "Left",
+            "fieldname": "sidebar_position",
+            "fieldtype": "Select",
+            "label": "Sidebar Position | موضع الشريط",
+            "options": "Left\nRight"
+        },
+        {
+            "fieldname": "footer_section",
+            "fieldtype": "Section Break",
+            "label": "🔻 Footer | الفوتر"
+        },
+        {
+            "default": "Gradient",
+            "fieldname": "footer_style",
+            "fieldtype": "Select",
+            "label": "Footer Style | نمط الفوتر",
+            "options": "Gradient\nSolid\nGlass\nTransparent"
+        },
+        {
+            "default": "#1e1e2e",
+            "fieldname": "footer_gradient_start",
+            "fieldtype": "Color",
+            "label": "Footer Gradient Start | بداية تدرج الفوتر"
+        },
+        {
+            "default": "#2d2d3f",
+            "fieldname": "footer_gradient_end",
+            "fieldtype": "Color",
+            "label": "Footer Gradient End | نهاية تدرج الفوتر"
+        },
+        {
+            "fieldname": "column_break_footer",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "10",
+            "fieldname": "footer_blur",
+            "fieldtype": "Int",
+            "label": "Footer Blur (px) | ضبابية الفوتر"
         },
         {
             "default": "1",
-            "fieldname": "enable_animations",
+            "fieldname": "show_footer",
             "fieldtype": "Check",
-            "label": "Enable Animations"
-        },
-        {
-            "default": "Normal",
-            "fieldname": "animation_speed",
-            "fieldtype": "Select",
-            "label": "Animation Speed",
-            "options": "Slow\nNormal\nFast"
+            "label": "Show Footer | إظهار الفوتر"
         },
         {
             "fieldname": "typography_section",
             "fieldtype": "Section Break",
-            "label": "Typography"
+            "label": "🔤 Typography | الخطوط"
         },
         {
             "default": "Cairo",
             "fieldname": "font_family",
             "fieldtype": "Select",
-            "label": "Font Family",
+            "label": "Font Family | نوع الخط",
             "options": "Cairo\nInter\nTajawal\nRoboto\nOpen Sans\nPoppins"
         },
         {
             "default": "14",
             "fieldname": "font_size_base",
             "fieldtype": "Int",
-            "label": "Base Font Size (px)"
+            "label": "Base Font Size (px) | حجم الخط الأساسي"
         },
         {
-            "fieldname": "column_break_2",
+            "fieldname": "column_break_typography",
             "fieldtype": "Column Break"
         },
         {
             "default": "Cairo",
             "fieldname": "arabic_font",
             "fieldtype": "Select",
-            "label": "Arabic Font",
+            "label": "Arabic Font | الخط العربي",
             "options": "Cairo\nTajawal\nAmiri\nNoto Sans Arabic"
         },
         {
             "default": "1",
             "fieldname": "enable_custom_fonts",
             "fieldtype": "Check",
-            "label": "Enable Custom Fonts"
+            "label": "Enable Custom Fonts | تفعيل الخطوط المخصصة"
         },
         {
-            "fieldname": "navbar_section",
+            "fieldname": "colors_section",
             "fieldtype": "Section Break",
-            "label": "Navbar Settings"
+            "label": "🎨 Colors | الألوان"
         },
         {
-            "default": "Gradient",
-            "fieldname": "navbar_style",
-            "fieldtype": "Select",
-            "label": "Navbar Style",
-            "options": "Gradient\nSolid\nGlass\nTransparent"
+            "default": "#0f766e",
+            "fieldname": "primary_color",
+            "fieldtype": "Color",
+            "label": "Primary Color | اللون الأساسي"
         },
         {
-            "default": "30",
-            "fieldname": "navbar_blur",
-            "fieldtype": "Int",
-            "label": "Navbar Blur (px)"
+            "default": "#d97706",
+            "fieldname": "secondary_color",
+            "fieldtype": "Color",
+            "label": "Secondary Color | اللون الثانوي"
         },
         {
-            "fieldname": "column_break_3",
+            "fieldname": "column_break_colors",
             "fieldtype": "Column Break"
         },
         {
-            "default": "0",
-            "fieldname": "show_custom_logo",
-            "fieldtype": "Check",
-            "label": "Show Custom Logo"
+            "default": "#10b981",
+            "fieldname": "success_color",
+            "fieldtype": "Color",
+            "label": "Success Color | لون النجاح"
         },
         {
-            "fieldname": "custom_logo",
-            "fieldtype": "Attach Image",
-            "label": "Custom Logo"
+            "default": "#f59e0b",
+            "fieldname": "warning_color",
+            "fieldtype": "Color",
+            "label": "Warning Color | لون التحذير"
         },
         {
-            "fieldname": "sidebar_section",
-            "fieldtype": "Section Break",
-            "label": "Sidebar Settings"
-        },
-        {
-            "default": "Glass",
-            "fieldname": "sidebar_style",
-            "fieldtype": "Select",
-            "label": "Sidebar Style",
-            "options": "Glass\nSolid\nTransparent\nBordered"
-        },
-        {
-            "default": "260",
-            "fieldname": "sidebar_width",
-            "fieldtype": "Int",
-            "label": "Sidebar Width (px)"
-        },
-        {
-            "fieldname": "column_break_4",
-            "fieldtype": "Column Break"
-        },
-        {
-            "default": "20",
-            "fieldname": "sidebar_blur",
-            "fieldtype": "Int",
-            "label": "Sidebar Blur (px)"
-        },
-        {
-            "default": "Left",
-            "fieldname": "sidebar_position",
-            "fieldtype": "Select",
-            "label": "Sidebar Position",
-            "options": "Left\nRight"
+            "default": "#ef4444",
+            "fieldname": "error_color",
+            "fieldtype": "Color",
+            "label": "Error Color | لون الخطأ"
         },
         {
             "fieldname": "advanced_section",
             "fieldtype": "Section Break",
-            "label": "Advanced Settings"
+            "label": "⚡ Advanced Settings | الإعدادات المتقدمة",
+            "collapsible": 1
         },
         {
             "fieldname": "custom_css",
@@ -252,7 +379,7 @@
     "index_web_pages_for_search": 1,
     "issingle": 1,
     "links": [],
-    "modified": "2026-01-03 10:00:00.000000",
+    "modified": "2026-01-04 12:00:00.000000",
     "modified_by": "Administrator",
     "module": "Ahmadcss",
     "name": "AhmadCSS Settings",
@@ -266,6 +393,11 @@
             "read": 1,
             "role": "System Manager",
             "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "Administrator",
             "write": 1
         }
     ],

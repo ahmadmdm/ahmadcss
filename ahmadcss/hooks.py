@@ -24,23 +24,21 @@ add_to_apps_screen = [
 # ------------------
 
 # include js, css files in header of desk.html
+# Only include components.css (common utilities) - themes loaded dynamically
 app_include_css = [
-    "/assets/ahmadcss/css/glass-ultimate.css",
-    "/assets/ahmadcss/css/glass-silver.css",
     "/assets/ahmadcss/css/components.css"
 ]
 app_include_js = [
     "https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js",
-    "/assets/ahmadcss/js/ahmadcss.js"
+    "ahmadcss.bundle.js"
 ]
 
 # include js, css files in header of web template
+# Only include components.css (common utilities) - themes loaded dynamically
 web_include_css = [
-    "/assets/ahmadcss/css/glass-ultimate.css",
-    "/assets/ahmadcss/css/glass-silver.css",
     "/assets/ahmadcss/css/components.css"
 ]
-web_include_js = "/assets/ahmadcss/js/ahmadcss.js"
+web_include_js = "ahmadcss.bundle.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "ahmadcss/public/scss/website"

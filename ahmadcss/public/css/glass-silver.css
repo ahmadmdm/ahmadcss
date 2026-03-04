@@ -8,6 +8,8 @@
    🔤 Fonts: Cairo (Arabic) + Inter (English)
    ═══════════════════════════════════════════════════════════════════════════ */
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
 /* ═══════════════════════════════════════════════════════════════════════════
    🎨 SILVER THEME DESIGN TOKENS
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -48,28 +50,28 @@ body.ahmadcss-theme-silver {
     --info: #0ea5e9;
     
     /* === Silver Glass Effect Variables === */
-    --glass-white: rgba(255, 255, 255, 0.75);
-    --glass-white-strong: rgba(255, 255, 255, 0.9);
-    --glass-border: rgba(148, 163, 184, 0.4);
-    --glass-shadow: 0 8px 32px rgba(100, 116, 139, 0.15);
-    --glass-blur: 20px;
+    --glass-white: rgba(255, 255, 255, 0.82);
+    --glass-white-strong: rgba(255, 255, 255, 0.94);
+    --glass-border: rgba(148, 163, 184, 0.45);
+    --glass-shadow: 0 8px 32px rgba(30, 41, 59, 0.18);
+    --glass-blur: 24px;
     
     /* === Silver Gradients === */
-    --gradient-bg: linear-gradient(135deg, #94a3b8 0%, #64748b 50%, #475569 100%);
-    --gradient-navbar: linear-gradient(135deg, #64748b 0%, #475569 50%, #334155 100%);
-    --gradient-accent: linear-gradient(135deg, #94a3b8 0%, #38bdf8 100%);
-    --gradient-silver: linear-gradient(135deg, #667eea 0%, #64748b 35%, #94a3b8 65%, #cbd5e1 100%);
+    --gradient-bg: linear-gradient(160deg, #1e293b 0%, #334155 30%, #475569 60%, #64748b 100%);
+    --gradient-navbar: linear-gradient(135deg, #1e293b 0%, #334155 55%, #475569 100%);
+    --gradient-accent: linear-gradient(135deg, #475569 0%, #0ea5e9 100%);
+    --gradient-silver: linear-gradient(135deg, #0ea5e9 0%, #475569 35%, #94a3b8 65%, #cbd5e1 100%);
     --gradient-metallic: linear-gradient(180deg, 
-        rgba(255, 255, 255, 0.4) 0%, 
-        rgba(148, 163, 184, 0.2) 50%, 
-        rgba(100, 116, 139, 0.3) 100%);
+        rgba(255, 255, 255, 0.45) 0%, 
+        rgba(148, 163, 184, 0.25) 50%, 
+        rgba(100, 116, 139, 0.35) 100%);
     
     /* === Typography === */
-    --text-primary: #1e293b;
-    --text-secondary: #334155;
-    --text-muted: #64748b;
+    --text-primary: #0f172a;
+    --text-secondary: #1e293b;
+    --text-muted: #475569;
     --text-on-gradient: #ffffff;
-    --text-label: #475569;
+    --text-label: #334155;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -77,12 +79,12 @@ body.ahmadcss-theme-silver {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 body.ahmadcss-theme-silver {
-    background: linear-gradient(135deg, 
-        #4a5568 0%, 
-        #64748b 25%, 
-        #94a3b8 50%, 
-        #78909c 75%, 
-        #546e7a 100%) !important;
+    background: linear-gradient(160deg, 
+        #0f172a 0%, 
+        #1e293b 25%, 
+        #334155 55%, 
+        #475569 80%,
+        #64748b 100%) !important;
     background-attachment: fixed !important;
     min-height: 100vh;
 }
@@ -95,10 +97,10 @@ body.ahmadcss-theme-silver::before {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(ellipse 100% 80% at 10% 90%, rgba(71, 85, 105, 0.6) 0%, transparent 50%),
-        radial-gradient(ellipse 80% 60% at 90% 10%, rgba(100, 116, 139, 0.5) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 40% at 50% 50%, rgba(148, 163, 184, 0.3) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 30% 30%, rgba(203, 213, 225, 0.25) 0%, transparent 50%);
+        radial-gradient(ellipse 100% 80% at 10% 90%, rgba(14, 165, 233, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 60% at 90% 10%, rgba(71, 85, 105, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 50% 50%, rgba(100, 116, 139, 0.2) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 30% 30%, rgba(203, 213, 225, 0.1) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -108,11 +110,12 @@ body.ahmadcss-theme-silver::before {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 body.ahmadcss-theme-silver .navbar {
-    background: linear-gradient(135deg, #475569 0%, #334155 50%, #1e293b 100%) !important;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.3) !important;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important;
+    border-bottom: 1px solid rgba(14, 165, 233, 0.2) !important;
     box-shadow: 
-        0 4px 24px rgba(30, 41, 59, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+        0 4px 24px rgba(15, 23, 42, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        inset 0 -1px 0 rgba(14, 165, 233, 0.15) !important;
 }
 
 body.ahmadcss-theme-silver .navbar .navbar-brand,
@@ -167,17 +170,17 @@ body.ahmadcss-theme-silver .sidebar-toggle-placeholder use {
 
 body.ahmadcss-theme-silver .desk-sidebar,
 body.ahmadcss-theme-silver .layout-side-section {
-    background: rgba(255, 255, 255, 0.75) !important;
-    backdrop-filter: blur(25px) saturate(200%) !important;
-    -webkit-backdrop-filter: blur(25px) saturate(200%) !important;
-    border-right: 1px solid rgba(148, 163, 184, 0.4) !important;
-    box-shadow: 4px 0 30px rgba(71, 85, 105, 0.15) !important;
+    background: rgba(255, 255, 255, 0.88) !important;
+    backdrop-filter: blur(28px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+    border-right: 1px solid rgba(148, 163, 184, 0.35) !important;
+    box-shadow: 4px 0 30px rgba(15, 23, 42, 0.15) !important;
 }
 
 body.ahmadcss-theme-silver .desk-sidebar .desk-sidebar-item.active,
 body.ahmadcss-theme-silver .desk-sidebar .desk-sidebar-item:hover {
-    background: linear-gradient(135deg, rgba(100, 116, 139, 0.25) 0%, rgba(148, 163, 184, 0.3) 100%) !important;
-    border-left: 3px solid #475569 !important;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(14, 165, 233, 0.2) 100%) !important;
+    border-left: 3px solid #0ea5e9 !important;
 }
 
 body.ahmadcss-theme-silver .sidebar-label,
@@ -197,14 +200,14 @@ body.ahmadcss-theme-silver .form-container,
 body.ahmadcss-theme-silver .layout-main-section,
 body.ahmadcss-theme-silver .page-container,
 body.ahmadcss-theme-silver [data-page-container] {
-    background: rgba(255, 255, 255, 0.7) !important;
-    backdrop-filter: blur(25px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
-    border: 1px solid rgba(148, 163, 184, 0.35) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(28px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+    border: 1px solid rgba(148, 163, 184, 0.4) !important;
     border-radius: 16px !important;
     box-shadow: 
-        0 8px 32px rgba(71, 85, 105, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+        0 8px 32px rgba(15, 23, 42, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85) !important;
 }
 
 body.ahmadcss-theme-silver .card:hover,
@@ -227,15 +230,15 @@ body.ahmadcss-theme-silver .section-head {
 
 body.ahmadcss-theme-silver .btn-primary,
 body.ahmadcss-theme-silver .btn-primary-dark {
-    background: linear-gradient(135deg, #64748b 0%, #475569 100%) !important;
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%) !important;
     border: none !important;
     color: #ffffff !important;
-    box-shadow: 0 4px 15px rgba(100, 116, 139, 0.3) !important;
+    box-shadow: 0 4px 15px rgba(14, 165, 233, 0.35) !important;
 }
 
 body.ahmadcss-theme-silver .btn-primary:hover,
 body.ahmadcss-theme-silver .btn-primary-dark:hover {
-    background: linear-gradient(135deg, #475569 0%, #334155 100%) !important;
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
     transform: translateY(-1px);
     box-shadow: 0 6px 20px rgba(100, 116, 139, 0.4) !important;
 }
@@ -276,6 +279,8 @@ body.ahmadcss-theme-silver select {
     background: rgba(255, 255, 255, 0.85) !important;
     border: 1px solid rgba(148, 163, 184, 0.4) !important;
     border-radius: 10px !important;
+    padding: 6px 12px !important;
+    min-height: 32px !important;
     color: #1e293b !important;
     transition: all 0.25s ease !important;
 }
@@ -770,5 +775,152 @@ body.ahmadcss-theme-silver .btn-primary:focus {
         background: #ffffff !important;
         box-shadow: none !important;
         border: 1px solid #e2e8f0 !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ✨ SILVER REDESIGN LAYER (2026)
+   Clearer contrast, calmer palette, sharper hierarchy
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root[data-ahmadcss-theme="silver"],
+body.ahmadcss-theme-silver {
+    --primary-500: #0f766e;
+    --primary-600: #0b5e58;
+    --secondary-500: #d97706;
+    --secondary-600: #b45309;
+    --text-primary: #102432;
+    --text-secondary: #284253;
+    --text-muted: #4b6475;
+    --glass-white: rgba(253, 254, 255, 0.72);
+    --glass-white-strong: rgba(255, 255, 255, 0.86);
+    --glass-border: rgba(15, 118, 110, 0.18);
+    --glass-shadow: 0 12px 38px rgba(12, 34, 50, 0.12);
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+}
+
+body.ahmadcss-theme-silver,
+body.ahmadcss-theme-silver * {
+    font-family: 'IBM Plex Sans Arabic', 'Manrope', 'Cairo', sans-serif !important;
+}
+
+body.ahmadcss-theme-silver {
+    background: linear-gradient(120deg, #dceef0 0%, #edf5f3 38%, #f4eee3 72%, #efe1cd 100%) !important;
+    color: var(--text-primary) !important;
+}
+
+body.ahmadcss-theme-silver::before {
+    background:
+        radial-gradient(60% 45% at 16% 16%, rgba(15, 118, 110, 0.18) 0%, transparent 70%),
+        radial-gradient(42% 35% at 88% 10%, rgba(217, 119, 6, 0.2) 0%, transparent 72%),
+        radial-gradient(45% 36% at 85% 82%, rgba(14, 165, 233, 0.14) 0%, transparent 72%);
+}
+
+body.ahmadcss-theme-silver .navbar {
+    background: linear-gradient(110deg, #0f3b4a 0%, #0f5e58 56%, #1f7665 100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 28px rgba(9, 40, 52, 0.26) !important;
+}
+
+body.ahmadcss-theme-silver #navbar-search {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    border-radius: 999px !important;
+    width: clamp(180px, 24vw, 320px) !important;
+}
+
+body.ahmadcss-theme-silver .desk-sidebar,
+body.ahmadcss-theme-silver .layout-side-section {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.78) 0%, rgba(247, 252, 251, 0.68) 100%) !important;
+    border-right: 1px solid rgba(15, 118, 110, 0.16) !important;
+    box-shadow: 8px 0 28px rgba(13, 49, 66, 0.1) !important;
+}
+
+body.ahmadcss-theme-silver .desk-sidebar .desk-sidebar-item.active,
+body.ahmadcss-theme-silver .desk-sidebar .desk-sidebar-item:hover,
+body.ahmadcss-theme-silver .standard-sidebar-item:hover,
+body.ahmadcss-theme-silver .standard-sidebar-item.selected {
+    background: linear-gradient(90deg, rgba(15, 118, 110, 0.16) 0%, rgba(217, 119, 6, 0.14) 100%) !important;
+    border-left: 3px solid var(--primary-500) !important;
+}
+
+body.ahmadcss-theme-silver .card,
+body.ahmadcss-theme-silver .frappe-card,
+body.ahmadcss-theme-silver .widget,
+body.ahmadcss-theme-silver .layout-main-section,
+body.ahmadcss-theme-silver .page-container,
+body.ahmadcss-theme-silver [data-page-container],
+body.ahmadcss-theme-silver .frappe-list {
+    background: var(--glass-white) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--glass-shadow) !important;
+}
+
+body.ahmadcss-theme-silver .card:hover,
+body.ahmadcss-theme-silver .frappe-card:hover {
+    transform: translateY(-3px) scale(1.002);
+    box-shadow: 0 16px 42px rgba(10, 36, 48, 0.18) !important;
+}
+
+body.ahmadcss-theme-silver .btn-primary,
+body.ahmadcss-theme-silver .btn-primary-dark {
+    background: linear-gradient(125deg, var(--primary-500) 0%, #0f8a78 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.28) !important;
+    box-shadow: 0 8px 18px rgba(15, 118, 110, 0.28) !important;
+}
+
+body.ahmadcss-theme-silver .btn-primary:hover,
+body.ahmadcss-theme-silver .btn-primary-dark:hover {
+    background: linear-gradient(125deg, #0d675f 0%, #0f766e 100%) !important;
+    transform: translateY(-1px);
+}
+
+body.ahmadcss-theme-silver .btn-secondary {
+    background: rgba(217, 119, 6, 0.14) !important;
+    border: 1px solid rgba(217, 119, 6, 0.26) !important;
+    color: #8a4b05 !important;
+}
+
+body.ahmadcss-theme-silver .btn-secondary:hover {
+    background: rgba(217, 119, 6, 0.22) !important;
+}
+
+body.ahmadcss-theme-silver .form-control:focus,
+body.ahmadcss-theme-silver .input-with-feedback:focus {
+    border-color: rgba(15, 118, 110, 0.45) !important;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14) !important;
+}
+
+body.ahmadcss-theme-silver .page-head,
+body.ahmadcss-theme-silver .layout-main-section {
+    animation: ahmadcssSilverRise 280ms ease-out both;
+}
+
+@keyframes ahmadcssSilverRise {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 991px) {
+    body.ahmadcss-theme-silver .navbar {
+        padding-inline: 10px !important;
+    }
+
+    body.ahmadcss-theme-silver #navbar-search {
+        width: min(56vw, 230px) !important;
+    }
+
+    body.ahmadcss-theme-silver .card,
+    body.ahmadcss-theme-silver .frappe-card,
+    body.ahmadcss-theme-silver .widget {
+        border-radius: 14px !important;
     }
 }
