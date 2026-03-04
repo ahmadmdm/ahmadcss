@@ -1,0 +1,28 @@
+--- _sidebar.scss
++++ _sidebar.scss
+@@ -16,15 +16,21 @@
+     margin-left: 16px !important;
+     margin-right: 16px !important;
+     box-shadow: var(--glass-shadow-soft), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0, 0, 0, 0.03) !important;
+-    height: calc(100vh - var(--navbar-height) - 48px) !important;
++    height: fit-content !important;
++    min-height: calc(100vh - var(--navbar-height) - 64px) !important; // Align cleanly with bottom
+     transition: var(--transition-spring) !important;
+-    overflow-y: auto !important;
+ }
+ 
+ // Sticky sidebar for workspaces
+ [data-page-route="Workspaces"] .layout-side-section,
+ [data-page-route^="Workspaces/"] .layout-side-section {
+     position: sticky !important;
+-    top: calc(var(--navbar-height) + 24px) !important;
+-    height: calc(100vh - var(--navbar-height) - var(--page-head-height) - 16px) !important;
++    top: calc(var(--navbar-height) + var(--page-head-height) + 24px) !important; // Push down below white header area
++    height: calc(100vh - var(--navbar-height) - var(--page-head-height) - 40px) !important; // Align with Workspace bottom
++    overflow-y: auto !important;
++}
++
++// Ensure main content matches minimum height
++.layout-main-section {
++    min-height: calc(100vh - var(--navbar-height) - 64px) !important;
+ }

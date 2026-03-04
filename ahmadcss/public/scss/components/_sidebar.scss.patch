@@ -1,0 +1,19 @@
+--- /home/ahmad/frp/apps/ahmadcss/ahmadcss/public/scss/components/_sidebar.scss
++++ /home/ahmad/frp/apps/ahmadcss/ahmadcss/public/scss/components/_sidebar.scss
+@@ -16,15 +16,14 @@
+     margin-left: 16px !important;
+     margin-right: 16px !important;
+     box-shadow: var(--glass-shadow-soft), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0, 0, 0, 0.03) !important;
+     height: fit-content !important;
++    min-height: calc(100vh - var(--navbar-height) - var(--page-head-height)) !important;
+     transition: var(--transition-spring) !important;
+ }
+ 
+ // Sticky sidebar for workspaces
+ [data-page-route="Workspaces"] .layout-side-section,
+ [data-page-route^="Workspaces/"] .layout-side-section {
+     position: sticky !important;
+     top: calc(var(--navbar-height) + var(--page-head-height) + 32px) !important;
+     max-height: calc(100vh - var(--navbar-height) - var(--page-head-height) - 48px) !important;
+     overflow-y: auto !important;
+ }
