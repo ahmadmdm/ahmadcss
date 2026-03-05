@@ -2,15 +2,15 @@
 // AhmadCSS - Dark Mode Feature
 // ═══════════════════════════════════════════════════════════════════════════
 
-[data-theme="dark"],
+[data-dark-mode="dark"],
 .ahmadcss-dark {
     --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
-    --glass-white: rgba(30, 27, 75, 0.85);
-    --glass-white-strong: rgba(30, 27, 75, 0.95);
-    --glass-border: rgba(124, 58, 237, 0.3);
-    --gradient-bg: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+    --glass-white: rgba(8, 23, 31, 0.85);
+    --glass-white-strong: rgba(8, 23, 31, 0.95);
+    --glass-border: rgba(45, 212, 191, 0.26);
+    --gradient-bg: linear-gradient(145deg, #061821 0%, #0b2230 45%, #132f3b 100%);
     
     body {
         background: var(--gradient-bg) !important;
@@ -26,9 +26,9 @@
     
     .form-control,
     .input-with-feedback {
-        background: rgba(30, 27, 75, 0.6) !important;
+        background: rgba(12, 29, 39, 0.68) !important;
         color: var(--text-primary) !important;
-        border-color: rgba($primary-600, 0.3) !important;
+        border-color: rgba(45, 212, 191, 0.25) !important;
     }
     
     .list-row,

@@ -38,7 +38,9 @@ app_include_js = [
 web_include_css = [
     "/assets/ahmadcss/css/components.css"
 ]
-web_include_js = "ahmadcss.bundle.js"
+web_include_js = [
+    "ahmadcss.bundle.js"
+]
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "ahmadcss/public/scss/website"

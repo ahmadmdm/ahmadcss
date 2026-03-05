@@ -165,10 +165,13 @@ def get_ahmadcss_settings():
 
 
 @frappe.whitelist()
-def toggle_dark_mode():
+def toggle_dark_mode(dark_mode=None):
     """Toggle dark mode setting"""
     settings = frappe.get_single("AhmadCSS Settings")
-    settings.dark_mode = not settings.dark_mode
+    if dark_mode is not None:
+        settings.dark_mode = int(dark_mode)
+    else:
+        settings.dark_mode = not settings.dark_mode
     settings.save()
     frappe.clear_cache()
     return {"dark_mode": settings.dark_mode}
@@ -176,12 +179,20 @@ def toggle_dark_mode():
 
 # قائمة الحقول المسموح بتعديلها
 ALLOWED_SETTINGS_FIELDS = [
-    'enable_theme', 'dark_mode', 'primary_color', 'secondary_color',
-    'gradient_start', 'gradient_end', 'enable_glassmorphism', 'glass_blur',
-    'glass_opacity', 'enable_animations', 'animation_speed', 'font_family',
-    'font_size_base', 'arabic_font', 'enable_custom_fonts', 'navbar_style',
-    'navbar_blur', 'show_custom_logo', 'custom_logo', 'sidebar_style',
-    'sidebar_width', 'sidebar_blur', 'sidebar_position', 'custom_css', 'custom_js'
+    'enable_theme', 'dark_mode', 'color_theme',
+    'primary_color', 'secondary_color', 'success_color', 'warning_color', 'error_color',
+    'enable_glassmorphism', 'glass_blur', 'glass_opacity',
+    'enable_animations', 'animation_speed',
+    'font_family', 'font_size_base', 'arabic_font', 'enable_custom_fonts',
+    'header_style', 'header_gradient_start', 'header_gradient_end', 'header_blur',
+    'show_custom_logo', 'custom_logo',
+    'body_gradient_start', 'body_gradient_middle', 'body_gradient_end',
+    'sidebar_style', 'sidebar_gradient_start', 'sidebar_gradient_end',
+    'sidebar_width', 'sidebar_blur', 'sidebar_position',
+    'footer_style', 'footer_gradient_start', 'footer_gradient_end',
+    'footer_blur', 'show_footer',
+    'navbar_style', 'navbar_blur',
+    'custom_css', 'custom_js',
 ]
 
 

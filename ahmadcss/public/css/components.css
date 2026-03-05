@@ -7,7 +7,7 @@
    🌙 DARK MODE
    ═══════════════════════════════════════════════════════════════════════════ */
 
-[data-theme="dark"],
+[data-dark-mode="dark"],
 .ahmadcss-dark {
     --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;

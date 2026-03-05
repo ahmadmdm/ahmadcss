@@ -45,10 +45,10 @@ frappe.ui.form.on("AhmadCSS Settings", {
         // Preview dark mode change
         if (window.AhmadCSS && AhmadCSS.darkMode) {
             if (frm.doc.dark_mode) {
-                document.documentElement.setAttribute('data-theme', 'dark');
+                document.documentElement.setAttribute('data-dark-mode', 'dark');
                 document.body.classList.add('ahmadcss-dark');
             } else {
-                document.documentElement.setAttribute('data-theme', 'light');
+                document.documentElement.setAttribute('data-dark-mode', 'light');
                 document.body.classList.remove('ahmadcss-dark');
             }
         }
@@ -99,10 +99,10 @@ function applyThemeChanges(frm) {
     
     // Apply dark mode
     if (frm.doc.dark_mode && window.AhmadCSS) {
-        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-dark-mode', 'dark');
         document.body.classList.add('ahmadcss-dark');
     } else {
-        document.documentElement.removeAttribute('data-theme');
+        document.documentElement.setAttribute('data-dark-mode', 'light');
         document.body.classList.remove('ahmadcss-dark');
     }
     
