@@ -83,10 +83,10 @@
           },
           apply() {
             if (this.isEnabled) {
-              document.documentElement.setAttribute("data-theme", "dark");
+              document.documentElement.setAttribute("data-dark-mode", "dark");
               document.body.classList.add("ahmadcss-dark");
             } else {
-              document.documentElement.setAttribute("data-theme", "light");
+              document.documentElement.setAttribute("data-dark-mode", "light");
               document.body.classList.remove("ahmadcss-dark");
             }
           },
@@ -98,6 +98,7 @@
             if (Permissions.isAdmin() && window.frappe && frappe.call) {
               frappe.call({
                 method: "ahmadcss.ahmadcss.doctype.ahmadcss_settings.ahmadcss_settings.toggle_dark_mode",
+                args: { dark_mode: this.isEnabled ? 1 : 0 },
                 async: true
               });
             }
@@ -749,8 +750,7 @@
               }
               document.body.classList.remove(`ahmadcss-theme-${theme}`);
             });
-            document.documentElement.removeAttribute("data-ahmadcss-theme");
-            document.documentElement.removeAttribute("data-theme");
+            document.documentElement.removeAttribute("data-color-theme");
             this.loadThemeCSS(this.currentTheme);
             const config = this.themeConfig[this.currentTheme];
             if (config) {
@@ -758,8 +758,7 @@
                 document.body.classList.add(config.cssClass);
               }
               if (config.dataTheme) {
-                document.documentElement.setAttribute("data-ahmadcss-theme", config.dataTheme);
-                document.documentElement.setAttribute("data-theme", config.dataTheme);
+                document.documentElement.setAttribute("data-color-theme", config.dataTheme);
               }
             }
             document.dispatchEvent(new CustomEvent("ahmadcss:theme-changed", {
@@ -922,4 +921,4 @@
   });
   require_ahmadcss_bundle();
 })();
-//# sourceMappingURL=ahmadcss.bundle.LQ4PJIIA.js.map
+//# sourceMappingURL=ahmadcss.bundle.TKUFS44Q.js.map

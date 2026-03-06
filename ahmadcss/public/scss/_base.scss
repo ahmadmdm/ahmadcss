@@ -4,6 +4,40 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
+// ─── CSS Custom Properties (Runtime tokens) ────────────────────────────
+:root {
+    --font-sans: #{$font-sans};
+    --text-primary: #{$text-primary};
+    --text-secondary: #{$text-secondary};
+    --text-muted: #{$text-muted};
+    --glass-white: #{$glass-white};
+    --glass-white-strong: #{$glass-white-strong};
+    --glass-border: #{$glass-border};
+    --glass-blur: #{$glass-blur};
+    --glass-shadow: #{$glass-shadow};
+    --glass-shadow-soft: #{$glass-shadow-soft};
+    --gradient-bg: #{$gradient-bg};
+    --gradient-navbar: #{$gradient-navbar};
+    --gradient-accent: #{$gradient-accent};
+    --navbar-height: #{$navbar-height};
+    --page-head-height: #{$page-head-height};
+    --radius-sm: #{$radius-sm};
+    --radius-md: #{$radius-md};
+    --radius-lg: #{$radius-lg};
+    --radius-xl: #{$radius-xl};
+    --transition-fast: #{$transition-fast};
+    --transition-base: #{$transition-base};
+    --transition-spring: #{$transition-spring};
+    --surface-0: #{$surface-0};
+    --surface-1: #{$surface-1};
+    --surface-2: #{$surface-2};
+    --surface-3: #{$surface-3};
+    --primary-600: #{$primary-600};
+    --primary-on-surface: #{$primary-on-surface};
+    --accent-500: #{$accent-500};
+    --accent-600: #{$accent-600};
+}
+
 html {
     min-height: 100%;
 }
@@ -16,6 +50,7 @@ body {
     color: var(--text-primary);
     margin: 0 !important;
     padding: 0 !important;
+    font-size: $text-base;
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
 }

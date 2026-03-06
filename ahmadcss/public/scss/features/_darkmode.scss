@@ -1,5 +1,6 @@
 // ═══════════════════════════════════════════════════════════════════════════
 // AhmadCSS - Dark Mode Feature
+// Emerald-based dark theme with green-tinted glass
 // ═══════════════════════════════════════════════════════════════════════════
 
 [data-dark-mode="dark"],
@@ -7,10 +8,15 @@
     --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
-    --glass-white: rgba(8, 23, 31, 0.85);
-    --glass-white-strong: rgba(8, 23, 31, 0.95);
-    --glass-border: rgba(45, 212, 191, 0.26);
-    --gradient-bg: linear-gradient(145deg, #061821 0%, #0b2230 45%, #132f3b 100%);
+    --glass-white: #{$dark-glass-white};
+    --glass-white-strong: #{$dark-glass-white-strong};
+    --glass-border: #{$dark-glass-border};
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --glass-shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --gradient-bg: #{$gradient-dark-bg};
+    --surface-1: #{$dark-surface-1};
+    --surface-2: #{$dark-surface-2};
+    --surface-3: #{$dark-surface-3};
     
     body {
         background: var(--gradient-bg) !important;
@@ -26,15 +32,19 @@
     
     .form-control,
     .input-with-feedback {
-        background: rgba(12, 29, 39, 0.68) !important;
+        background: #{$dark-surface-3} !important;
         color: var(--text-primary) !important;
-        border-color: rgba(45, 212, 191, 0.25) !important;
+        border-color: rgba($primary-400, 0.2) !important;
     }
     
     .list-row,
     .standard-sidebar-item,
     .dropdown-item {
         color: var(--text-primary) !important;
+    }
+    
+    .modal-backdrop {
+        background: rgba(0, 10, 8, 0.5) !important;
     }
     
     .modal-content {
@@ -45,6 +55,24 @@
     .number-widget-box .number,
     .shortcut-widget-box .widget-title {
         color: var(--text-primary) !important;
+    }
+    
+    // Dark mode links
+    a:not(.btn):not(.nav-link):not(.dropdown-item) {
+        color: $primary-400 !important;
+        
+        &:hover {
+            color: $primary-300 !important;
+        }
+    }
+    
+    // Scrollbars in dark mode
+    ::-webkit-scrollbar-track {
+        background: rgba($primary-900, 0.3);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, rgba($primary-500, 0.4) 0%, rgba($secondary-500, 0.4) 100%);
     }
 }
 

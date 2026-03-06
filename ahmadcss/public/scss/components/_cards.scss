@@ -1,55 +1,56 @@
 // ═══════════════════════════════════════════════════════════════════════════
 // AhmadCSS - Cards Component
+// Uses elevation system for consistent shadow hierarchy
 // ═══════════════════════════════════════════════════════════════════════════
 
 .frappe-card {
-    background: var(--glass-white) !important;
-    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
-    border: 1px solid var(--glass-border) !important;
-    border-radius: 24px !important;
-    box-shadow: var(--glass-shadow-soft), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0, 0, 0, 0.03) !important;
-    transition: var(--transition-spring) !important;
+    background: $surface-2;
+    backdrop-filter: blur($glass-blur) saturate(180%);
+    -webkit-backdrop-filter: blur($glass-blur) saturate(180%);
+    border: 1px solid $glass-border;
+    border-radius: 24px;
+    box-shadow: $elevation-2, inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0, 0, 0, 0.03);
+    transition: $transition-spring;
     
     &:hover {
-        transform: translateY(-4px) !important;
-        box-shadow: var(--glass-shadow), inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
-        border-color: rgba(255, 255, 255, 0.6) !important;
+        transform: translateY(-4px);
+        box-shadow: $elevation-3, inset 0 1px 1px rgba(255, 255, 255, 0.9);
+        border-color: rgba(255, 255, 255, 0.6);
     }
 }
 
 // Widget Groups
 .widget-group {
-    margin-bottom: 28px !important;
+    margin-bottom: 28px;
 }
 
 .widget-group-title,
 .widget-group-head .widget-group-title {
-    font-size: 15px !important;
-    font-weight: 700 !important;
-    color: #1e293b !important;
-    margin-bottom: 14px !important;
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6) !important;
+    font-size: $text-base;
+    font-weight: 700;
+    color: $text-primary !important;
+    margin-bottom: 14px;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
 }
 
 .widget-group-body {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
-    gap: 14px !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
 }
 
 // Number Widget
 .number-widget-box {
-    background: var(--glass-white) !important;
-    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
-    border: 1px solid var(--glass-border) !important;
-    border-radius: 20px !important;
-    box-shadow: var(--glass-shadow-soft), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0, 0, 0, 0.03) !important;
-    padding: 18px !important;
-    transition: var(--transition-spring) !important;
-    position: relative !important;
-    overflow: hidden !important;
+    background: $surface-1;
+    backdrop-filter: blur($glass-blur) saturate(180%);
+    -webkit-backdrop-filter: blur($glass-blur) saturate(180%);
+    border: 1px solid $glass-border;
+    border-radius: $radius-xl;
+    box-shadow: $elevation-1, inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0, 0, 0, 0.03);
+    padding: 18px;
+    transition: $transition-spring;
+    position: relative;
+    overflow: hidden;
     
     &::after {
         content: '';
@@ -58,16 +59,16 @@
         left: 0;
         right: 0;
         height: 3px;
-        background: var(--gradient-accent);
+        background: $gradient-accent;
         transform: scaleX(0);
         transform-origin: left;
-        transition: transform var(--transition-base);
+        transition: transform $transition-base;
     }
     
     &:hover {
-        transform: translateY(-5px) !important;
-        box-shadow: 0 16px 28px rgba(31, 38, 135, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
-        border-color: rgba(255, 255, 255, 0.6) !important;
+        transform: translateY(-5px);
+        box-shadow: $elevation-3, inset 0 1px 1px rgba(255, 255, 255, 0.95);
+        border-color: rgba(255, 255, 255, 0.6);
         
         &::after {
             transform: scaleX(1);
@@ -75,34 +76,34 @@
     }
     
     .widget-title {
-        font-size: 10px !important;
-        font-weight: 700 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.5px !important;
-        color: #475569 !important;
-        margin-bottom: 6px !important;
+        font-size: $text-xs;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: $text-secondary !important;
+        margin-bottom: 6px;
     }
     
     .number {
-        font-size: 22px !important;
-        font-weight: 700 !important;
-        color: #1e293b !important;
+        font-size: $text-xl;
+        font-weight: 700;
+        color: $text-primary !important;
     }
 }
 
 // Shortcut Widget
 .shortcut-widget-box {
-    background: var(--glass-white) !important;
-    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
-    border: 1px solid var(--glass-border) !important;
-    border-radius: 20px !important;
-    box-shadow: var(--glass-shadow-soft), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0, 0, 0, 0.03) !important;
-    padding: 16px !important;
-    cursor: pointer !important;
-    transition: var(--transition-spring) !important;
-    position: relative !important;
-    overflow: hidden !important;
+    background: $surface-1;
+    backdrop-filter: blur($glass-blur) saturate(180%);
+    -webkit-backdrop-filter: blur($glass-blur) saturate(180%);
+    border: 1px solid $glass-border;
+    border-radius: $radius-xl;
+    box-shadow: $elevation-1, inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0, 0, 0, 0.03);
+    padding: 16px;
+    cursor: pointer;
+    transition: $transition-spring;
+    position: relative;
+    overflow: hidden;
     
     &::after {
         content: '';
@@ -111,16 +112,16 @@
         left: 0;
         right: 0;
         height: 3px;
-        background: var(--gradient-accent);
+        background: $gradient-accent;
         transform: scaleX(0);
         transform-origin: left;
-        transition: transform var(--transition-base);
+        transition: transform $transition-base;
     }
     
     &:hover {
-        transform: translateY(-5px) scale(1.02) !important;
-        box-shadow: 0 16px 32px rgba(31, 38, 135, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
-        border-color: rgba(255, 255, 255, 0.6) !important;
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: $elevation-3, inset 0 1px 1px rgba(255, 255, 255, 0.95);
+        border-color: rgba(255, 255, 255, 0.6);
         
         &::after {
             transform: scaleX(1);
@@ -129,54 +130,54 @@
     
     .widget-title,
     .ellipsis {
-        font-size: 12px !important;
-        font-weight: 600 !important;
-        color: #1e293b !important;
+        font-size: $text-xs;
+        font-weight: 600;
+        color: $text-primary !important;
     }
 }
 
 // Links Widget
 .links-widget-box {
-    background: var(--glass-white) !important;
-    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
-    border: 1px solid var(--glass-border) !important;
-    border-radius: 20px !important;
-    box-shadow: var(--glass-shadow-soft), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0, 0, 0, 0.03) !important;
-    padding: 16px !important;
-    transition: var(--transition-spring) !important;
+    background: $surface-1;
+    backdrop-filter: blur($glass-blur) saturate(180%);
+    -webkit-backdrop-filter: blur($glass-blur) saturate(180%);
+    border: 1px solid $glass-border;
+    border-radius: $radius-xl;
+    box-shadow: $elevation-1, inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -1px 1px rgba(0, 0, 0, 0.03);
+    padding: 16px;
+    transition: $transition-spring;
     
     &:hover {
-        transform: translateY(-4px) !important;
-        box-shadow: var(--glass-shadow), inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
-        border-color: rgba(255, 255, 255, 0.6) !important;
+        transform: translateY(-4px);
+        box-shadow: $elevation-2, inset 0 1px 1px rgba(255, 255, 255, 0.9);
+        border-color: rgba(255, 255, 255, 0.6);
     }
     
     .widget-head {
-        padding-bottom: 10px !important;
-        margin-bottom: 8px !important;
-        border-bottom: 1px solid rgba($primary-600, 0.1) !important;
+        padding-bottom: 10px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid rgba($primary-600, 0.1);
     }
     
     .widget-title {
-        font-size: 13px !important;
-        font-weight: 700 !important;
-        color: #1e293b !important;
+        font-size: $text-sm;
+        font-weight: 700;
+        color: $text-primary !important;
     }
     
     .link-item,
     .widget-link {
-        padding: 6px 10px !important;
-        margin: 2px 0 !important;
-        border-radius: var(--radius-sm) !important;
-        transition: var(--transition-fast) !important;
-        color: #334155 !important;
-        font-size: 12px !important;
+        padding: 6px 10px;
+        margin: 2px 0;
+        border-radius: $radius-sm;
+        transition: $transition-fast;
+        color: $text-secondary !important;
+        font-size: $text-xs;
         
         &:hover {
-            background: rgba($primary-600, 0.08) !important;
-            transform: translateX(3px) !important;
-            color: $primary-800 !important;
+            background: rgba($primary-600, 0.08);
+            transform: translateX(3px);
+            color: $primary-on-surface !important;
         }
     }
 }

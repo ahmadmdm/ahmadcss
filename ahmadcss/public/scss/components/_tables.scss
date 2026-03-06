@@ -3,19 +3,19 @@
 // ═══════════════════════════════════════════════════════════════════════════
 
 .frappe-list {
-    background: var(--glass-white) !important;
-    backdrop-filter: blur(var(--glass-blur)) !important;
-    border: 1px solid var(--glass-border) !important;
-    border-radius: var(--radius-lg) !important;
-    box-shadow: var(--glass-shadow) !important;
+    background: $surface-1 !important;
+    backdrop-filter: blur($glass-blur) !important;
+    border: 1px solid $glass-border !important;
+    border-radius: $radius-lg !important;
+    box-shadow: $elevation-2 !important;
     overflow: hidden !important;
 }
 
 .list-row {
     padding: 10px 16px !important;
     border-bottom: 1px solid rgba($primary-600, 0.06) !important;
-    transition: var(--transition-fast) !important;
-    color: #1e293b !important;
+    transition: $transition-fast !important;
+    color: $text-primary !important;
     
     &:hover {
         background: rgba($primary-600, 0.04) !important;
@@ -29,10 +29,10 @@
 .list-row-head {
     background: rgba($primary-600, 0.05) !important;
     font-weight: 700 !important;
-    font-size: 10px !important;
+    font-size: $text-xs !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
-    color: #475569 !important;
+    color: $text-secondary !important;
 }
 
 // Status Indicators

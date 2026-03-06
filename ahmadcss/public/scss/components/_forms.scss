@@ -3,29 +3,29 @@
 // ═══════════════════════════════════════════════════════════════════════════
 
 .form-layout {
-    background: var(--glass-white) !important;
-    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
-    border: 1px solid var(--glass-border) !important;
-    border-radius: var(--radius-lg) !important;
-    box-shadow: var(--glass-shadow) !important;
+    background: $surface-2 !important;
+    backdrop-filter: blur($glass-blur) saturate(180%) !important;
+    -webkit-backdrop-filter: blur($glass-blur) saturate(180%) !important;
+    border: 1px solid $glass-border !important;
+    border-radius: $radius-lg !important;
+    box-shadow: $elevation-2 !important;
     padding: 20px !important;
 }
 
 // Form Controls
 .form-control,
 .input-with-feedback {
-    background: var(--glass-white-strong) !important;
+    background: $surface-3 !important;
     border: 1.5px solid rgba($primary-600, 0.15) !important;
-    border-radius: var(--radius-md) !important;
+    border-radius: $radius-md !important;
     padding: 6px 12px !important;
     min-height: 32px !important;
     height: 32px !important;
     color: var(--text-primary) !important;
-    font-size: 13px !important;
+    font-size: $text-sm !important;
     font-weight: 500 !important;
     line-height: 1.4 !important;
-    transition: var(--transition-base) !important;
+    transition: $transition-base !important;
     
     &:focus {
         background: rgba(255, 255, 255, 0.95) !important;
@@ -71,7 +71,7 @@
 // Select dropdown styling
 select.form-control,
 select.input-with-feedback {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e") !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23059669'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e") !important;
     background-repeat: no-repeat !important;
     background-position: right 12px center !important;
     background-size: 18px !important;
@@ -115,8 +115,8 @@ select.input-with-feedback {
     background: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: blur(20px) !important;
     border: 1px solid rgba($primary-600, 0.15) !important;
-    border-radius: var(--radius-md) !important;
-    box-shadow: 0 10px 40px rgba(30, 27, 75, 0.18) !important;
+    border-radius: $radius-md !important;
+    box-shadow: $elevation-4 !important;
     padding: 6px !important;
     margin-top: 4px !important;
     max-height: 280px !important;
@@ -151,9 +151,9 @@ select.input-with-feedback {
 // Form labels
 .frappe-control .control-label,
 .form-group label {
-    color: #374151 !important;
+    color: $text-label !important;
     font-weight: 600 !important;
-    font-size: 11px !important;
+    font-size: $text-xs !important;
     text-transform: uppercase !important;
     letter-spacing: 0.4px !important;
     margin-bottom: 4px !important;

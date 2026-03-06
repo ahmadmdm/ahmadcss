@@ -3,16 +3,16 @@
 // ═══════════════════════════════════════════════════════════════════════════
 
 .modal-backdrop {
-    background: rgba(30, 27, 75, 0.4) !important;
+    background: rgba(6, 30, 24, 0.4) !important;
     backdrop-filter: blur(6px) !important;
 }
 
 .modal-content {
-    background: var(--glass-white-strong) !important;
+    background: $glass-white-strong !important;
     backdrop-filter: blur(30px) saturate(180%) !important;
-    border: 1px solid var(--glass-border) !important;
-    border-radius: var(--radius-xl) !important;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid $glass-border !important;
+    border-radius: $radius-xl !important;
+    box-shadow: $elevation-5 !important;
 }
 
 .modal-header {
@@ -21,9 +21,9 @@
 }
 
 .modal-title {
-    font-size: 16px !important;
+    font-size: $text-lg !important;
     font-weight: 700 !important;
-    color: #1e293b !important;
+    color: $text-primary !important;
 }
 
 .modal-body {
@@ -37,24 +37,24 @@
 
 // Dropdown Menus
 .dropdown-menu {
-    background: var(--glass-white-strong) !important;
+    background: $glass-white-strong !important;
     backdrop-filter: blur(25px) !important;
-    border: 1px solid var(--glass-border) !important;
-    border-radius: var(--radius-md) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid $glass-border !important;
+    border-radius: $radius-md !important;
+    box-shadow: $elevation-4 !important;
     padding: 4px !important;
 }
 
 .dropdown-item {
     padding: 8px 12px !important;
-    border-radius: var(--radius-sm) !important;
-    color: #1e293b !important;
-    font-size: 12px !important;
-    transition: var(--transition-fast) !important;
+    border-radius: $radius-sm !important;
+    color: $text-primary !important;
+    font-size: $text-xs !important;
+    transition: $transition-fast !important;
     
     &:hover {
         background: rgba($primary-600, 0.08) !important;
-        color: $primary-800 !important;
+        color: $primary-on-surface !important;
     }
 }
 

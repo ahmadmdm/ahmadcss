@@ -4,18 +4,18 @@
 
 .btn {
     font-weight: 600 !important;
-    font-size: 12px !important;
+    font-size: $text-xs !important;
     padding: 6px 14px !important;
     min-height: 32px !important;
-    border-radius: var(--radius-md) !important;
-    transition: var(--transition-base) !important;
+    border-radius: $radius-md !important;
+    transition: $transition-base !important;
     position: relative !important;
     overflow: hidden !important;
 }
 
 .btn-primary,
 .btn-primary-dark {
-    background: var(--gradient-navbar) !important;
+    background: $gradient-navbar !important;
     color: #fff !important;
     border: none !important;
     box-shadow: 0 4px 12px rgba($primary-600, 0.3) !important;
@@ -28,8 +28,8 @@
 
 .btn-default,
 .btn-secondary {
-    background: var(--glass-white) !important;
-    color: $primary-600 !important;
+    background: $glass-white !important;
+    color: $primary-on-surface !important;
     border: 1.5px solid rgba($primary-600, 0.25) !important;
     
     &:hover {
@@ -61,13 +61,13 @@
 }
 
 .btn-warning {
-    background: linear-gradient(135deg, $warning, darken($warning, 10%)) !important;
+    background: $gradient-warm !important;
     color: #fff !important;
     border: none !important;
     
     &:hover {
         transform: translateY(-2px) !important;
-        box-shadow: 0 4px 15px rgba($warning, 0.4) !important;
+        box-shadow: 0 4px 15px rgba($accent-500, 0.4) !important;
     }
 }
 
@@ -84,13 +84,13 @@
 
 // Button sizes
 .btn-sm {
-    font-size: 11px !important;
+    font-size: $text-xs !important;
     padding: 4px 10px !important;
     min-height: 26px !important;
 }
 
 .btn-lg {
-    font-size: 14px !important;
+    font-size: $text-base !important;
     padding: 10px 20px !important;
     min-height: 42px !important;
 }
